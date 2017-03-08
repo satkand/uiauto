@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- You can learn more about this keys by running 'xcodebuild --help' -->
+<!-- Under the 'Available keys for -exportOptionsPlist:' heading -->
+<plist version="1.0">
+<dict>
+    <key>method</key>
+    <string>ad-hoc</string>
+    <key>compileBitcode</key>
+    <false/>
+    <key>provisioningProfiles</key>
+    <dict>
+      <key>au.com.outware.OMProject</key>
+      <string>OMProject-Beta</string>
+    </dict>
+</dict>
+</plist>

@@ -5,6 +5,7 @@ disabled_rules:
   - type_name
   - force_try
   - force_cast
+  - trailing_comma
 
 included:
   - Source

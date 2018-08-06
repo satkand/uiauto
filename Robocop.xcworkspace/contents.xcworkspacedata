@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Robocop.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:UIKitCatalog/UIKitCatalog.xcodeproj">
+   </FileRef>
 </Workspace>

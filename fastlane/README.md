@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios acknowledge
 ```
 Acknowledge third party frameworks
+### ios ci_pr
+```
+fastlane ios ci_pr
+```
+Lane to execute on pull-request jobs (defaults to ci_dev lane)
 ### ios ci_dev
 ```
 fastlane ios ci_dev
@@ -30,12 +35,12 @@ Cleans, tests, builds, computes code coverage and lints
 ```
 fastlane ios ci_qa
 ```
-Cleans, tests, builds, archive and upload builds
+Cleans and tests
 ### ios ci_drop
 ```
 fastlane ios ci_drop
 ```
-Cleans, tests, builds, archive and upload builds
+Cleans and tests
 ### ios build_archive_appstore
 ```
 fastlane ios build_archive_appstore

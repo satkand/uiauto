@@ -17,12 +17,27 @@ import_from_git(
   version: "~> 1.0"
 )
 
-# If you want to override a lane:
-#
-# platform :ios do
-#
-#   override_lane :test do
-#     # custom implementation here
-#   end
-#
-# end
+platform :ios do
+
+  desc "Cleans, tests, builds, computes code coverage and lints"
+  override_lane :ci_dev do
+    clean
+    test
+
+    coverage
+    lint
+  end
+
+  desc "Cleans and tests"
+  override_lane :ci_qa do
+    clean
+    test
+  end
+
+  desc "Cleans and tests"
+  override_lane :ci_drop do
+    clean
+    test
+  end
+
+end

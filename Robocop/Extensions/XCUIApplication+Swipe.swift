@@ -7,7 +7,7 @@ extension XCUIApplication {
   /// Swiping directions.
   ///
   /// **Notes**: the swiping direction will scroll the table in the opposite direction
-  enum Direction {
+  public enum Direction {
 
     /// Scrolls down
     case up
@@ -30,7 +30,7 @@ extension XCUIApplication {
   ///     - direction: the swiping direction
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func swipe(
+  public func swipe(
     to cellIndex: Int,
     in tableIdentifier: String,
     direction: Direction,

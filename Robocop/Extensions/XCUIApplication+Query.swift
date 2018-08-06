@@ -10,7 +10,7 @@ extension XCUIApplication {
   ///     - elementType: the type of elements to build the query
   ///
   /// - returns: A query containing elements that matches the given type
-  func query(for elementType: Robocop.ElementType) -> XCUIElementQuery {
+  public func query(for elementType: Robocop.ElementType) -> XCUIElementQuery {
     switch elementType {
     case .actionSheetButton: return sheets.buttons
     case .activityIndicator: return activityIndicators

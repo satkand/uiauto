@@ -11,7 +11,7 @@ extension XCUIApplication {
   ///     - index: the index of the element
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func tap(_ elementType: Robocop.ElementType, atIndex index: Int, file: StaticString = #file, line: UInt = #line) {
+  public func tap(_ elementType: Robocop.ElementType, atIndex index: Int, file: StaticString = #file, line: UInt = #line) {
     first(elementType, atIndex: index, file: file, line: line).tap()
   }
 
@@ -22,7 +22,7 @@ extension XCUIApplication {
   ///     - identifer: the identifer of the element
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func tap(_ elementType: Robocop.ElementType, withIdentifier identifer: String, file: StaticString = #file, line: UInt = #line) {
+  public func tap(_ elementType: Robocop.ElementType, withIdentifier identifer: String, file: StaticString = #file, line: UInt = #line) {
     first(elementType, withIdentifier: identifer, file: file, line: line).tap()
   }
 }

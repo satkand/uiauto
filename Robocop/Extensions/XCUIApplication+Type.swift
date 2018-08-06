@@ -12,7 +12,7 @@ extension XCUIApplication {
   ///     - type: the text entry type
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func typeText(
+  public func typeText(
     _ text: String,
     intoElement identifier: String,
     ofType type: TextEntryType = .textField,
@@ -32,7 +32,7 @@ extension XCUIApplication {
   ///     - identifier: the identifier of the text entry
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func clearText(inTextEntry textEntry: TextEntryType, withIdentifier identifier: String, file: StaticString = #file, line: UInt = #line) {
+  public func clearText(inTextEntry textEntry: TextEntryType, withIdentifier identifier: String, file: StaticString = #file, line: UInt = #line) {
     let element: XCUIElement = first(.textEntry(textEntry), withIdentifier: identifier, file: file, line: line)
 
     let text: String = element.value as? String ?? ""

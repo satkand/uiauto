@@ -4,7 +4,7 @@ import XCTest
 
 /// Custom element type that are handled by this framework
 /// to abstract the interaction to this library from the XCUITest framework.
-enum ElementType {
+public enum ElementType {
 
   /// Button within an action sheet
   case actionSheetButton
@@ -58,7 +58,7 @@ enum ElementType {
 /// Text entry type as sub elements of `ElementType`
 ///
 /// As there is no generic way to access all text entry elements, a custom type is provided to deal with it
-enum TextEntryType {
+public enum TextEntryType {
 
   /// Secure text field has a different query
   case secureTextField
@@ -73,7 +73,7 @@ enum TextEntryType {
 /// Search element type as sub elements of `ElementType`
 ///
 /// In order to find the elements within a search bar, one will need the search bar identifier and the sub element identifier
-enum SearchElementType {
+public enum SearchElementType {
 
   /// The clear text button
   case clearButton

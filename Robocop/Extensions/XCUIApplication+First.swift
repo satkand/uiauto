@@ -13,7 +13,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  func first(
+  public func first(
     _ elementType: Robocop.ElementType,
     file: StaticString = #file,
     line: UInt = #line
@@ -38,7 +38,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  func first(
+  public func first(
     _ elementType: Robocop.ElementType,
     withIdentifier identifier: String,
     file: StaticString = #file,
@@ -65,7 +65,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  func first(
+  public func first(
     _ elementType: Robocop.ElementType,
     atIndex index: Int,
     file: StaticString = #file,

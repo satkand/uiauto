@@ -15,7 +15,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: element with the given title
-  func screen(withTitle title: String, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
+  public func screen(withTitle title: String, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
     return first(.navigationBarTitle, withIdentifier: title, file: file, line: line)
   }
 }

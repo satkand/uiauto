@@ -5,7 +5,7 @@ import XCTest
 extension XCUIApplication {
 
   /// The two 12-hour time periods
-  enum TimePeriod {
+  public enum TimePeriod {
 
     // Ante meridiem period, aka. before noon
     case beforeNoon
@@ -29,7 +29,7 @@ extension XCUIApplication {
   ///     - identifier: the identifier of the picker element
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func pick(
+  public func pick(
     _ wheelValue: String,
     fromColumn column: Int,
     inPicker identifier: String? = nil,
@@ -52,7 +52,7 @@ extension XCUIApplication {
   ///     - timePeriod: the meridiem period (AM/PM)
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  func pick(
+  public func pick(
     date: String,
     hour: String,
     minute: String,

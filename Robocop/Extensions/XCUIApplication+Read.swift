@@ -13,7 +13,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: Accessibility label of element
-  func readText(
+  public func readText(
     from elementType: Robocop.ElementType,
     withIdentifier identifier: String,
     file: StaticString = #file,

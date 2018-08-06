@@ -90,8 +90,7 @@
 				DB7FEAE42118175A008B2082 /* Robocop.h */,
 				DB7FEAED211817A8008B2082 /* Extensions */,
 			);
-			name = Source;
-			path = Robocop;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		DB7FEAED211817A8008B2082 /* Extensions */ = {
@@ -360,7 +359,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Robocop/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -407,7 +406,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Robocop/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

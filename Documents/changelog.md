@@ -4,7 +4,7 @@
 
 **New Features**
 
-* Initial release of OMProject!
+* Initial release of Robocop!
 
 * This repository can be used as the base Xcode project when starting a new project.
 More information available in the [Starting a New Project](starting-a-new-project.md) document.

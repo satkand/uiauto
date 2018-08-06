@@ -24,14 +24,14 @@
 			containerPortal = CED6AACA1BD9D3F8001911A0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CED6AAD11BD9D3F8001911A0;
-			remoteInfo = OMProject;
+			remoteInfo = Robocop;
 		};
 		CED6AAF21BD9D3F8001911A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CED6AACA1BD9D3F8001911A0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CED6AAD11BD9D3F8001911A0;
-			remoteInfo = OMProject;
+			remoteInfo = Robocop;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -98,7 +98,7 @@
 		2791791A1E6FD2FD00F1119B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED6AAEC1BD9D3F8001911A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED6AAF71BD9D3F8001911A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CED6AAD21BD9D3F8001911A0 /* OMProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED6AAD21BD9D3F8001911A0 /* Robocop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robocop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272D2ED41FCB827B0083A3FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		CED6AAE61BD9D3F8001911A0 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6AAD71BD9D3F8001911A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CED6AAF11BD9D3F8001911A0 /* Features.xctest */,
-				CED6AAD21BD9D3F8001911A0 /* OMProject.app */,
+				CED6AAD21BD9D3F8001911A0 /* Robocop.app */,
 				CED6AAE61BD9D3F8001911A0 /* Specs.xctest */,
 			);
 			name = Products;
@@ -221,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CED6AAD11BD9D3F8001911A0 /* OMProject */ = {
+		CED6AAD11BD9D3F8001911A0 /* Robocop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CED6AAFA1BD9D3F8001911A0 /* Build configuration list for PBXNativeTarget "OMProject" */;
+			buildConfigurationList = CED6AAFA1BD9D3F8001911A0 /* Build configuration list for PBXNativeTarget "Robocop" */;
 			buildPhases = (
 				CED6AACE1BD9D3F8001911A0 /* Sources */,
 				CED6AACF1BD9D3F8001911A0 /* Frameworks */,
@@ -235,9 +235,9 @@
 			);
 			dependencies = (
 			);
-			name = OMProject;
-			productName = OMProject;
-			productReference = CED6AAD21BD9D3F8001911A0 /* OMProject.app */;
+			name = Robocop;
+			productName = Robocop;
+			productReference = CED6AAD21BD9D3F8001911A0 /* Robocop.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CED6AAE51BD9D3F8001911A0 /* Specs */ = {
@@ -311,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CED6AACD1BD9D3F8001911A0 /* Build configuration list for PBXProject "OMProject" */;
+			buildConfigurationList = CED6AACD1BD9D3F8001911A0 /* Build configuration list for PBXProject "Robocop" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -324,7 +324,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CED6AAD11BD9D3F8001911A0 /* OMProject */,
+				CED6AAD11BD9D3F8001911A0 /* Robocop */,
 				CED6AAE51BD9D3F8001911A0 /* Specs */,
 				CED6AAF01BD9D3F8001911A0 /* Features */,
 			);
@@ -408,12 +408,12 @@
 /* Begin PBXTargetDependency section */
 		CED6AAE81BD9D3F8001911A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CED6AAD11BD9D3F8001911A0 /* OMProject */;
+			target = CED6AAD11BD9D3F8001911A0 /* Robocop */;
 			targetProxy = CED6AAE71BD9D3F8001911A0 /* PBXContainerItemProxy */;
 		};
 		CED6AAF31BD9D3F8001911A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CED6AAD11BD9D3F8001911A0 /* OMProject */;
+			target = CED6AAD11BD9D3F8001911A0 /* Robocop */;
 			targetProxy = CED6AAF21BD9D3F8001911A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -490,7 +490,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D OMQA";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier)";
-				PROJECT_NAME = OMProject;
+				PROJECT_NAME = Robocop;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -508,7 +508,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "OMProject-Beta";
+				PROVISIONING_PROFILE_SPECIFIER = "Robocop-Beta";
 			};
 			name = OMQA;
 		};
@@ -524,7 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier).$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OMProject.app/OMProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Robocop.app/Robocop";
 			};
 			name = OMQA;
 		};
@@ -596,7 +596,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D Debug";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier)";
-				PROJECT_NAME = OMProject;
+				PROJECT_NAME = Robocop;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -652,7 +652,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier)";
-				PROJECT_NAME = OMProject;
+				PROJECT_NAME = Robocop;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -672,7 +672,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "OMProject-Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Robocop-Development";
 			};
 			name = Debug;
 		};
@@ -686,7 +686,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "OMProject-AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "Robocop-AppStore";
 			};
 			name = Release;
 		};
@@ -702,7 +702,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier).$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OMProject.app/OMProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Robocop.app/Robocop";
 			};
 			name = Debug;
 		};
@@ -718,7 +718,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.outware.$(PROJECT_NAME:rfc1034identifier).$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OMProject.app/OMProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Robocop.app/Robocop";
 			};
 			name = Release;
 		};
@@ -757,7 +757,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CED6AACD1BD9D3F8001911A0 /* Build configuration list for PBXProject "OMProject" */ = {
+		CED6AACD1BD9D3F8001911A0 /* Build configuration list for PBXProject "Robocop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CED6AAF81BD9D3F8001911A0 /* Debug */,
@@ -767,7 +767,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CED6AAFA1BD9D3F8001911A0 /* Build configuration list for PBXNativeTarget "OMProject" */ = {
+		CED6AAFA1BD9D3F8001911A0 /* Build configuration list for PBXNativeTarget "Robocop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CED6AAFB1BD9D3F8001911A0 /* Debug */,

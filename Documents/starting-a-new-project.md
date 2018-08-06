@@ -32,9 +32,9 @@ If you do not have access to the above, please pair with a team lead to complete
 
 1. Add the new group to the repository with *Write* access
 
-### OMProject Forking
+### Robocop Forking
 
-1. Clone OMProject
+1. Clone Robocop
 
     ```
     $ git clone git@bitbucket.org:outware/omproject-ios-swift.git <project name>
@@ -62,7 +62,7 @@ If you do not have access to the above, please pair with a team lead to complete
     $ git push --set-upstream
     ```
 
-### OMProject Renaming
+### Robocop Renaming
 
 1. Checkout on a new branch
 
@@ -83,7 +83,7 @@ If you do not have access to the above, please pair with a team lead to complete
 1. Run the renaming script
 
     ```
-    $ ./renameProject.sh OMProject <ProjectName>
+    $ ./renameProject.sh Robocop <ProjectName>
     ```
 
 #### Manual Steps
@@ -96,11 +96,11 @@ If you do not have access to the above, please pair with a team lead to complete
 
 1. Change the `PROJECT_NAME` setting under **Project** (not Target) > **Build Settings**
 
-1. Update the `import` statements referencing *OMProject* (e.g.: `@testable import OMProject` -> `@testable import <ProjectName>`)
+1. Update the `import` statements referencing *Robocop* (e.g.: `@testable import Robocop` -> `@testable import <ProjectName>`)
 
 1. Close Xcode
 
-1. Rename `OMProject.xcworkspace` file to `<ProjectName>.xcworkspace`
+1. Rename `Robocop.xcworkspace` file to `<ProjectName>.xcworkspace`
 
 1. Update the location of the project in the `<ProjectName>.xcworkspace/contents.xcworkspacedata` file to use a relative path:
 
@@ -150,9 +150,9 @@ By default, each project should have 3 jobs:
 
 Create a new Jenkins job for each of the above by copying the following, respectively:
 
-* OMProject-iOS-Dev
-* OMProject-iOS-OMQA
-* OMProject-iOS-DropClient
+* Robocop-iOS-Dev
+* Robocop-iOS-OMQA
+* Robocop-iOS-DropClient
 
 Update the git repository, git branch being built, Xcode version label and the `project_name` configurations for each of them.
 

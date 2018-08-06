@@ -1,6 +1,6 @@
 //  Copyright © 2017 Outware Mobile. All rights reserved.
 
-@testable import OMProject
+@testable import Robocop
 import XCTest
 
 final class GreetingSpec: XCTestCase {

@@ -10,8 +10,8 @@
     <false/>
     <key>provisioningProfiles</key>
     <dict>
-      <key>au.com.outware.OMProject</key>
-      <string>OMProject-Beta</string>
+      <key>au.com.outware.Robocop</key>
+      <string>Robocop-Beta</string>
     </dict>
 </dict>
 </plist>

@@ -46,9 +46,9 @@ Feel free to modify the `swiftformat` rules in `scripts/pre-commit` as per proje
 
 ## Starting a new project
 
-By default, this repository is configured for OMProject in terms of build settings, code signing identities, provisioning profiles, etc.
+By default, this repository is configured for Robocop in terms of build settings, code signing identities, provisioning profiles, etc.
 
-To start a new project from OMProject, please follow the [Starting a new project][starting-a-new-project] guide.
+To start a new project from Robocop, please follow the [Starting a new project][starting-a-new-project] guide.
 
 [starting-a-new-project]: Documents/starting-a-new-project.md
 

@@ -3,6 +3,8 @@ disabled_rules:
   - opening_brace
   - identifier_name
   - type_name
+  - force_try
+  - force_cast
 
 included:
   - Source

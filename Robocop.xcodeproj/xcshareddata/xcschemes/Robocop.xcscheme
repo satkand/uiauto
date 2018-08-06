@@ -14,8 +14,8 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "CED6AAD11BD9D3F8001911A0"
-                     BuildableName = "Robocop.app"
+                     BlueprintIdentifier = "DB7FEAE121181759008B2082"
+                     BuildableName = "Robocop.framework"
                      BlueprintName = "Robocop"
                      ReferencedContainer = "container:Robocop.xcodeproj">
                   </BuildableReference>
@@ -32,8 +32,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CED6AAD11BD9D3F8001911A0"
-               BuildableName = "Robocop.app"
+               BlueprintIdentifier = "DB7FEAE121181759008B2082"
+               BuildableName = "Robocop.framework"
                BlueprintName = "Robocop"
                ReferencedContainer = "container:Robocop.xcodeproj">
             </BuildableReference>
@@ -47,32 +47,12 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CED6AAE51BD9D3F8001911A0"
-               BuildableName = "Specs.xctest"
-               BlueprintName = "Specs"
-               ReferencedContainer = "container:Robocop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CED6AAF01BD9D3F8001911A0"
-               BuildableName = "Features.xctest"
-               BlueprintName = "Features"
-               ReferencedContainer = "container:Robocop.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CED6AAD11BD9D3F8001911A0"
-            BuildableName = "Robocop.app"
+            BlueprintIdentifier = "DB7FEAE121181759008B2082"
+            BuildableName = "Robocop.framework"
             BlueprintName = "Robocop"
             ReferencedContainer = "container:Robocop.xcodeproj">
          </BuildableReference>
@@ -94,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CED6AAD11BD9D3F8001911A0"
-            BuildableName = "Robocop.app"
+            BlueprintIdentifier = "DB7FEAE121181759008B2082"
+            BuildableName = "Robocop.framework"
             BlueprintName = "Robocop"
             ReferencedContainer = "container:Robocop.xcodeproj">
          </BuildableReference>
@@ -113,8 +93,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CED6AAD11BD9D3F8001911A0"
-            BuildableName = "Robocop.app"
+            BlueprintIdentifier = "DB7FEAE121181759008B2082"
+            BuildableName = "Robocop.framework"
             BlueprintName = "Robocop"
             ReferencedContainer = "container:Robocop.xcodeproj">
          </BuildableReference>

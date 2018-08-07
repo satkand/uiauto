@@ -8,20 +8,20 @@ extension XCUIApplication {
   ///
   /// **Notes**: the swiping direction will scroll the table in the opposite direction
   public enum Direction {
-
+    
     /// Scrolls down
     case up
-
+    
     /// Scrolls left
     case right
-
+    
     /// Scrolls up
     case down
-
+    
     /// Scrolls right
     case left
   }
-
+  
   /// Swipe to the given cell index in a table towards a `Direction`.
   ///
   /// - parameters:
@@ -41,12 +41,7 @@ extension XCUIApplication {
     let table: XCUIElement = first(.table, withIdentifier: tableIdentifier, file: file, line: line)
 
     while !cell.isVisible {
-      switch direction {
-      case .up: table.swipeUp()
-      case .right: table.swipeRight()
-      case .down: table.swipeDown()
-      case .left: table.swipeLeft()
-      }
+      table.swipe(withDirection: direction)
     }
   }
   

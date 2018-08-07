@@ -7,41 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B995AB821195EC300830259 /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */; };
+		DB7FEAE62118175A008B2082 /* Robocop.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7FEAE42118175A008B2082 /* Robocop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEB211817A7008B2082 /* Assert.swift */; };
 		DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEC211817A8008B2082 /* ElementType.swift */; };
-		DB7FEAE62118175A008B2082 /* Robocop.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7FEAE42118175A008B2082 /* Robocop.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB7FEB01211817A8008B2082 /* XCUIApplication+First.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF3211817A8008B2082 /* XCUIApplication+First.swift */; };
-		DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */; };
-		DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */; };
 		DB7FEAFC211817A8008B2082 /* XCUIApplication+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEE211817A8008B2082 /* XCUIApplication+Query.swift */; };
-		DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */; };
-		DB7FEB02211817A8008B2082 /* XCUIApplication+Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF4211817A8008B2082 /* XCUIApplication+Screen.swift */; };
 		DB7FEAFD211817A8008B2082 /* XCUIApplication+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEF211817A8008B2082 /* XCUIApplication+Search.swift */; };
-		DB7FEB03211817A8008B2082 /* XCUIApplication+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */; };
-		DB7FEB05211817A8008B2082 /* XCUIApplication+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */; };
 		DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */; };
-		DB7FEB04211817A8008B2082 /* XCUIApplication+Verify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */; };
 		DB7FEAFF211817A8008B2082 /* XCUIElement+IsVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */; };
+		DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */; };
+		DB7FEB01211817A8008B2082 /* XCUIApplication+First.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF3211817A8008B2082 /* XCUIApplication+First.swift */; };
+		DB7FEB02211817A8008B2082 /* XCUIApplication+Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF4211817A8008B2082 /* XCUIApplication+Screen.swift */; };
+		DB7FEB03211817A8008B2082 /* XCUIApplication+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */; };
+		DB7FEB04211817A8008B2082 /* XCUIApplication+Verify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */; };
+		DB7FEB05211817A8008B2082 /* XCUIApplication+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */; };
+		DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */; };
+		DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB7FEAEB211817A7008B2082 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
-		DB7FEAEC211817A8008B2082 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
-		DB7FEAE52118175A008B2082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Swipe.swift"; sourceTree = "<group>"; };
 		DB7FEAE221181759008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7FEAE42118175A008B2082 /* Robocop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robocop.h; sourceTree = "<group>"; };
-		DB7FEAF3211817A8008B2082 /* XCUIApplication+First.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+First.swift"; sourceTree = "<group>"; };
-		DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Navigate.swift"; sourceTree = "<group>"; };
-		DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Pick.swift"; sourceTree = "<group>"; };
+		DB7FEAE52118175A008B2082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB7FEAEB211817A7008B2082 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
+		DB7FEAEC211817A8008B2082 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 		DB7FEAEE211817A8008B2082 /* XCUIApplication+Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Query.swift"; sourceTree = "<group>"; };
-		DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Read.swift"; sourceTree = "<group>"; };
-		DB7FEAF4211817A8008B2082 /* XCUIApplication+Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Screen.swift"; sourceTree = "<group>"; };
 		DB7FEAEF211817A8008B2082 /* XCUIApplication+Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Search.swift"; sourceTree = "<group>"; };
-		DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Swipe.swift"; sourceTree = "<group>"; };
-		DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
 		DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Type.swift"; sourceTree = "<group>"; };
-		DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Verify.swift"; sourceTree = "<group>"; };
 		DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+IsVisible.swift"; sourceTree = "<group>"; };
+		DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Pick.swift"; sourceTree = "<group>"; };
+		DB7FEAF3211817A8008B2082 /* XCUIApplication+First.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+First.swift"; sourceTree = "<group>"; };
+		DB7FEAF4211817A8008B2082 /* XCUIApplication+Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Screen.swift"; sourceTree = "<group>"; };
+		DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Swipe.swift"; sourceTree = "<group>"; };
+		DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Verify.swift"; sourceTree = "<group>"; };
+		DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
+		DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Navigate.swift"; sourceTree = "<group>"; };
+		DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Read.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */,
 				DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */,
 				DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */,
+				2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				DB7FEB03211817A8008B2082 /* XCUIApplication+Swipe.swift in Sources */,
 				DB7FEB05211817A8008B2082 /* XCUIApplication+Tap.swift in Sources */,
 				DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */,
+				2B995AB821195EC300830259 /* XCUIElement+Swipe.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Verify.swift in Sources */,
 				DB7FEAFF211817A8008B2082 /* XCUIElement+IsVisible.swift in Sources */,
 			);

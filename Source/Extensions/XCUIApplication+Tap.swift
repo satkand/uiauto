@@ -8,31 +8,23 @@ extension XCUIApplication {
   ///
   /// **Notes**:
   /// We can tap a specific area of an element by calculating a vector based on its size
-  public enum LocationArea {
+  public enum Area {
     
     // CGVectors require dx and dy values to calculate where has been tapped
     // dx is a percentage of pixels, measured from the left-hand side
     // dy is a percentage of pixels, measured from the top side
     var vector: CGVector {
       switch self {
-      case .top: return CGVector(dx: 0.5, dy: 0.05)
-      case .right: return CGVector(dx: 0.95, dy: 0.5)
-      case .bottom: return CGVector(dx: 0.5, dy: 0.95)
-      case .left: return CGVector(dx: 0.05, dy: 0.5)
+      case .rightSide: return CGVector(dx: 0.95, dy: 0.5)
+      case .leftSide: return CGVector(dx: 0.05, dy: 0.5)
       }
     }
     
-    // Align horizontally to the mid point (50%/0.5) and vertically to the top side (5%/0.05)
-    case top
-    
     // Align horizontally to the right side (95%/0.95) and vertically to the mid point (50%/0.5)
-    case right
-    
-    // Align horizontally to the mid point (50%/0.5) and vertically to the bottom side (95%/0.95)
-    case bottom
+    case rightSide
     
     // Align horizontally to the left side (5%/0.05) and vertically to the mid point (50%/0.5)
-    case left
+    case leftSide
   }
   
   /// Tap on element with given type and index.
@@ -62,10 +54,10 @@ extension XCUIApplication {
   /// - parameters:
   ///     - elementType: the type of the element
   ///     - identifier: the identifier of the element
-  ///     - locationArea: the area of the element that was tapped
+  ///     - area: the area of the element that was tapped
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func tap(_ elementType: Robocop.ElementType, withIdentifier identifier: String, withLocationArea locationArea: LocationArea, file: StaticString = #file, line: UInt = #line) {
-    first(elementType, withIdentifier: identifier).coordinate(withNormalizedOffset: locationArea.vector).tap()
+  public func tap(_ elementType: Robocop.ElementType, withIdentifier identifier: String, withArea area: Area, file: StaticString = #file, line: UInt = #line) {
+    first(elementType, withIdentifier: identifier).coordinate(withNormalizedOffset: area.vector).tap()
   }
 }

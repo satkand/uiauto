@@ -20,10 +20,10 @@ final class PageControlFeatures: XCTestCase {
     
     application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
     
-    application.tap(.pageControl, withIdentifier: pageControlIdentifier, withLocationArea: .left)
+    application.tap(.pageControl, withIdentifier: pageControlIdentifier, withArea: .leftSide)
     application.verifyValue(expectedValue: "page 2 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
     
-    application.tap(.pageControl, withIdentifier: pageControlIdentifier, withLocationArea: .right)
+    application.tap(.pageControl, withIdentifier: pageControlIdentifier, withArea: .rightSide)
     application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
   }
   

@@ -26,4 +26,15 @@ final class PageControlFeatures: XCTestCase {
     application.tap(.pageControl, withIdentifier: pageControlIdentifier, withLocationArea: .right)
     application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
   }
+  
+  func testPageControlSwipes() {
+    
+    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    
+    application.swipe(.pageControl, withIdentifier: pageControlIdentifier, direction: .left)
+    application.verifyValue(expectedValue: "page 2 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    
+    application.swipe(.pageControl, withIdentifier: pageControlIdentifier, direction: .right)
+    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+  }
 }

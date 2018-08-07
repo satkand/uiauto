@@ -37,6 +37,7 @@
 		53B791DC1F85505A00AB2FA6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53B791D81F854B4800AB2FA6 /* Localizable.strings */; };
 		3E5C084E1974991E00969DD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C08501974991E00969DD7 /* Main.storyboard */; };
 		539C6BB21F27F4A70006C5A9 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539C6BB11F27F4A70006C5A9 /* MasterViewController.swift */; };
+		2B995AB42119208900830259 /* PageControlFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB32119208900830259 /* PageControlFeatures.swift */; };
 		53CE5AE31F2A8AD200D8A656 /* PageControlViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE11F2A8AD200D8A656 /* PageControlViewController.storyboard */; };
 		2200543F18BC54F5002A6E8B /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543018BC54F5002A6E8B /* PageControlViewController.swift */; };
 		DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB95405E2112BC6300157B74 /* PickerFeatures.swift */; };
@@ -110,6 +111,7 @@
 		228DB9F718BC53F1002BA12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8EF6F1210AE2CB0091E5C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		539C6BB11F27F4A70006C5A9 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		2B995AB32119208900830259 /* PageControlFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlFeatures.swift; sourceTree = "<group>"; };
 		2200543018BC54F5002A6E8B /* PageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		DB95405E2112BC6300157B74 /* PickerFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFeatures.swift; sourceTree = "<group>"; };
 		2200543118BC54F5002A6E8B /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				DB8F273221113FCB008BDCE7 /* DatePickerFeatures.swift */,
 				DB8F273821114E24008BDCE7 /* ImageViewFeatures.swift */,
 				DB8EF6F1210AE2CB0091E5C8 /* Info.plist */,
+				2B995AB32119208900830259 /* PageControlFeatures.swift */,
 				DB95405E2112BC6300157B74 /* PickerFeatures.swift */,
 				DBE070DA2113E6E300609510 /* SearchFeatures.swift */,
 				DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */,
@@ -533,6 +536,7 @@
 				DB8EF6F0210AE2CB0091E5C8 /* CatalogFeatures.swift in Sources */,
 				DB8F273321113FCB008BDCE7 /* DatePickerFeatures.swift in Sources */,
 				DB8F273921114E24008BDCE7 /* ImageViewFeatures.swift in Sources */,
+				2B995AB42119208900830259 /* PageControlFeatures.swift in Sources */,
 				DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */,
 				DBE070DB2113E6E400609510 /* SearchFeatures.swift in Sources */,
 				DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */,

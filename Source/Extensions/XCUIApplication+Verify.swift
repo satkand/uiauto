@@ -32,8 +32,8 @@ extension XCUIApplication {
   ///     - timeout: the timeout value to stop the query
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func verifyValue(
-    expectedValue: String,
+  public func verifyText(
+    _ expectedText: String,
     inElement elementType: Robocop.ElementType,
     withIdentifier elementIdentifier: String,
     timeout: TimeInterval = 0,
@@ -42,6 +42,6 @@ extension XCUIApplication {
   ) {
     let element: XCUIElement = first(elementType, withIdentifier: elementIdentifier, file: file, line: line)
     let actualValue: String = element.value as! String
-    assert(expectedValue == actualValue, message: "Expected \(expectedValue), found \(actualValue)", file: file, line: line)
+    assert(expectedText == actualValue, message: "Expected \(expectedText), found \(actualValue)", file: file, line: line)
   }
 }

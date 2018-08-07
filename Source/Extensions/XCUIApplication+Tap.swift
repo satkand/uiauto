@@ -15,16 +15,16 @@ extension XCUIApplication {
     // dy is a percentage of pixels, measured from the top side
     var vector: CGVector {
       switch self {
-      case .rightSide: return CGVector(dx: 0.95, dy: 0.5)
-      case .leftSide: return CGVector(dx: 0.05, dy: 0.5)
+      case .right: return CGVector(dx: 0.95, dy: 0.5)
+      case .left: return CGVector(dx: 0.05, dy: 0.5)
       }
     }
     
     // Align horizontally to the right side (95%/0.95) and vertically to the mid point (50%/0.5)
-    case rightSide
+    case right
     
     // Align horizontally to the left side (5%/0.05) and vertically to the mid point (50%/0.5)
-    case leftSide
+    case left
   }
   
   /// Tap on element with given type and index.

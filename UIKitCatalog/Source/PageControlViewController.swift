@@ -51,7 +51,6 @@ class PageControlViewController: UIViewController {
     pageControl.currentPageIndicatorTintColor = UIColor(named: "Tint_Purple_Color")
 
     pageControl.addTarget(self, action: #selector(PageControlViewController.pageControlValueDidChange), for: .valueChanged)
-    
     pageControl.accessibilityIdentifier = "page_control"
   }
 

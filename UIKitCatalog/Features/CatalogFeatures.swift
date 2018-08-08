@@ -15,7 +15,7 @@ final class CatalogFeatures: XCTestCase {
   }
 
   func testScreenTitle() {
-    application.verifyExistence(ofElement: .navigationBarTitle, withIdentifier: "UIKitCatalog")
+    application.verifyExistence(ofElement: .init(type: .navigationBarTitle, identifier: "UIKitCatalog"))
   }
 
   func testTappingEachCells() {
@@ -24,7 +24,7 @@ final class CatalogFeatures: XCTestCase {
 
       application.swipe(to: index, in: "catalog_table", direction: .up)
 
-      application.tap(.cell, atIndex: index)
+      application.tap(element: .init(type: .cell, index: index))
 
       application.navigateBack()
     }

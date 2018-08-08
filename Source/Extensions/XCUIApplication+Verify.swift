@@ -13,14 +13,12 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func verifyExistence(
-    ofElement elementType: Robocop.ElementType,
-    withIdentifier identifier: String,
+    ofElement element: Element,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    _ = first(elementType, withIdentifier: identifier, file: file, line: line)
-      .waitForExistence(timeout: timeout)
+    _ = first(element: element, file: file, line: line).waitForExistence(timeout: timeout)
   }
 
   /// Verify the value of an element.
@@ -34,14 +32,13 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func verifyText(
     _ expectedText: String,
-    inElement elementType: Robocop.ElementType,
-    withIdentifier elementIdentifier: String,
+    inElement element: Element,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = first(elementType, withIdentifier: elementIdentifier, file: file, line: line)
-    let actualValue: String = element.value as! String
+    let uiElement: XCUIElement = first(element: element, file: file, line: line)
+    let actualValue: String = uiElement.value as! String
     assert(expectedText == actualValue, message: "Expected \(expectedText), found \(actualValue)", file: file, line: line)
   }
 }

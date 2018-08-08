@@ -5,7 +5,7 @@ import XCTest
 extension XCUIApplication {
 
   /// Type `text` into element with given identifier and type.
-  /// 
+  ///
   /// - parameters:
   ///     - text: the text to input into the text entry form
   ///     - identifier: the identifier of the element
@@ -19,7 +19,7 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let textEntryElement: XCUIElement = first(.textEntry(type), withIdentifier: identifier, file: file, line: line)
+    let textEntryElement: XCUIElement = first(element: .init(type: .textEntry(type), identifier: identifier), file: file, line: line)
 
     textEntryElement.tap()
     textEntryElement.typeText(text)
@@ -33,7 +33,7 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func clearText(inTextEntry textEntry: TextEntryType, withIdentifier identifier: String, file: StaticString = #file, line: UInt = #line) {
-    let element: XCUIElement = first(.textEntry(textEntry), withIdentifier: identifier, file: file, line: line)
+    let element: XCUIElement = first(element: .init(type: .textEntry(textEntry), identifier: identifier), file: file, line: line)
 
     let text: String = element.value as? String ?? ""
     let deleteString: String = String(repeating: XCUIKeyboardKey.delete.rawValue, count: text.count)

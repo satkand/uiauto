@@ -37,8 +37,8 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let cell: XCUIElement = first(.cell, atIndex: cellIndex, file: file, line: line)
-    let table: XCUIElement = first(.table, withIdentifier: tableIdentifier, file: file, line: line)
+    let cell: XCUIElement = first(element: .init(type: .cell, index: cellIndex), file: file, line: line)
+    let table: XCUIElement = first(element: .init(type: .table, identifier: tableIdentifier), file: file, line: line)
 
     while !cell.isVisible {
       switch direction {

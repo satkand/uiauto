@@ -13,12 +13,7 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: Accessibility label of element
-  public func readText(
-    from elementType: Robocop.ElementType,
-    withIdentifier identifier: String,
-    file: StaticString = #file,
-    line: UInt = #line
-  ) -> String? {
-    return first(elementType, withIdentifier: identifier, file: file, line: line).value as? String
+  public func readText(from element: Element, file: StaticString = #file, line: UInt = #line) -> String? {
+    return first(element: element, file: file, line: line).value as? String
   }
 }

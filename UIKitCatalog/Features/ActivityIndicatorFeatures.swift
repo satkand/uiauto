@@ -15,7 +15,7 @@ final class ActivityIndicatorFeatures: XCTestCase {
   }
 
   func testActivityIndicatorAnimation() {
-    application.tap(.cell, withIdentifier: "cell_activity_indicator")
-    application.verifyExistence(ofElement: .activityIndicator, withIdentifier: "activity_indicator_gray")
+    application.tap(element: .init(type: .cell, identifier: "cell_activity_indicator"))
+    application.verifyExistence(ofElement: .init(type: .activityIndicator, identifier: "activity_indicator_gray"))
   }
 }

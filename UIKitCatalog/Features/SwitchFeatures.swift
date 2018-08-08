@@ -13,14 +13,14 @@ final class SwitchFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 13)
+    application.tap(element: .init(type: .cell, index: 13))
   }
 
   func testSwitches() {
-    application.tap(.switch, withIdentifier: "switch_switch")
-    application.tap(.switch, atIndex: 1)
-    application.tap(.switch, atIndex: 1)
+    application.tap(element: .init(type: .switch, identifier: "switch_switch"))
+    application.tap(element: .init(type: .switch, index: 1))
+    application.tap(element: .init(type: .switch, index: 1))
 
-    application.verifyText("0", inElement: .switch, withIdentifier: "switch_switch")
+    application.verifyText("0", inElement: .init(type: .switch, identifier: "switch_switch"))
   }
 }

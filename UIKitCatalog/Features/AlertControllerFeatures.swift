@@ -44,13 +44,13 @@ final class AlertControllerFeatures: XCTestCase {
 
   func testTextEntryStyle() {
     application.tap(.cell, atIndex: 3)
-    application.typeText("Hello World", intoElement: "alert_text_field")
+    application.type(text: "Hello World", intoElement: "alert_text_field")
     application.tap(.alertButton, withIdentifier: "OK")
   }
 
   func testSecureTextEntryStyle() {
     application.tap(.cell, atIndex: 4)
-    application.typeText("Hello World", intoElement: "alert_secure_text_field", ofType: .secureTextField)
+    application.type(text: "Hello World", intoElement: "alert_secure_text_field", ofType: .secureTextField)
     application.tap(.alertButton, withIdentifier: "OK")
   }
 

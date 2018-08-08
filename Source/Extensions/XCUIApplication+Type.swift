@@ -12,8 +12,8 @@ extension XCUIApplication {
   ///     - type: the text entry type
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func typeText(
-    _ text: String,
+  public func type(
+    text: String,
     intoElement identifier: String,
     ofType type: TextEntryType = .textField,
     file: StaticString = #file,

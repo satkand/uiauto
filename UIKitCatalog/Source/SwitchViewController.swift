@@ -32,7 +32,7 @@ class SwitchViewController: UITableViewController {
 
     defaultSwitch.addTarget(self, action: #selector(SwitchViewController.switchValueDidChange(_:)), for: .valueChanged)
 
-    defaultSwitch.accessibilityIdentifier = "switch_switch"
+    defaultSwitch.accessibilityIdentifier = "default_switch"
   }
 
   func configureTintedSwitch() {

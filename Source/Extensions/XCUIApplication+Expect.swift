@@ -57,7 +57,7 @@ extension XCUIApplication {
       errorMessage = "Expected element to '\(expectation)', got \(uiElement.exists)"
 
     case let .haveBool(expectedBool):
-      let currentBool: Bool = (uiElement.value as? String) == "1"
+      let currentBool: Bool? = (uiElement.value as? String)?.asBool
       result = currentBool == expectedBool
       errorMessage = "Expected element to '\(expectation)', got \(String(describing: uiElement.value))"
 
@@ -85,4 +85,14 @@ extension XCUIApplication {
 
     assert(result, message: errorMessage, file: file, line: line)
   }
+}
+
+private extension String {
+
+  var asBool: Bool? {
+    switch self.lowercased() {
+    case "true", "1": return true
+    case "false", "0": return false
+    default: return nil
+    }  }
 }

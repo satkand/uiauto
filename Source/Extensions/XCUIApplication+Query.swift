@@ -23,6 +23,7 @@ extension XCUIApplication {
     case .navigationBarTitle: return navigationBars
     case .picker: return pickers
     case .pickerWheel: return pickerWheels
+    case .progressView: return progressIndicators
     case let .searchBar(searchElementType, identifier): return query(for: searchElementType, inSearchBar: identifier)
     case .switch: return switches
     case .table: return tables

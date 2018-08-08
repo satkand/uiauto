@@ -95,6 +95,7 @@ class ProgressViewController: UITableViewController {
 
   func configureDefaultStyleProgressView() {
     defaultStyleProgressView.progressViewStyle = .default
+    defaultStyleProgressView.accessibilityIdentifier = "default_progress_view"
   }
 
   func configureBarStyleProgressView() {

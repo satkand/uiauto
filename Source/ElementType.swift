@@ -38,7 +38,7 @@ public enum ElementType {
 
   /// Any page control
   case pageControl
-  
+
   /// Any picker
   case picker
 
@@ -47,7 +47,7 @@ public enum ElementType {
 
   /// Any progress view
   case progressView
-  
+
   /// Search bar element
   case searchBar(type: SearchElementType, identifier: String)
 

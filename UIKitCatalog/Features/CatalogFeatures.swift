@@ -15,7 +15,7 @@ final class CatalogFeatures: XCTestCase {
   }
 
   func testScreenTitle() {
-    application.verifyExistence(ofElement: .init(type: .navigationBarTitle, identifier: "UIKitCatalog"))
+    application.expect(element: .init(type: .navigationBarTitle, identifier: "UIKitCatalog"), to: .exist(true))
   }
 
   func testTappingEachCells() {

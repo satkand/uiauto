@@ -21,8 +21,8 @@ final class TextFieldsFeatures: XCTestCase {
     application.type(text: "Hello", intoElement: "text_fields_default")
     application.type(text: "Foo Bar", intoElement: "text_fields_tinted")
 
-    application.verifyText("Hello", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
-    application.verifyText("Foo Bar", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
+    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_default"), to: .haveText("Hello"))
+    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"), to: .haveText("Foo Bar"))
 
     let oldText: String = application.readText(from: .init(type: .textEntry(.textField), identifier: "text_fields_default")) ?? ""
 
@@ -32,7 +32,7 @@ final class TextFieldsFeatures: XCTestCase {
     application.type(text: oldText, intoElement: "text_fields_default")
     application.type(text: " World", intoElement: "text_fields_default")
 
-    application.verifyText("Hello World", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
-    application.verifyText("", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
+    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_default"), to: .haveText("Hello World"))
+    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"), to: .haveText(""))
   }
 }

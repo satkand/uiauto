@@ -16,8 +16,8 @@ final class ProgressViewFeatures: XCTestCase {
   }
 
   func testProgressViews() {
-    application.verifyText("0%", inElement: .init(type: .progressView, identifier: "default_progress_view"))
+    application.expect(element: .init(type: .progressView, identifier: "default_progress_view"), to: .haveText("0%"))
     sleep(1)
-    application.verifyText("10%", inElement: .init(type: .progressView, identifier: "default_progress_view"))
+    application.expect(element: .init(type: .progressView, identifier: "default_progress_view"), to: .haveText("10%"))
   }
 }

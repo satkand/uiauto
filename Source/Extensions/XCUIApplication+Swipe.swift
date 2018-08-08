@@ -4,24 +4,6 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Swiping directions.
-  ///
-  /// **Notes**: the swiping direction will scroll the table in the opposite direction
-  public enum Direction {
-    
-    /// Scrolls down
-    case up
-    
-    /// Scrolls left
-    case right
-    
-    /// Scrolls up
-    case down
-    
-    /// Scrolls right
-    case left
-  }
-  
   /// Swipe to the given cell index in a table towards a `Direction`.
   ///
   /// - parameters:

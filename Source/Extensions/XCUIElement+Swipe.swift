@@ -3,7 +3,25 @@
 import XCTest
 
 extension XCUIElement {
-  
+
+  /// Swiping directions.
+  ///
+  /// **Notes**: the swiping direction will *scroll* in the opposite direction
+  public enum Direction {
+
+    /// Scrolls down
+    case up
+
+    /// Scrolls left
+    case right
+
+    /// Scrolls up
+    case down
+
+    /// Scrolls right
+    case left
+  }
+
   /// Convenience function to swipe towards a specific direction.
   ///
   /// - parameters:

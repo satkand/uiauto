@@ -45,6 +45,7 @@
 		2200544018BC54F5002A6E8B /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543118BC54F5002A6E8B /* PickerViewController.swift */; };
 		53CE5AE91F2A8B1000D8A656 /* ProgressViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE71F2A8B1000D8A656 /* ProgressViewController.storyboard */; };
 		2200544118BC54F5002A6E8B /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543218BC54F5002A6E8B /* ProgressViewController.swift */; };
+		2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */; };
 		DB7FEB1321182566008B2082 /* Robocop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; };
 		3E6AE85A196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */; };
 		533BD7BC1F8D2B08007D5C3B /* SearchBarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7BA1F8D2B07007D5C3B /* SearchBarsTableViewController.swift */; };
@@ -116,6 +117,7 @@
 		DB95405E2112BC6300157B74 /* PickerFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFeatures.swift; sourceTree = "<group>"; };
 		2200543118BC54F5002A6E8B /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PickerViewController.swift; sourceTree = "<group>"; };
 		2200543218BC54F5002A6E8B /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewFeatures.swift; sourceTree = "<group>"; };
 		5359C3081F194CF0007F0EC7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB7FEB1221182566008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarEmbeddedInNavigationBarViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				DB8EF6F1210AE2CB0091E5C8 /* Info.plist */,
 				2B995AB32119208900830259 /* PageControlFeatures.swift */,
 				DB95405E2112BC6300157B74 /* PickerFeatures.swift */,
+				2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */,
 				DBE070DA2113E6E300609510 /* SearchFeatures.swift */,
 				DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */,
 				DBE672B521141B2C007E54E9 /* SwitchFeatures.swift */,
@@ -538,6 +541,7 @@
 				DB8F273921114E24008BDCE7 /* ImageViewFeatures.swift in Sources */,
 				2B995AB42119208900830259 /* PageControlFeatures.swift in Sources */,
 				DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */,
+				2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */,
 				DBE070DB2113E6E400609510 /* SearchFeatures.swift in Sources */,
 				DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */,
 				DBE672B621141B2C007E54E9 /* SwitchFeatures.swift in Sources */,

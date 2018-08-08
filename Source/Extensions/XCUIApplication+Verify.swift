@@ -2,27 +2,7 @@
 
 import XCTest
 
-/// Empty protocol which can be used to check if an element has a specific "value"
-public protocol Value {}
-
-extension Bool: Value {}
-
-extension String: Value {}
-
 extension XCUIApplication {
-
-  public enum Expectation {
-    case exist
-    case haveValue(Value)
-    case beEnabled
-    case beHittable
-    case beSelected
-    case beVisible
-  }
-
-//  public func expect(element: Element, to expectation: Expectation, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-//    first(element).
-//  }
 
   /// Verify the existence of an element.
   ///

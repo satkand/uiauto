@@ -22,8 +22,8 @@ final class TextFieldsFeatures: XCTestCase {
     application.type(text: "Foo Bar", intoElement: "text_fields_tinted")
 
     application.verifyText("Hello", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
-    application.verifyText("Foo Bar", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted")
-)
+    application.verifyText("Foo Bar", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
+    
     let oldText: String = application.readText(from: .init(type: .textEntry(.textField), identifier: "text_fields_default")) ?? ""
 
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_default")

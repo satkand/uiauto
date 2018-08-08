@@ -45,6 +45,9 @@ public enum ElementType {
   /// Any wheel from any picker
   case pickerWheel
 
+  /// Any progress view
+  case progressView
+  
   /// Search bar element
   case searchBar(type: SearchElementType, identifier: String)
 

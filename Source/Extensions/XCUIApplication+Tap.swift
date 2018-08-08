@@ -57,7 +57,7 @@ extension XCUIApplication {
   ///     - area: the area of the element that was tapped
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func tap(_ elementType: Robocop.ElementType, withIdentifier identifier: String, withArea area: Area, file: StaticString = #file, line: UInt = #line) {
+  public func tap(_ elementType: Robocop.ElementType, withIdentifier identifier: String, inArea area: Area, file: StaticString = #file, line: UInt = #line) {
     first(elementType, withIdentifier: identifier).coordinate(withNormalizedOffset: area.vector).tap()
   }
 }

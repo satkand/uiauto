@@ -13,7 +13,7 @@ final class PickerFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 6)
+    application.tap(element: .init(type: .cell, index: 6))
   }
 
   func testPicker() {

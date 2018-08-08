@@ -37,8 +37,11 @@ extension XCUIApplication {
     line: UInt = #line
   ) {
     let element: XCUIElement = identifier
-      .flatMap { [unowned self] in self.first(.picker, withIdentifier: $0, file: file, line: line).pickerWheels.element(boundBy: column) }
-      ?? first(.pickerWheel, atIndex: column, file: file, line: line)
+      .flatMap { [unowned self] in
+        self.first(element: .init(type: .picker, identifier: $0), file: file, line: line)
+          .pickerWheels.element(boundBy: column)
+      }
+      ?? first(element: .init(type: .pickerWheel, index: column), file: file, line: line)
 
     element.adjust(toPickerWheelValue: wheelValue)
   }
@@ -50,6 +53,7 @@ extension XCUIApplication {
   ///     - hour: the hour of the day
   ///     - time: the time of the day
   ///     - timePeriod: the meridiem period (AM/PM)
+  ///     - datePickerIdentifier: the identifier of the date picker
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func pick(
@@ -57,11 +61,11 @@ extension XCUIApplication {
     hour: String,
     minute: String,
     timePeriod: TimePeriod,
-    inElement elementIdentifier: String,
+    inDatePicker datePickerIdentifier: String,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let datePicker: XCUIElement = first(.datePicker, withIdentifier: elementIdentifier, file: file, line: line)
+    let datePicker: XCUIElement = first(element: .init(type: .datePicker, identifier: datePickerIdentifier), file: file, line: line)
     let pickerWheelsCount: Int = datePicker.pickerWheels.count
 
     assert(

@@ -13,28 +13,28 @@ final class PageControlFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
     
-    application.tap(.cell, atIndex: 5)
+    application.tap(element: .init(type: .cell, index: 5))
   }
   
   func testPageControlTaps() {
     
-    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    application.verifyText("page 3 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
     
-    application.tap(.pageControl, withIdentifier: pageControlIdentifier, inArea: .left)
-    application.verifyValue(expectedValue: "page 2 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), inArea: .left)
+    application.verifyText("page 2 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
     
-    application.tap(.pageControl, withIdentifier: pageControlIdentifier, inArea: .right)
-    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), inArea: .right)
+    application.verifyText("page 3 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
   }
   
   func testPageControlSwipes() {
     
-    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    application.verifyText("page 3 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
+
+    application.swipe(element: .init(type: .pageControl, identifier: pageControlIdentifier), direction: .left)
+    application.verifyText("page 2 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
     
-    application.swipe(.pageControl, withIdentifier: pageControlIdentifier, direction: .left)
-    application.verifyValue(expectedValue: "page 2 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
-    
-    application.swipe(.pageControl, withIdentifier: pageControlIdentifier, direction: .right)
-    application.verifyValue(expectedValue: "page 3 of 10", inElement: .pageControl, withIdentifier: pageControlIdentifier)
+    application.swipe(element: .init(type: .pageControl, identifier: pageControlIdentifier), direction: .right)
+    application.verifyText("page 3 of 10", inElement: .init(type: .pageControl, identifier: pageControlIdentifier))
   }
 }

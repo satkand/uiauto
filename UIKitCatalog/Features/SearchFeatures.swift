@@ -13,22 +13,22 @@ final class SearchFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 8)
+    application.tap(element: .init(type: .cell, index: 8))
   }
 
   func testDefaultSearchBar() {
-    application.tap(.cell, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 0))
 
     application.search(text: "Hello World", inSearchBar: "search_search_bar_default_search_bar")
-    application.tap(.button, withIdentifier: "Scope Two")
+    application.tap(element: .init(type: .button, identifier: "Scope Two"))
     application.clearText(inSearchBar: "search_search_bar_default_search_bar")
   }
 
   func testSearchController() {
-    application.tap(.cell, atIndex: 2)
+    application.tap(element: .init(type: .cell, index: 2))
 
     application.search(text: "Hello World", inSearchBar: "search_search_controller_search_bar")
     application.clearText(inSearchBar: "search_search_controller_search_bar")
-    application.tap(.button, withIdentifier: "Cancel")
+    application.tap(element: .init(type: .button, identifier: "Cancel"))
   }
 }

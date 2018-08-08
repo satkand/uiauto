@@ -13,11 +13,11 @@ final class SegmentedControlsFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 9)
+    application.tap(element: .init(type: .cell, index: 9))
   }
 
   func testSegmentedControls() {
-    application.tap(.button, withIdentifier: "Tools")
-    application.tap(.button, atIndex: 6)
+    application.tap(element: .init(type: .button, identifier: "Tools"))
+    application.tap(element: .init(type: .button, index: 6))
   }
 }

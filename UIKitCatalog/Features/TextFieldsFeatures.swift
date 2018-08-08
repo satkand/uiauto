@@ -14,17 +14,17 @@ final class TextFieldsFeatures: XCTestCase {
     application.launch()
 
     application.swipe(to: 14, in: "catalog_table", direction: .up)
-    application.tap(.cell, atIndex: 14)
+    application.tap(element: .init(type: .cell, index: 14))
   }
 
   func testTextFields() {
     application.type(text: "Hello", intoElement: "text_fields_default")
     application.type(text: "Foo Bar", intoElement: "text_fields_tinted")
 
-    application.verifyText("Hello", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
-    application.verifyText("Foo Bar", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
-
-    let oldText: String = application.readText(from: .textEntry(.textField), withIdentifier: "text_fields_default") ?? ""
+    application.verifyText("Hello", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
+    application.verifyText("Foo Bar", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
+    
+    let oldText: String = application.readText(from: .init(type: .textEntry(.textField), identifier: "text_fields_default")) ?? ""
 
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_default")
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_tinted")
@@ -32,7 +32,7 @@ final class TextFieldsFeatures: XCTestCase {
     application.type(text: oldText, intoElement: "text_fields_default")
     application.type(text: " World", intoElement: "text_fields_default")
 
-    application.verifyText("Hello World", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
-    application.verifyText("", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
+    application.verifyText("Hello World", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
+    application.verifyText("", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
   }
 }

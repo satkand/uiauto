@@ -4,24 +4,6 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Swiping directions.
-  ///
-  /// **Notes**: the swiping direction will scroll the table in the opposite direction
-  public enum Direction {
-    
-    /// Scrolls down
-    case up
-    
-    /// Scrolls left
-    case right
-    
-    /// Scrolls up
-    case down
-    
-    /// Scrolls right
-    case left
-  }
-  
   /// Swipe to the given cell index in a table towards a `Direction`.
   ///
   /// - parameters:
@@ -37,8 +19,8 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let cell: XCUIElement = first(.cell, atIndex: cellIndex, file: file, line: line)
-    let table: XCUIElement = first(.table, withIdentifier: tableIdentifier, file: file, line: line)
+    let cell: XCUIElement = first(element: .init(type: .cell, index: cellIndex), file: file, line: line)
+    let table: XCUIElement = first(element: .init(type: .table, identifier: tableIdentifier), file: file, line: line)
 
     while !cell.isVisible {
       table.swipe(withDirection: direction)
@@ -48,12 +30,11 @@ extension XCUIApplication {
   /// Swipe an element towards a 'Direction'
   ///
   /// - parameters:
-  ///     - elementType: the type of the element
-  ///     - identifier: the identifier of the element
+  ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - direction: the swiping direction
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func swipe(_ elementType: Robocop.ElementType, withIdentifier identifier: String, direction: Direction, file: StaticString = #file, line: UInt = #line) {
-    first(elementType, withIdentifier: identifier).swipe(withDirection: direction)
+  public func swipe(element: Element, direction: Direction, file: StaticString = #file, line: UInt = #line) {
+    first(element: element).swipe(withDirection: direction)
   }
 }

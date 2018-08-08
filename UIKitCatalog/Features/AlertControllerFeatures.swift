@@ -13,63 +13,63 @@ final class AlertControllerFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 1)
+    application.tap(element: .init(type: .cell, index: 1))
   }
 
   // MARK: Alert Styles
 
   func testAlertSimpleStyle() {
-    application.tap(.cell, atIndex: 0)
-    application.tap(.alertButton, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 0))
+    application.tap(element: .init(type: .alertButton, index: 0))
   }
 
   func testOKCancelStyle() {
-    application.tap(.cell, atIndex: 1)
-    application.tap(.alertButton, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 1))
+    application.tap(element: .init(type: .alertButton, index: 0))
 
-    application.tap(.cell, atIndex: 1)
-    application.tap(.alertButton, atIndex: 1)
+    application.tap(element: .init(type: .cell, index: 1))
+    application.tap(element: .init(type: .alertButton, index: 1))
   }
 
   func testThreeButtonsStyle() {
-    application.tap(.cell, atIndex: 2)
-    application.tap(.alertButton, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 2))
+    application.tap(element: .init(type: .alertButton, index: 0))
 
-    application.tap(.cell, atIndex: 2)
-    application.tap(.alertButton, withIdentifier: "Choice Two")
+    application.tap(element: .init(type: .cell, index: 2))
+    application.tap(element: .init(type: .alertButton, identifier: "Choice Two"))
 
-    application.tap(.cell, atIndex: 2)
-    application.tap(.alertButton, withIdentifier: "Cancel")
+    application.tap(element: .init(type: .cell, index: 2))
+    application.tap(element: .init(type: .alertButton, identifier: "Cancel"))
   }
 
   func testTextEntryStyle() {
-    application.tap(.cell, atIndex: 3)
+    application.tap(element: .init(type: .cell, index: 3))
     application.type(text: "Hello World", intoElement: "alert_text_field")
-    application.tap(.alertButton, withIdentifier: "OK")
+    application.tap(element: .init(type: .alertButton, identifier: "OK"))
   }
 
   func testSecureTextEntryStyle() {
-    application.tap(.cell, atIndex: 4)
+    application.tap(element: .init(type: .cell, index: 4))
     application.type(text: "Hello World", intoElement: "alert_secure_text_field", ofType: .secureTextField)
-    application.tap(.alertButton, withIdentifier: "OK")
+    application.tap(element: .init(type: .alertButton, identifier: "OK"))
   }
 
 
   // MARK: Action Sheet Styles
 
   func testActionSheetComfirmCancelStyle() {
-    application.tap(.cell, atIndex: 5)
-    application.tap(.actionSheetButton, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 5))
+    application.tap(element: .init(type: .actionSheetButton, index: 0))
 
-    application.tap(.cell, atIndex: 5)
-    application.tap(.actionSheetButton, withIdentifier: "Cancel")
+    application.tap(element: .init(type: .cell, index: 5))
+    application.tap(element: .init(type: .actionSheetButton, identifier: "Cancel"))
   }
 
   func testActionSheetDestructiveStyle() {
-    application.tap(.cell, atIndex: 6)
-    application.tap(.actionSheetButton, atIndex: 0)
+    application.tap(element: .init(type: .cell, index: 6))
+    application.tap(element: .init(type: .actionSheetButton, index: 0))
 
-    application.tap(.cell, atIndex: 6)
-    application.tap(.actionSheetButton, atIndex: 1)
+    application.tap(element: .init(type: .cell, index: 6))
+    application.tap(element: .init(type: .actionSheetButton, index: 1))
   }
 }

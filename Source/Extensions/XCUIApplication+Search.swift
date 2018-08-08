@@ -14,7 +14,7 @@ extension XCUIApplication {
   public func search(text: String, inSearchBar identifier: String, file: StaticString = #file, line: UInt = #line) {
 
     let elementType: Robocop.ElementType = .searchBar(type: .searchField, identifier: identifier)
-    let searchField: XCUIElement = first(elementType, file: file, line: line)
+    let searchField: XCUIElement = first(element: .init(type: elementType), file: file, line: line)
 
     searchField.tap()
     searchField.typeText(text)
@@ -28,6 +28,6 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func clearText(inSearchBar identifier: String, file: StaticString = #file, line: UInt = #line) {
     let elementType: Robocop.ElementType = .searchBar(type: .clearButton, identifier: identifier)
-    first(elementType, withIdentifier: "Clear text", file: file, line: line).tap()
+    first(element: .init(type: elementType, identifier: "Clear text"), file: file, line: line).tap()
   }
 }

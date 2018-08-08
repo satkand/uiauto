@@ -21,6 +21,7 @@ extension XCUIApplication {
     case .image: return images
     case .navigationBarButton: return navigationBars.buttons
     case .navigationBarTitle: return navigationBars
+    case .pageControl: return pageIndicators
     case .picker: return pickers
     case .pickerWheel: return pickerWheels
     case let .searchBar(searchElementType, identifier): return query(for: searchElementType, inSearchBar: identifier)

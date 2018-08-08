@@ -4,11 +4,10 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Find the first matching `XCUIElement` with the given `ElementType` and identifier.
+  /// Find the first matching `XCUIElement` with the given `ElementType`
   ///
   /// - parameters:
   ///     - elementType: the type of the element to find
-  ///     - identifier: the identifier of the element to find
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///

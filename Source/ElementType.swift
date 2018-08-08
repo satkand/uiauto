@@ -36,6 +36,9 @@ public enum ElementType {
   /// as a navigation bar by default is not accessible
   case navigationBarTitle
 
+  /// Any page control
+  case pageControl
+  
   /// Any picker
   case picker
 

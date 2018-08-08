@@ -98,5 +98,6 @@ private extension String {
     case "true", "1": return true
     case "false", "0": return false
     default: return nil
-    }  }
+    }
+  }
 }

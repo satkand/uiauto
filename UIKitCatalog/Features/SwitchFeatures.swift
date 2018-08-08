@@ -21,6 +21,6 @@ final class SwitchFeatures: XCTestCase {
     application.tap(.switch, atIndex: 1)
     application.tap(.switch, atIndex: 1)
 
-    application.verifyValue(expectedValue: "0", inElement: .switch, withIdentifier: "switch_switch")
+    application.verifyText("0", inElement: .switch, withIdentifier: "switch_switch")
   }
 }

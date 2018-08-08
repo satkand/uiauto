@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Sort Xcode Project Files"
-               scriptText = "perl &quot;${PROJECT_DIR}/../scripts/sort-xcode-project-file&quot; &quot;${PROJECT_FILE_PATH}/project.pbxproj&quot;">
+               scriptText = "perl &quot;${PROJECT_DIR}/../scripts/sort-xcode-project-file&quot; &quot;${PROJECT_FILE_PATH}/project.pbxproj&quot;&#10;perl &quot;${PROJECT_DIR}/../scripts/sort-xcode-project-file&quot; &quot;${PROJECT_DIR}/../Robocop.xcodeproj/project.pbxproj&quot;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

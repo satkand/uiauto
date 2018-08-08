@@ -19,7 +19,7 @@ final class SearchFeatures: XCTestCase {
   func testDefaultSearchBar() {
     application.tap(.cell, atIndex: 0)
 
-    application.searchText("Hello World", inSearchBar: "search_search_bar_default_search_bar")
+    application.search(text: "Hello World", inSearchBar: "search_search_bar_default_search_bar")
     application.tap(.button, withIdentifier: "Scope Two")
     application.clearText(inSearchBar: "search_search_bar_default_search_bar")
   }
@@ -27,7 +27,7 @@ final class SearchFeatures: XCTestCase {
   func testSearchController() {
     application.tap(.cell, atIndex: 2)
 
-    application.searchText("Hello World", inSearchBar: "search_search_controller_search_bar")
+    application.search(text: "Hello World", inSearchBar: "search_search_controller_search_bar")
     application.clearText(inSearchBar: "search_search_controller_search_bar")
     application.tap(.button, withIdentifier: "Cancel")
   }

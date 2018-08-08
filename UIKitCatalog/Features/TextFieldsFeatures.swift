@@ -18,21 +18,21 @@ final class TextFieldsFeatures: XCTestCase {
   }
 
   func testTextFields() {
-    application.typeText("Hello", intoElement: "text_fields_default")
-    application.typeText("Foo Bar", intoElement: "text_fields_tinted")
+    application.type(text: "Hello", intoElement: "text_fields_default")
+    application.type(text: "Foo Bar", intoElement: "text_fields_tinted")
 
-    application.verifyValue(expectedValue: "Hello", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
-    application.verifyValue(expectedValue: "Foo Bar", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
+    application.verifyText("Hello", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
+    application.verifyText("Foo Bar", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
 
     let oldText: String = application.readText(from: .textEntry(.textField), withIdentifier: "text_fields_default") ?? ""
 
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_default")
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_tinted")
 
-    application.typeText(oldText, intoElement: "text_fields_default")
-    application.typeText(" World", intoElement: "text_fields_default")
+    application.type(text: oldText, intoElement: "text_fields_default")
+    application.type(text: " World", intoElement: "text_fields_default")
 
-    application.verifyValue(expectedValue: "Hello World", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
-    application.verifyValue(expectedValue: "", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
+    application.verifyText("Hello World", inElement: .textEntry(.textField), withIdentifier: "text_fields_default")
+    application.verifyText("", inElement: .textEntry(.textField), withIdentifier: "text_fields_tinted")
   }
 }

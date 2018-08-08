@@ -4,13 +4,17 @@ import XCTest
 
 extension XCUIElement {
   
-  func swipe(withDirection direction: XCUIApplication.Direction) {
+  /// Convenience function to swipe towards a specific direction.
+  ///
+  /// - parameters:
+  ///     - direction: the direction of the swipe
+  func swipe(withDirection direction: Direction) {
     
     switch direction {
-    case .up: self.swipeUp()
-    case .right: self.swipeRight()
-    case .down: self.swipeDown()
-    case .left: self.swipeLeft()
+    case .up: swipeUp()
+    case .right: swipeRight()
+    case .down: swipeDown()
+    case .left: swipeLeft()
     }
   }
 }

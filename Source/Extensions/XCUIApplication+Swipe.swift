@@ -48,8 +48,7 @@ extension XCUIApplication {
   /// Swipe an element towards a 'Direction'
   ///
   /// - parameters:
-  ///     - elementType: the type of the element
-  ///     - identifier: the identifier of the element
+  ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - direction: the swiping direction
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.

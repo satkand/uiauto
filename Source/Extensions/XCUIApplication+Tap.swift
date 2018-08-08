@@ -34,8 +34,8 @@ extension XCUIApplication {
   /// Tap on element in the given area.
   ///
   /// - parameters:
-  ///     - elementType: the type of the element
-  ///     - area: the area of the element that was tapped
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - area: the area of the element that was tapped (defaults to tapping in the center)
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func tap(element: Element, inArea area: Area = .center, file: StaticString = #file, line: UInt = #line) {

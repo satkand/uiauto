@@ -17,6 +17,6 @@ final class ImageViewFeatures: XCTestCase {
   }
 
   func testImageView() {
-    application.verifyExistence(ofElement: .init(type: .image, identifier: "image_view_image_view"))
+    application.expect(element: .init(type: .image, identifier: "image_view_image_view"), to: .exist(true))
   }
 }

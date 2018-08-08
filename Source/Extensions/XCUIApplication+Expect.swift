@@ -45,7 +45,7 @@ extension XCUIApplication {
     line: UInt = #line
   ) {
     let buildErrorMessage: (Any?) -> String = { actualValue in
-      return "Expected element to '\(expectation)', got \(String(describing: actualValue))"
+      "Expected element to '\(expectation)', got \(String(describing: actualValue))"
     }
 
     let uiElement: XCUIElement = first(element: element, failable: false, timeout: timeout, file: file, line: line)

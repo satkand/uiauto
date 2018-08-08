@@ -1,7 +1,7 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
 import Robocop
+import XCTest
 
 final class AlertControllerFeatures: XCTestCase {
 
@@ -53,7 +53,6 @@ final class AlertControllerFeatures: XCTestCase {
     application.type(text: "Hello World", intoElement: "alert_secure_text_field", ofType: .secureTextField)
     application.tap(element: .init(type: .alertButton, identifier: "OK"))
   }
-
 
   // MARK: Action Sheet Styles
 

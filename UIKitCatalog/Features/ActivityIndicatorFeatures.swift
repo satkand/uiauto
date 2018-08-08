@@ -1,10 +1,10 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
 import Robocop
+import XCTest
 
 final class ActivityIndicatorFeatures: XCTestCase {
-        
+
   private var application: XCUIApplication!
 
   override func setUp() {

@@ -13,12 +13,12 @@ final class ButtonsFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 2)
+    application.tap(element: .init(type: .cell, index: 2))
   }
 
   func testButtons() {
-    application.tap(.button, withIdentifier: "Button")
-    application.tap(.button, atIndex: 1)
-    application.tap(.button, withIdentifier: "buttons_image_button")
+    application.tap(element: .init(type: .button, identifier: "Button"))
+    application.tap(element: .init(type: .button, index: 1))
+    application.tap(element: .init(type: .button, identifier: "buttons_image_button"))
   }
 }

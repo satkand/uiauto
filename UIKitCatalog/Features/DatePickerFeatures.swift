@@ -13,13 +13,13 @@ final class DatePickerFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 3)
+    application.tap(element: .init(type: .cell, index: 3))
   }
 
   func testDatePicker() {
     let dateFormatter: DateFormatter = .init()
     dateFormatter.dateFormat = "MMM d"
 
-    application.pick(date: dateFormatter.string(from: Date()), hour: "11", minute: "30", timePeriod: .afterNoon, inElement: "date_picker_date_picker")
+    application.pick(date: dateFormatter.string(from: Date()), hour: "11", minute: "30", timePeriod: .afterNoon, inDatePicker: "date_picker_date_picker")
   }
 }

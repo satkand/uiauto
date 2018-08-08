@@ -4,81 +4,45 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Find the first matching `XCUIElement` with the given `ElementType`
+  /// Find the first matching `XCUIElement` with the given `Element`.
+  ///
+  /// An `XCUIElement` can be found by using their identifier (which is the accessibility identifier or label),
+  /// index or type.
+  ///
+  /// This function will first attempt to make a match using the identifier if available.
+  /// If no identifier is given, the index will be used if available.
+  /// Otherwise, it will return the first element matching the given type
+  ///
+  /// **Notes**
+  ///
+  /// It is always preferred to use the identifier as it is more robust than relying on an index or just on the type.
+  /// In the ideal case, one would want to ensure that each identifiers are **unique** per screen.
   ///
   /// - parameters:
-  ///     - elementType: the type of the element to find
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - timeout: the timeout for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  public func first(
-    _ elementType: Robocop.ElementType,
-    file: StaticString = #file,
-    line: UInt = #line
-  ) -> XCUIElement {
-    let element: XCUIElement = query(for: elementType).element.firstMatch
+  public func first(element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
 
-    assert(
-      element.exists,
-      message: "No element \(elementType) found.",
-      file: file,
-      line: line
-    )
+    let uiElement: XCUIElement
+    let errorMessage: String
 
-    return element
-  }
-  /// Find the first matching `XCUIElement` with the given `ElementType` and identifier.
-  ///
-  /// - parameters:
-  ///     - elementType: the type of the element to find
-  ///     - identifier: the identifier of the element to find
-  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
-  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  ///
-  /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  public func first(
-    _ elementType: Robocop.ElementType,
-    withIdentifier identifier: String,
-    file: StaticString = #file,
-    line: UInt = #line
-  ) -> XCUIElement {
-    let element: XCUIElement = query(for: elementType)[identifier].firstMatch
+    if let identifier = element.identifier {
+      uiElement = query(for: element.type)[identifier].firstMatch
+      errorMessage = "No element \(element.type) with identifier '\(identifier)' found."
+    } else if let index = element.index {
+      uiElement = query(for: element.type).element(boundBy: index).firstMatch
+      errorMessage = "No element \(element.type) at index '\(index)' found."
+    } else {
+      uiElement = query(for: element.type).element.firstMatch
+      errorMessage = "No element \(elementType) found."
+    }
 
-    assert(
-      element.exists,
-      message: "No element \(elementType) with identifier '\(identifier)' found.",
-      file: file,
-      line: line
-    )
+    assert(uiElement.waitForExistence(timeout: timeout), message: errorMessage, file: file, line: line)
 
-    return element
-  }
-
-  /// Find the first matching `XCUIElement` with the given `ElementType` and index.
-  ///
-  /// - parameters:
-  ///     - elementType: the type of the element to find
-  ///     - index: the index of the element to find
-  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
-  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  ///
-  /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  public func first(
-    _ elementType: Robocop.ElementType,
-    atIndex index: Int,
-    file: StaticString = #file,
-    line: UInt = #line
-  ) -> XCUIElement {
-    let element: XCUIElement = query(for: elementType).element(boundBy: index).firstMatch
-
-    assert(
-      element.exists,
-      message: "No element \(elementType) at index '\(index)' found.",
-      file: file,
-      line: line
-    )
-
-    return element
+    return uiElement
   }
 }

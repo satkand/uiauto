@@ -13,10 +13,10 @@ final class ImageViewFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.tap(.cell, atIndex: 4)
+    application.tap(element: .init(type: .cell, index: 4))
   }
 
   func testImageView() {
-    application.verifyExistence(ofElement: .image, withIdentifier: "image_view_image_view")
+    application.verifyExistence(ofElement: .init(type: .image, identifier: "image_view_image_view"))
   }
 }

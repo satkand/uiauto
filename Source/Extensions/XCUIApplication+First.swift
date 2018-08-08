@@ -41,6 +41,7 @@ extension XCUIApplication {
       errorMessage = "No element \(elementType) found."
     }
 
+    _ = uiElement.waitForExistence(timeout: timeout)
     assert(uiElement.exists, message: errorMessage, file: file, line: line)
 
     return uiElement

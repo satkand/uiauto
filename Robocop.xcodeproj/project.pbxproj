@@ -22,6 +22,7 @@
 		DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */; };
 		DB7FEB04211817A8008B2082 /* XCUIApplication+Verify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */; };
 		DB7FEAFF211817A8008B2082 /* XCUIElement+IsVisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */; };
+		2B995AB821195EC300830259 /* XCUIElement+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Type.swift"; sourceTree = "<group>"; };
 		DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Verify.swift"; sourceTree = "<group>"; };
 		DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+IsVisible.swift"; sourceTree = "<group>"; };
+		2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Swipe.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */,
 				DB7FEAF6211817A8008B2082 /* XCUIApplication+Verify.swift */,
 				DB7FEAF1211817A8008B2082 /* XCUIElement+IsVisible.swift */,
+				2B995AB721195EC300830259 /* XCUIElement+Swipe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Verify.swift in Sources */,
 				DB7FEAFF211817A8008B2082 /* XCUIElement+IsVisible.swift in Sources */,
+				2B995AB821195EC300830259 /* XCUIElement+Swipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

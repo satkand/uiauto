@@ -10,6 +10,15 @@ extension XCUIApplication {
   /// We can tap a specific area of an element by calculating a vector based on its size
   public enum Area {
     
+    // Centered horizontally and vertically (50%/0.5, 50%/0.5)
+    case center
+
+    // Align horizontally to the left side (5%/0.05) and vertically to the mid point (50%/0.5)
+    case left
+
+    // Align horizontally to the right side (95%/0.95) and vertically to the mid point (50%/0.5)
+    case right
+
     // CGVectors require dx and dy values to calculate where has been tapped
     // dx is a percentage of pixels, measured from the left-hand side
     // dy is a percentage of pixels, measured from the top side
@@ -20,15 +29,6 @@ extension XCUIApplication {
       case .right: return CGVector(dx: 0.95, dy: 0.5)
       }
     }
-    
-    // Align horizontally to the right side (95%/0.95) and vertically to the mid point (50%/0.5)
-    case right
-
-    // Centered horizontally and vertically (50%/0.5, 50%/0.5)
-    case center
-
-    // Align horizontally to the left side (5%/0.05) and vertically to the mid point (50%/0.5)
-    case left
   }
   
   /// Tap on element in the given area.

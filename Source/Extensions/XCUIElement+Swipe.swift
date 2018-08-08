@@ -4,7 +4,7 @@ import XCTest
 
 extension XCUIElement {
   
-  public func swipe(withDirection direction: XCUIApplication.Direction) {
+  func swipe(withDirection direction: XCUIApplication.Direction) {
     
     switch direction {
     case .up: self.swipeUp()

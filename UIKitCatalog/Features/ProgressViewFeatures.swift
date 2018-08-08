@@ -11,14 +11,13 @@ final class ProgressViewFeatures: XCTestCase {
     
     application = XCUIApplication()
     application.launch()
-    
-    application.tap(.cell, atIndex: 7)
+
+    application.tap(element: .init(type: .cell, index: 7))
   }
   
   func testProgressViews() {
-    
-    application.verifyValue(expectedValue: "0%", inElement: .progressView, withIdentifier: "default_progress_view")
+    application.verifyText("0%", inElement: .init(type: .progressView, identifier: "default_progress_view"))
     sleep(1)
-    application.verifyValue(expectedValue: "10%", inElement: .progressView, withIdentifier: "default_progress_view")
+    application.verifyText("10%", inElement: .init(type: .progressView, identifier: "default_progress_view"))
   }
 }

@@ -62,7 +62,7 @@ disabled_rules="redundantSelf,unusedArguments,blankLinesAtStartOfScope"
 
 swiftformat_exit_codes=()
 
-for folder in Source Specs Features; do
+for folder in Source UIKitCatalog/Source UIKitCatalog/Features; do
   exit_code=$(swiftformat "${folder}" --disable ${disabled_rules} --indent 2 --wraparguments beforefirst | grep -q "completed. 0/"; echo $?)
 
   if [[ ${exit_code} -ne 0 ]]; then

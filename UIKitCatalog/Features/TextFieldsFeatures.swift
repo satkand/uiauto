@@ -1,7 +1,7 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
 import Robocop
+import XCTest
 
 final class TextFieldsFeatures: XCTestCase {
 
@@ -23,7 +23,7 @@ final class TextFieldsFeatures: XCTestCase {
 
     application.verifyText("Hello", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_default"))
     application.verifyText("Foo Bar", inElement: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"))
-    
+
     let oldText: String = application.readText(from: .init(type: .textEntry(.textField), identifier: "text_fields_default")) ?? ""
 
     application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_default")

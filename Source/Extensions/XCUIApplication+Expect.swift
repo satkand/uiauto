@@ -44,6 +44,10 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
+    let buildErrorMessage: (Any?) -> String = { actualValue in
+      return "Expected element to '\(expectation)', got \(String(describing: actualValue))"
+    }
+
     let uiElement: XCUIElement = first(element: element, failable: false, timeout: timeout, file: file, line: line)
 
     let errorMessage: String
@@ -54,33 +58,33 @@ extension XCUIApplication {
     case let .exist(expectedBool):
       // Waiting for existence is already done as part of finding the element using `first`
       result = uiElement.exists == expectedBool
-      errorMessage = "Expected element to '\(expectation)', got \(uiElement.exists)"
+      errorMessage = buildErrorMessage(uiElement.exists)
 
     case let .haveBool(expectedBool):
       let currentBool: Bool? = (uiElement.value as? String)?.asBool
       result = currentBool == expectedBool
-      errorMessage = "Expected element to '\(expectation)', got \(String(describing: uiElement.value))"
+      errorMessage = buildErrorMessage(currentBool)
 
     case let .haveText(expectedText):
-      let currentText: String = (uiElement.value as? String) ?? ""
+      let currentText: String? = (uiElement.value as? String)
       result = currentText == expectedText
-      errorMessage = "Expected element to \(expectation), got \(String(describing: uiElement.value))"
+      errorMessage = buildErrorMessage(currentText)
 
     case let .beEnabled(expectedBool):
       result = uiElement.isEnabled == expectedBool
-      errorMessage = "Expected element to \(expectation), got \(uiElement.isEnabled)"
+      errorMessage = buildErrorMessage(uiElement.isEnabled)
 
     case let .beHittable(expectedBool):
       result = uiElement.isHittable == expectedBool
-      errorMessage = "Expected element to \(expectation), got \(uiElement.isHittable)"
+      errorMessage = buildErrorMessage(uiElement.isHittable)
 
     case let .beSelected(expectedBool):
       result = uiElement.isSelected == expectedBool
-      errorMessage = "Expected element to \(expectation), got \(uiElement.isSelected)"
+      errorMessage = buildErrorMessage(uiElement.isSelected)
 
     case let .beVisible(expectedBool):
       result = uiElement.isVisible == expectedBool
-      errorMessage = "Expected element to \(expectation), got \(uiElement.isVisible)"
+      errorMessage = buildErrorMessage(uiElement.isVisible)
     }
 
     assert(result, message: errorMessage, file: file, line: line)

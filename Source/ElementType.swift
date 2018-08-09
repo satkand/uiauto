@@ -68,4 +68,7 @@ public enum ElementType {
 
   /// Text view
   case textView
+
+  /// Link inside web views
+  case webViewLink
 }

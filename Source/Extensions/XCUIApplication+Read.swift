@@ -4,7 +4,15 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Read the accessibility label from the element with given type and identifier.
+  /// Read the text from an element with given type and identifier.
+  ///
+  /// **Note:**
+  ///
+  /// In some cases, (e.g.: `UILabel`), the `accessibilityValue` of the element is not set automatically.
+  /// For those, the `label` property is being used to determine the text being displayed.
+  ///
+  /// If the `accessibilityLabel` on those are customised, it is advised to also set the `accessibilityValue` to
+  /// the actual text so that the UI tests are able to verify it.
   ///
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
@@ -13,13 +21,12 @@ extension XCUIApplication {
   ///
   /// - returns: Accessibility label of element
   public func readText(from element: Element, file: StaticString = #file, line: UInt = #line) -> String? {
-    return getText(forElement: first(element: element, file: file, line: line))
-  }
+    let element: XCUIElement = first(element: element, file: file, line: line)
 
-  private func getText(forElement element: XCUIElement) -> String? {
-    switch element.elementType {
-    case .staticText: return element.label
-    default: return element.value as? String
+    if let value: String = element.value as? String, !value.isEmpty {
+      return value
+    } else {
+      return element.label
     }
   }
 }

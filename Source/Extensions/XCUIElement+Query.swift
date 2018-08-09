@@ -19,6 +19,7 @@ extension XCUIElement {
     case .cell: return cells
     case .datePicker: return datePickers
     case .image: return images
+    case .label: return staticTexts
     case .navigationBarButton: return navigationBars.buttons
     case .navigationBarTitle: return navigationBars
     case .pageControl: return pageIndicators

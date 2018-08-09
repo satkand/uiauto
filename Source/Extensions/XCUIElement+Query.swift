@@ -2,7 +2,7 @@
 
 import XCTest
 
-extension XCUIApplication {
+extension XCUIElement {
 
   /// Build a `XCUIElementQuery` given an `ElementType`.
   ///
@@ -26,6 +26,7 @@ extension XCUIApplication {
     case .pickerWheel: return pickerWheels
     case .progressView: return progressIndicators
     case .searchBar: return otherElements
+    case .searchField: return searchFields
     case .secureTextField: return secureTextFields
     case .switch: return switches
     case .table: return tables

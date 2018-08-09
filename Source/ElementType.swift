@@ -9,25 +9,25 @@ public enum ElementType {
   /// Button within an action sheet
   case actionSheetButton
 
-  /// Any activity indicator
+  /// Activity indicator
   case activityIndicator
 
   /// Button within an alert
   case alertButton
 
-  /// Any button
+  /// Button
   case button
 
-  /// Any cell
+  /// Cell
   case cell
 
-  /// Any date picker
+  /// Date picker
   case datePicker
 
-  /// Any image
+  /// Image
   case image
 
-  /// Any navigation bar button
+  /// Navigation bar button
   case navigationBarButton
 
   /// Title within a navigation bar
@@ -36,33 +36,36 @@ public enum ElementType {
   /// as a navigation bar by default is not accessible
   case navigationBarTitle
 
-  /// Any page control
+  /// Page control
   case pageControl
 
-  /// Any picker
+  /// Picker
   case picker
 
-  /// Any wheel from any picker
+  /// Wheel from picker
   case pickerWheel
 
-  /// Any progress view
+  /// Progress view
   case progressView
 
-  /// Search bar element
+  /// Search bar
   case searchBar
 
-  /// Any secure text field
+  /// Search field, usually contained within a searchBar
+  case searchField
+
+  /// Secure text field (for other text fields, see .textField)
   case secureTextField
 
-  /// Any switch
+  /// Switch
   case `switch`
 
-  /// Any table
+  /// Table
   case table
 
-  /// Any plain text field
+  /// Plain text field (for secure text field, see .secureTextField)
   case textField
 
-  /// Any text view
+  /// Text view
   case textView
 }

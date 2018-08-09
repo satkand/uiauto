@@ -2,7 +2,7 @@
 
 import XCTest
 
-extension XCUIApplication {
+extension XCUIElement {
 
   /// Find the first matching `XCUIElement` with the given `Element`.
   ///

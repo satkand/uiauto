@@ -51,6 +51,9 @@ public enum ElementType {
   /// Search bar element
   case searchBar(type: SearchElementType, identifier: String)
 
+  /// Any stepper
+  case stepper
+
   /// Any switch
   case `switch`
 

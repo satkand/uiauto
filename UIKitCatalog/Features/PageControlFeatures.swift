@@ -1,5 +1,6 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
+import Robocop
 import XCTest
 
 final class PageControlFeatures: XCTestCase {

@@ -29,7 +29,6 @@ extension XCUIElement {
     case .searchBar: return otherElements
     case .searchField: return searchFields
     case .secureTextField: return secureTextFields
-    case .stepper: return steppers
     case .switch: return switches
     case .table: return tables
     case .textField: return textFields

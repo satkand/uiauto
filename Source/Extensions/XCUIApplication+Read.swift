@@ -16,12 +16,13 @@ extension XCUIApplication {
   ///
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: the accessibility value of an element if found, otherwise the accessibility label
-  public func readText(from element: Element, file: StaticString = #file, line: UInt = #line) -> String? {
-    let element: XCUIElement = first(element: element, file: file, line: line)
+  public func readText(from element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> String? {
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
     if let value: String = element.value as? String, !value.isEmpty {
       return value

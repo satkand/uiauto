@@ -14,8 +14,8 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func search(text: String, inSearchBar identifier: String, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
 
-    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), file: file, line: line)
-    let searchField: XCUIElement = searchBar.first(element: .init(type: .searchField), file: file, line: line)
+    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), timeout: timeout, file: file, line: line)
+    let searchField: XCUIElement = searchBar.first(element: .init(type: .searchField), timeout: timeout, file: file, line: line)
 
     searchField.tap()
     searchField.typeText(text)
@@ -29,8 +29,8 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func clearText(inSearchBar identifier: String, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), file: file, line: line)
-    let clearButton: XCUIElement = searchBar.first(element: .init(type: .button, identifier: "Clear text"))
+    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), timeout: timeout, file: file, line: line)
+    let clearButton: XCUIElement = searchBar.first(element: .init(type: .button, identifier: "Clear text"), timeout: timeout, file: file, line: line)
 
     clearButton.tap()
   }

@@ -20,6 +20,6 @@ final class PickerFeatures: XCTestCase {
 
     application.pick("55", fromColumn: 0, inPicker: "picker_picker_wheel")
     application.pick("65", fromColumn: 1, inPicker: "picker_picker_wheel")
-    application.pick("75", fromColumn: 2)
+    application.pick("75", fromColumn: 2, inPicker: "picker_picker_wheel")
   }
 }

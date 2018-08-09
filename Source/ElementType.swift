@@ -51,27 +51,18 @@ public enum ElementType {
   /// Search bar element
   case searchBar
 
+  /// Any secure text field
+  case secureTextField
+
   /// Any switch
   case `switch`
 
   /// Any table
   case table
 
-  /// Text entry element
-  case textEntry(TextEntryType)
-}
-
-/// Text entry type as sub elements of `ElementType`
-///
-/// As there is no generic way to access all text entry elements, a custom type is provided to deal with it
-public enum TextEntryType {
-
-  /// Secure text field has a different query
-  case secureTextField
-
-  /// Plain text field
+  /// Any plain text field
   case textField
 
-  /// Text view
+  /// Any text view
   case textView
 }

@@ -18,21 +18,21 @@ final class TextFieldsFeatures: XCTestCase {
   }
 
   func testTextFields() {
-    application.type(text: "Hello", intoElement: "text_fields_default")
-    application.type(text: "Foo Bar", intoElement: "text_fields_tinted")
+    application.type(text: "Hello", into: .init(type: .textField, identifier: "text_fields_default"))
+    application.type(text: "Foo Bar", into: .init(type: .textField, identifier: "text_fields_tinted"))
 
-    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_default"), to: .haveText("Hello"))
-    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"), to: .haveText("Foo Bar"))
+    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello"))
+    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText("Foo Bar"))
 
-    let oldText: String = application.readText(from: .init(type: .textEntry(.textField), identifier: "text_fields_default")) ?? ""
+    let oldText: String = application.readText(from: .init(type: .textField, identifier: "text_fields_default")) ?? ""
 
-    application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_default")
-    application.clearText(inTextEntry: .textField, withIdentifier: "text_fields_tinted")
+    application.clearText(in: .init(type: .textField, identifier: "text_fields_default"))
+    application.clearText(in: .init(type: .textField, identifier: "text_fields_tinted"))
 
-    application.type(text: oldText, intoElement: "text_fields_default")
-    application.type(text: " World", intoElement: "text_fields_default")
+    application.type(text: oldText, into: .init(type: .textField, identifier: "text_fields_default"))
+    application.type(text: " World", into: .init(type: .textField, identifier: "text_fields_default"))
 
-    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_default"), to: .haveText("Hello World"))
-    application.expect(element: .init(type: .textEntry(.textField), identifier: "text_fields_tinted"), to: .haveText(""))
+    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello World"))
+    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText(""))
   }
 }

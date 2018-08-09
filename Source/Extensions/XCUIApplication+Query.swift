@@ -26,21 +26,9 @@ extension XCUIApplication {
     case .pickerWheel: return pickerWheels
     case .progressView: return progressIndicators
     case .searchBar: return otherElements
+    case .secureTextField: return secureTextFields
     case .switch: return switches
     case .table: return tables
-    case let .textEntry(type): return query(for: type)
-    }
-  }
-
-  /// Build a `XCUIElementQuery` given an `TextEntryType`.
-  ///
-  /// - parameters:
-  ///     - textEntryType: the type of text entry to build the query
-  ///
-  /// - returns: A query containing elements that matches the given type
-  private func query(for textEntryType: TextEntryType) -> XCUIElementQuery {
-    switch textEntryType {
-    case .secureTextField: return secureTextFields
     case .textField: return textFields
     case .textView: return textViews
     }

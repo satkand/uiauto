@@ -29,7 +29,7 @@ final class StepperFeatures: XCTestCase {
     application.expect(element: .init(type: .button, identifier: "Increment"), to: .exist(true))
     application.expect(element: .init(type: .button, index: 1), to: .exist(true))
 
-    application.expect(element: .init(type: .label, index: 0), to: .haveLabel("0"))
+    application.expect(element: .init(type: .label, index: 0), to: .haveText("0"))
 
     // When we tap a stepper we must first retreive the correct button before tapping it
     application.tap(element: .init(type: .button, index: 1))
@@ -42,13 +42,13 @@ final class StepperFeatures: XCTestCase {
     thirdIncrementButton.tap()
 
     // We can set the accessabilityIdentifier of the label the stepper updates so we can access this with identifier or index
-    application.expect(element: .init(type: .label, identifier: "default_stepper_label"), to: .haveLabel("1"))
-    application.expect(element: .init(type: .label, index: 2), to: .haveLabel("2"))
+    application.expect(element: .init(type: .label, identifier: "default_stepper_label"), to: .haveText("1"))
+    application.expect(element: .init(type: .label, index: 2), to: .haveText("2"))
 
     // We cannot go below 0 even if we click the decremenent button multiple times
     application.tap(element: .init(type: .button, identifier: "Decrement"))
     application.tap(element: .init(type: .button, identifier: "Decrement"))
 
-    application.expect(element: .init(type: .label, index: 0), to: .haveLabel("0"))
+    application.expect(element: .init(type: .label, index: 0), to: .haveText("0"))
   }
 }

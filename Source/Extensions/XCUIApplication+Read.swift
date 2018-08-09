@@ -13,6 +13,13 @@ extension XCUIApplication {
   ///
   /// - returns: Accessibility label of element
   public func readText(from element: Element, file: StaticString = #file, line: UInt = #line) -> String? {
-    return first(element: element, file: file, line: line).value as? String
+    return getText(forElement: first(element: element, file: file, line: line))
+  }
+
+  private func getText(forElement element: XCUIElement) -> String? {
+    switch element.elementType {
+    case .staticText: return element.label
+    default: return element.value as? String
+    }
   }
 }

@@ -38,7 +38,7 @@ extension XCUIApplication {
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - expectation: the expectation to fulfill
-  ///     - timeout: the timeout value to stop the query
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func expect(

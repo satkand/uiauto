@@ -9,12 +9,13 @@ extension XCUIApplication {
   /// - parameters:
   ///     - text: the text to input into the search bar
   ///     - identifier: the identifier of the search bar
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func search(text: String, inSearchBar identifier: String, file: StaticString = #file, line: UInt = #line) {
+  public func search(text: String, inSearchBar identifier: String, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
 
-    let elementType: Robocop.ElementType = .searchBar(type: .searchField, identifier: identifier)
-    let searchField: XCUIElement = first(element: .init(type: elementType), file: file, line: line)
+    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), file: file, line: line)
+    let searchField: XCUIElement = searchBar.first(element: .init(type: .searchField), file: file, line: line)
 
     searchField.tap()
     searchField.typeText(text)
@@ -24,10 +25,13 @@ extension XCUIApplication {
   ///
   /// - parameters:
   ///     - identifier: the identifier of the search bar
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func clearText(inSearchBar identifier: String, file: StaticString = #file, line: UInt = #line) {
-    let elementType: Robocop.ElementType = .searchBar(type: .clearButton, identifier: identifier)
-    first(element: .init(type: elementType, identifier: "Clear text"), file: file, line: line).tap()
+  public func clearText(inSearchBar identifier: String, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+    let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), file: file, line: line)
+    let clearButton: XCUIElement = searchBar.first(element: .init(type: .button, identifier: "Clear text"))
+
+    clearButton.tap()
   }
 }

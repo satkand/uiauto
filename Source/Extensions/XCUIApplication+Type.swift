@@ -8,18 +8,18 @@ extension XCUIApplication {
   ///
   /// - parameters:
   ///     - text: the text to input into the text entry form
-  ///     - identifier: the identifier of the element
-  ///     - type: the text entry type
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func type(
     text: String,
-    intoElement identifier: String,
-    ofType type: TextEntryType = .textField,
+    into element: Element,
+    timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let textEntryElement: XCUIElement = first(element: .init(type: .textEntry(type), identifier: identifier), file: file, line: line)
+    let textEntryElement: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
     textEntryElement.tap()
     textEntryElement.typeText(text)
@@ -28,12 +28,12 @@ extension XCUIApplication {
   /// Clear text in text entry type with given identifier.
   ///
   /// - parameters:
-  ///     - textEntry: the text entry type
-  ///     - identifier: the identifier of the text entry
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func clearText(inTextEntry textEntry: TextEntryType, withIdentifier identifier: String, file: StaticString = #file, line: UInt = #line) {
-    let element: XCUIElement = first(element: .init(type: .textEntry(textEntry), identifier: identifier), file: file, line: line)
+  public func clearText(in element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
     let text: String = element.value as? String ?? ""
     let deleteString: String = String(repeating: XCUIKeyboardKey.delete.rawValue, count: text.count)

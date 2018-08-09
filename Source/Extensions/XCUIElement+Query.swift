@@ -2,7 +2,7 @@
 
 import XCTest
 
-extension XCUIApplication {
+extension XCUIElement {
 
   /// Build a `XCUIElementQuery` given an `ElementType`.
   ///
@@ -26,41 +26,14 @@ extension XCUIApplication {
     case .picker: return pickers
     case .pickerWheel: return pickerWheels
     case .progressView: return progressIndicators
-    case let .searchBar(searchElementType, identifier): return query(for: searchElementType, inSearchBar: identifier)
+    case .searchBar: return otherElements
+    case .searchField: return searchFields
+    case .secureTextField: return secureTextFields
     case .stepper: return steppers
     case .switch: return switches
     case .table: return tables
-    case let .textEntry(type): return query(for: type)
-    }
-  }
-
-  /// Build a `XCUIElementQuery` given an `TextEntryType`.
-  ///
-  /// - parameters:
-  ///     - textEntryType: the type of text entry to build the query
-  ///
-  /// - returns: A query containing elements that matches the given type
-  private func query(for textEntryType: TextEntryType) -> XCUIElementQuery {
-    switch textEntryType {
-    case .secureTextField: return secureTextFields
     case .textField: return textFields
     case .textView: return textViews
-    }
-  }
-
-  /// Build a `XCUIElementQuery` given an `TextEntryType`.
-  ///
-  /// - parameters:
-  ///     - searchElementType: the type of search element to build the query
-  ///
-  /// - returns: A query containing elements that matches the given type
-  private func query(for searchElementType: SearchElementType, inSearchBar identifier: String) -> XCUIElementQuery {
-
-    let searchBar: XCUIElement = otherElements[identifier]
-
-    switch searchElementType {
-    case .clearButton: return searchBar.buttons
-    case .searchField: return searchBar.children(matching: .searchField)
     }
   }
 }

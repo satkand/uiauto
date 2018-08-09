@@ -13,6 +13,10 @@ extension XCUIApplication {
     /// The element's value is a boolean and its value
     case haveBool(Bool)
 
+    /// The element's value is a string and its label
+    /// This should be set on a label (staticText) as .value doesn't return the value as expected
+    case haveLabel(String)
+
     /// The element's value is a string and its value
     case haveText(String)
 
@@ -67,6 +71,11 @@ extension XCUIApplication {
 
     case let .haveText(expectedText):
       let currentText: String? = (uiElement.value as? String)
+      result = currentText == expectedText
+      errorMessage = buildErrorMessage(currentText)
+
+    case let .haveLabel(expectedText):
+      let currentText: String = uiElement.label
       result = currentText == expectedText
       errorMessage = buildErrorMessage(currentText)
 

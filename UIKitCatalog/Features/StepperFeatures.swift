@@ -24,7 +24,7 @@ final class StepperFeatures: XCTestCase {
     application.expect(element: .init(type: .button, identifier: "Increment"), to: .exist(true))
     application.expect(element: .init(type: .button, index: 1), to: .exist(true))
 
-    XCTAssertEqual(application.staticTexts.firstMatch.label, "0")
+    application.expect(element: .init(type: .label, index: 0), to: .haveLabel("0"))
 
     // We can tap a button using the specific index of that button
     application.tap(element: .init(type: .button, index: 1))
@@ -34,13 +34,13 @@ final class StepperFeatures: XCTestCase {
     thirdIncrementButton.tap()
     thirdIncrementButton.tap()
 
-    XCTAssertEqual(application.staticTexts.firstMatch.label, "1")
-    XCTAssertEqual(application.staticTexts.allElementsBoundByIndex[2].label, "2")
+    application.expect(element: .init(type: .label, index: 0), to: .haveLabel("1"))
+    application.expect(element: .init(type: .label, index: 2), to: .haveLabel("2"))
 
     // We cannot go below 0 even if we click the decremenent button multiple times
     application.tap(element: .init(type: .button, identifier: "Decrement"))
     application.tap(element: .init(type: .button, identifier: "Decrement"))
 
-    XCTAssertEqual(application.staticTexts.firstMatch.label, "0")
+    application.expect(element: .init(type: .label, index: 0), to: .haveLabel("0"))
   }
 }

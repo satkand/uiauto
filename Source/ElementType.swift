@@ -27,6 +27,9 @@ public enum ElementType {
   /// Any image
   case image
 
+  // Any label
+  case label
+
   /// Any navigation bar button
   case navigationBarButton
 

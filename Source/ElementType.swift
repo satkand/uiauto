@@ -55,6 +55,11 @@ public enum ElementType {
   case searchBar(type: SearchElementType, identifier: String)
 
   /// Any stepper
+  ///
+  /// Steppers cannot be accessed by setting the accessabilityIdentifier on the stepper itself
+  /// A stepper is made up of two buttons and these buttons do not have settable accessabilityIdentifiers
+  /// This means to access the stepper we need to use index of the buttons in the view
+  /// Remember that each stepper has two buttons, the decrement button will be one index less than the increment button
   case stepper
 
   /// Any switch

@@ -43,6 +43,7 @@ class StepperViewController: UITableViewController {
     defaultStepper.stepValue = 1
 
     defaultStepperLabel.text = "\(Int(defaultStepper.value))"
+    defaultStepperLabel.accessibilityIdentifier = "default_stepper_label"
     defaultStepper.addTarget(self, action: #selector(StepperViewController.stepperValueDidChange(_:)), for: .valueChanged)
   }
 

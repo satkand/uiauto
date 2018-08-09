@@ -71,6 +71,7 @@
 		538B36F71F2A8E8A002AE100 /* TextViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 538B36F51F2A8E66002AE100 /* TextViewController.storyboard */; };
 		2200544818BC54F5002A6E8B /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543918BC54F5002A6E8B /* TextViewController.swift */; };
 		2200544918BC54F5002A6E8B /* TintedToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543A18BC54F5002A6E8B /* TintedToolbarViewController.swift */; };
+		DBB490C0211BFE440066C64D /* ToolbarsFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB490BF211BFE440066C64D /* ToolbarsFeatures.swift */; };
 		533BD7BD1F8D2B08007D5C3B /* ToolbarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7BB1F8D2B07007D5C3B /* ToolbarsTableViewController.swift */; };
 		5341627C1F291F310007BCCA /* ToolbarViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341627A1F291F310007BCCA /* ToolbarViewControllers.storyboard */; };
 		533BD7951F8BF6A4007D5C3B /* UIViewController+SizeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7941F8BF6A4007D5C3B /* UIViewController+SizeChange.swift */; };
@@ -136,6 +137,7 @@
 		2200543818BC54F5002A6E8B /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		2200543918BC54F5002A6E8B /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TextViewController.swift; sourceTree = "<group>"; };
 		2200543A18BC54F5002A6E8B /* TintedToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintedToolbarViewController.swift; sourceTree = "<group>"; };
+		DBB490BF211BFE440066C64D /* ToolbarsFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarsFeatures.swift; sourceTree = "<group>"; };
 		533BD7BB1F8D2B07007D5C3B /* ToolbarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarsTableViewController.swift; sourceTree = "<group>"; };
 		228DB9F318BC53F1002BA12A /* UIKitCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		533BD7941F8BF6A4007D5C3B /* UIViewController+SizeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SizeChange.swift"; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */,
 				DBE672B521141B2C007E54E9 /* SwitchFeatures.swift */,
 				DBE672B7211428B8007E54E9 /* TextFieldsFeatures.swift */,
+				DBB490BF211BFE440066C64D /* ToolbarsFeatures.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */,
 				DBE672B621141B2C007E54E9 /* SwitchFeatures.swift in Sources */,
 				DBE672B8211428B8007E54E9 /* TextFieldsFeatures.swift in Sources */,
+				DBB490C0211BFE440066C64D /* ToolbarsFeatures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

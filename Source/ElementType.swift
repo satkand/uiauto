@@ -49,7 +49,7 @@ public enum ElementType {
   case progressView
 
   /// Search bar element
-  case searchBar(type: SearchElementType, identifier: String)
+  case searchBar
 
   /// Any switch
   case `switch`
@@ -74,16 +74,4 @@ public enum TextEntryType {
 
   /// Text view
   case textView
-}
-
-/// Search element type as sub elements of `ElementType`
-///
-/// In order to find the elements within a search bar, one will need the search bar identifier and the sub element identifier
-public enum SearchElementType {
-
-  /// The clear text button
-  case clearButton
-
-  /// The search field
-  case searchField
 }

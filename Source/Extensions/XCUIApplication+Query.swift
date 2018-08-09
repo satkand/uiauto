@@ -25,7 +25,7 @@ extension XCUIApplication {
     case .picker: return pickers
     case .pickerWheel: return pickerWheels
     case .progressView: return progressIndicators
-    case let .searchBar(searchElementType, identifier): return query(for: searchElementType, inSearchBar: identifier)
+    case .searchBar: return otherElements
     case .switch: return switches
     case .table: return tables
     case let .textEntry(type): return query(for: type)
@@ -43,22 +43,6 @@ extension XCUIApplication {
     case .secureTextField: return secureTextFields
     case .textField: return textFields
     case .textView: return textViews
-    }
-  }
-
-  /// Build a `XCUIElementQuery` given an `TextEntryType`.
-  ///
-  /// - parameters:
-  ///     - searchElementType: the type of search element to build the query
-  ///
-  /// - returns: A query containing elements that matches the given type
-  private func query(for searchElementType: SearchElementType, inSearchBar identifier: String) -> XCUIElementQuery {
-
-    let searchBar: XCUIElement = otherElements[identifier]
-
-    switch searchElementType {
-    case .clearButton: return searchBar.buttons
-    case .searchField: return searchBar.children(matching: .searchField)
     }
   }
 }

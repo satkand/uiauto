@@ -66,7 +66,7 @@ extension XCUIApplication {
       errorMessage = buildErrorMessage(currentBool)
 
     case let .haveText(expectedText):
-      let currentText: String? = readText(from: element)
+      let currentText: String? = readText(from: element, file: file, line: line)
       result = currentText == expectedText
       errorMessage = buildErrorMessage(currentText)
 

@@ -33,6 +33,7 @@ extension XCUIElement {
     case .table: return tables
     case .textField: return textFields
     case .textView: return textViews
+    case .webViewLink: return webViews.links
     }
   }
 }

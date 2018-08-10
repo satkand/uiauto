@@ -27,21 +27,21 @@ extension XCUIApplication {
   ///     - wheelValue: the value to be set on the wheel
   ///     - column: the wheel column
   ///     - identifier: the identifier of the picker element
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func pick(
     _ wheelValue: String,
     fromColumn column: Int,
-    inPicker identifier: String? = nil,
+    inPicker identifier: String,
+    timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = identifier
-      .flatMap { [unowned self] in
-        self.first(element: .init(type: .picker, identifier: $0), file: file, line: line)
-          .pickerWheels.element(boundBy: column)
-      }
-      ?? first(element: .init(type: .pickerWheel, index: column), file: file, line: line)
+    let element: XCUIElement = first(element: .init(type: .picker, identifier: identifier), timeout: timeout, file: file, line: line)
+      .first(element: .init(type: .pickerWheel, index: column), timeout: timeout, file: file, line: line)
+
+    guard element.exists else { return }
 
     element.adjust(toPickerWheelValue: wheelValue)
   }
@@ -54,6 +54,7 @@ extension XCUIApplication {
   ///     - time: the time of the day
   ///     - timePeriod: the meridiem period (AM/PM)
   ///     - datePickerIdentifier: the identifier of the date picker
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func pick(
@@ -62,11 +63,14 @@ extension XCUIApplication {
     minute: String,
     timePeriod: TimePeriod,
     inDatePicker datePickerIdentifier: String,
+    timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let datePicker: XCUIElement = first(element: .init(type: .datePicker, identifier: datePickerIdentifier), file: file, line: line)
+    let datePicker: XCUIElement = first(element: .init(type: .datePicker, identifier: datePickerIdentifier), timeout: timeout, file: file, line: line)
     let pickerWheelsCount: Int = datePicker.pickerWheels.count
+
+    guard datePicker.exists else { return }
 
     assert(
       pickerWheelsCount == 4,

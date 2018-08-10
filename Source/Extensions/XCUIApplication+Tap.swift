@@ -36,9 +36,15 @@ extension XCUIApplication {
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - area: the area of the element that was tapped (defaults to tapping in the center)
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func tap(element: Element, inArea area: Area = .center, file: StaticString = #file, line: UInt = #line) {
-    first(element: element, file: file, line: line).coordinate(withNormalizedOffset: area.vector).tap()
+  public func tap(element: Element, inArea area: Area = .center, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+
+    guard element.exists else { return }
+
+    element.coordinate(withNormalizedOffset: area.vector).tap()
   }
 }

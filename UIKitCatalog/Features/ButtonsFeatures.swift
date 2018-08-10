@@ -17,8 +17,10 @@ final class ButtonsFeatures: XCTestCase {
   }
 
   func testButtons() {
-    application.tap(element: .init(type: .button, identifier: "Button"))
+    application.tap(element: .init(type: .button, identifier: "Button"), timeout: 2)
+
     application.tap(element: .init(type: .button, index: 1))
+
     application.tap(element: .init(type: .button, identifier: "buttons_image_button"))
   }
 }

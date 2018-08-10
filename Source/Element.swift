@@ -17,10 +17,24 @@ public struct Element {
   /// The index of the element (note: this might not be the programmed index as UI tests will return a list containing all matching elements)
   public let index: Int?
 
-  /// Convenience initialiser with default `nil` values for `identifier` and `index`.
-  public init(type: Robocop.ElementType, identifier: String? = nil, index: Int? = nil) {
+  /// Initialises an `Element` with no identifier or index
+  public init(type: Robocop.ElementType) {
+    self.type = type
+    self.identifier = nil
+    self.index = nil
+  }
+
+  /// Initialises an `Element` with an identifier
+  public init(type: Robocop.ElementType, identifier: String) {
     self.type = type
     self.identifier = identifier
+    self.index = nil
+  }
+
+  /// Initialises an `Element` with an index
+  public init(type: Robocop.ElementType, index: Int) {
+    self.type = type
+    self.identifier = nil
     self.index = index
   }
 }

@@ -36,6 +36,9 @@ final class SlidersFeatures: XCTestCase {
 
     application.slide(element: .init(type: .slider, identifier: "default_slider"), startPercent: 0.4, endPercent: 0.9)
 
+    // The expected text is 91% instead of 90% due to rounding errors in the method used to adjust the slider position
+    // When testing you should be aware of this discrepancy and take it into account when writing your tests
+    // The difference appears to be 1% more than the end percent set
     application.expect(element: .init(type: .slider, identifier: "default_slider"), to: .haveText("91%"))
   }
 }

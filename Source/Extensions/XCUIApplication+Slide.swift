@@ -13,10 +13,11 @@ extension XCUIApplication {
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - percent: the position to slide to with 0 being empty and 1 being full
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func slide(element: Element, toPercent percent: CGFloat, file: StaticString = #file, line: UInt = #line) {
-    first(element: element).adjust(toNormalizedSliderPosition: percent)
+  public func slide(element: Element, toPercent percent: CGFloat, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+    first(element: element, timeout: timeout, file: file, line: line).adjust(toNormalizedSliderPosition: percent)
   }
 
   /// Manually press and drag to adjust slider to a given percentage
@@ -32,10 +33,11 @@ extension XCUIApplication {
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - startPercent: the starting position the slider is set to
   ///     - endPercent: the final position we want our slider to finish at
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func slide(element: Element, startPercent: CGFloat, endPercent: CGFloat, file: StaticString = #file, line: UInt = #line) {
-    let slider = first(element: element)
+  public func slide(element: Element, startPercent: CGFloat, endPercent: CGFloat, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+    let slider = first(element: element, timeout: timeout, file: file, line: line)
     let startCoordinate: XCUICoordinate = slider.coordinate(withNormalizedOffset: CGVector(dx: startPercent, dy: 0.5))
     let endCoordinate: XCUICoordinate = slider.coordinate(withNormalizedOffset: CGVector(dx: endPercent, dy: 0.5))
 

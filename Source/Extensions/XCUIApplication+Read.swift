@@ -24,6 +24,8 @@ extension XCUIApplication {
   public func readText(from element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> String? {
     let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
+    guard element.exists else { return nil }
+
     if let value: String = element.value as? String, !value.isEmpty {
       return value
     } else {

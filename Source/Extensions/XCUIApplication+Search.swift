@@ -17,6 +17,8 @@ extension XCUIApplication {
     let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), timeout: timeout, file: file, line: line)
     let searchField: XCUIElement = searchBar.first(element: .init(type: .searchField), timeout: timeout, file: file, line: line)
 
+    guard searchBar.exists && searchField.exists else { return }
+
     searchField.tap()
     searchField.typeText(text)
   }
@@ -31,6 +33,8 @@ extension XCUIApplication {
   public func clearText(inSearchBar identifier: String, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
     let searchBar: XCUIElement = first(element: .init(type: .searchBar, identifier: identifier), timeout: timeout, file: file, line: line)
     let clearButton: XCUIElement = searchBar.first(element: .init(type: .button, identifier: "Clear text"), timeout: timeout, file: file, line: line)
+
+    guard searchBar.exists && clearButton.exists else { return }
 
     clearButton.tap()
   }

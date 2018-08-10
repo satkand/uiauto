@@ -41,6 +41,8 @@ extension XCUIApplication {
     let element: XCUIElement = first(element: .init(type: .picker, identifier: identifier), timeout: timeout, file: file, line: line)
       .first(element: .init(type: .pickerWheel, index: column), timeout: timeout, file: file, line: line)
 
+    guard element.exists else { return }
+
     element.adjust(toPickerWheelValue: wheelValue)
   }
 
@@ -67,6 +69,8 @@ extension XCUIApplication {
   ) {
     let datePicker: XCUIElement = first(element: .init(type: .datePicker, identifier: datePickerIdentifier), timeout: timeout, file: file, line: line)
     let pickerWheelsCount: Int = datePicker.pickerWheels.count
+
+    guard datePicker.exists else { return }
 
     assert(
       pickerWheelsCount == 4,

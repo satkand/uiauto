@@ -19,10 +19,12 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let textEntryElement: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
-    textEntryElement.tap()
-    textEntryElement.typeText(text)
+    guard element.exists else { return }
+
+    element.tap()
+    element.typeText(text)
   }
 
   /// Clear text in text entry type with given identifier.
@@ -34,6 +36,8 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func clearText(in element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
     let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+
+    guard element.exists else { return }
 
     let text: String = element.value as? String ?? ""
     let deleteString: String = String(repeating: XCUIKeyboardKey.delete.rawValue, count: text.count)

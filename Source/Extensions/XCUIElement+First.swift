@@ -43,7 +43,7 @@ extension XCUIElement {
     }
 
     if failable {
-      assert(uiElement.waitForExistence(timeout: timeout), message: errorMessage, file: file, line: line)
+      assert(uiElement.exists, message: errorMessage, file: file, line: line)
     } else {
       _ = uiElement.waitForExistence(timeout: timeout)
     }

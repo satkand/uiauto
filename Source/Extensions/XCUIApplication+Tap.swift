@@ -40,6 +40,11 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func tap(element: Element, inArea area: Area = .center, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-    first(element: element, timeout: timeout, file: file, line: line).coordinate(withNormalizedOffset: area.vector).tap()
+
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+
+    guard element.exists else { return }
+
+    element.coordinate(withNormalizedOffset: area.vector).tap()
   }
 }

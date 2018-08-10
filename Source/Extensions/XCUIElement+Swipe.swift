@@ -27,7 +27,7 @@ extension XCUIElement {
   /// - parameters:
   ///     - direction: the direction of the swipe
   func swipe(withDirection direction: Direction) {
-    
+
     switch direction {
     case .up: swipeUp()
     case .right: swipeRight()

@@ -26,7 +26,7 @@ extension XCUIApplication {
       table.swipe(withDirection: direction)
     }
   }
-  
+
   /// Swipe an element towards a 'Direction'
   ///
   /// - parameters:

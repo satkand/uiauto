@@ -2,7 +2,7 @@
 
 import XCTest
 
-extension XCUIApplication {
+extension XCUIElement {
 
   /// Find the first matching `XCUIElement` with the given `Element`.
   ///
@@ -20,12 +20,13 @@ extension XCUIApplication {
   ///
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
-  ///     - timeout: the timeout for the element to exist
+  ///     - failable: the flag depicting if this function should fail the tests if the element does not exist (defaults to `true`)
+  ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  public func first(element: Element, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
+  public func first(element: Element, failable: Bool = true, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
 
     let uiElement: XCUIElement
     let errorMessage: String
@@ -41,7 +42,11 @@ extension XCUIApplication {
       errorMessage = "No element \(elementType) found."
     }
 
-    assert(uiElement.waitForExistence(timeout: timeout), message: errorMessage, file: file, line: line)
+    if failable {
+      assert(uiElement.waitForExistence(timeout: timeout), message: errorMessage, file: file, line: line)
+    } else {
+      _ = uiElement.waitForExistence(timeout: timeout)
+    }
 
     return uiElement
   }

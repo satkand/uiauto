@@ -9,7 +9,7 @@ extension XCUIApplication {
   /// **Notes**:
   /// We can tap a specific area of an element by calculating a vector based on its size
   public enum Area {
-    
+
     // Centered horizontally and vertically (50%/0.5, 50%/0.5)
     case center
 
@@ -30,7 +30,7 @@ extension XCUIApplication {
       }
     }
   }
-  
+
   /// Tap on element in the given area.
   ///
   /// - parameters:

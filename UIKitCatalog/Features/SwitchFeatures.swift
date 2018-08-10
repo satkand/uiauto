@@ -1,7 +1,7 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
 import Robocop
+import XCTest
 
 final class SwitchFeatures: XCTestCase {
 
@@ -17,10 +17,17 @@ final class SwitchFeatures: XCTestCase {
   }
 
   func testSwitches() {
-    application.tap(element: .init(type: .switch, identifier: "switch_switch"))
-    application.tap(element: .init(type: .switch, index: 1))
+    application.expect(element: .init(type: .switch, identifier: "default_switch"), to: .haveBool(true))
+    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(true))
+
+    application.tap(element: .init(type: .switch, identifier: "default_switch"))
     application.tap(element: .init(type: .switch, index: 1))
 
-    application.verifyText("0", inElement: .init(type: .switch, identifier: "switch_switch"))
+    application.expect(element: .init(type: .switch, identifier: "default_switch"), to: .haveBool(false))
+    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(false))
+
+    application.tap(element: .init(type: .switch, index: 1))
+
+    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(true))
   }
 }

@@ -1,7 +1,7 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
 import Robocop
+import XCTest
 
 final class AlertControllerFeatures: XCTestCase {
 
@@ -44,16 +44,15 @@ final class AlertControllerFeatures: XCTestCase {
 
   func testTextEntryStyle() {
     application.tap(element: .init(type: .cell, index: 3))
-    application.type(text: "Hello World", intoElement: "alert_text_field")
+    application.type(text: "Hello World", into: .init(type: .textField, identifier: "alert_text_field"))
     application.tap(element: .init(type: .alertButton, identifier: "OK"))
   }
 
   func testSecureTextEntryStyle() {
     application.tap(element: .init(type: .cell, index: 4))
-    application.type(text: "Hello World", intoElement: "alert_secure_text_field", ofType: .secureTextField)
+    application.type(text: "Hello World", into: .init(type: .secureTextField, identifier: "alert_secure_text_field"))
     application.tap(element: .init(type: .alertButton, identifier: "OK"))
   }
-
 
   // MARK: Action Sheet Styles
 

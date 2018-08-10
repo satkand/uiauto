@@ -4,6 +4,23 @@ import XCTest
 
 extension XCUIApplication {
 
+  /// Position in which to add the text
+  public enum TextPosition {
+
+    /// At the end of the text
+    case end
+
+    /// At the start of the text
+    case start
+
+    fileprivate var tapArea: Area {
+      switch self {
+      case .end: return .bottomRight
+      case .start: return .topLeft
+      }
+    }
+  }
+
   /// Type `text` into element with given identifier and type.
   ///
   /// - parameters:
@@ -15,16 +32,18 @@ extension XCUIApplication {
   public func type(
     text: String,
     into element: Element,
+    position: TextPosition = .end,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    let uiElement: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
-    guard element.exists else { return }
+    guard uiElement.exists else { return }
 
-    element.tap()
-    element.typeText(text)
+    tap(element: element, inArea: position.tapArea)
+
+    uiElement.typeText(text)
   }
 
   /// Clear text in text entry type with given identifier.

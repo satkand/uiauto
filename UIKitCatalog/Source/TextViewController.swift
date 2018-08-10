@@ -167,6 +167,7 @@ class TextViewController: UIViewController {
     attributedText.append(appendedSpace)
 
     textView.attributedText = attributedText
+    textView.accessibilityIdentifier = "text_view"
   }
 
   // MARK: - Actions

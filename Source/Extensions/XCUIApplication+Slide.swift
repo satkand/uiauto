@@ -17,7 +17,9 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func slide(element: Element, toPercent percent: CGFloat, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-    first(element: element, timeout: timeout, file: file, line: line).adjust(toNormalizedSliderPosition: percent)
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    guard element.exists else { return }
+    element.adjust(toNormalizedSliderPosition: percent)
   }
 
   /// Manually press and drag to adjust slider to a given percentage
@@ -37,9 +39,11 @@ extension XCUIApplication {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func slide(element: Element, startPercent: CGFloat, endPercent: CGFloat, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-    let slider = first(element: element, timeout: timeout, file: file, line: line)
-    let startCoordinate: XCUICoordinate = slider.coordinate(withNormalizedOffset: CGVector(dx: startPercent, dy: 0.5))
-    let endCoordinate: XCUICoordinate = slider.coordinate(withNormalizedOffset: CGVector(dx: endPercent, dy: 0.5))
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    guard element.exists else { return }
+
+    let startCoordinate: XCUICoordinate = element.coordinate(withNormalizedOffset: CGVector(dx: startPercent, dy: 0.5))
+    let endCoordinate: XCUICoordinate = element.coordinate(withNormalizedOffset: CGVector(dx: endPercent, dy: 0.5))
 
     startCoordinate.press(forDuration: 0.25, thenDragTo: endCoordinate)
   }

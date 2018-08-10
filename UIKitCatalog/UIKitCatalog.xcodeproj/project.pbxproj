@@ -56,6 +56,7 @@
 		DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */; };
 		53CE5AEC1F2A8B2F00D8A656 /* SegmentedControlViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AEA1F2A8B2F00D8A656 /* SegmentedControlViewController.storyboard */; };
 		2200544218BC54F5002A6E8B /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543318BC54F5002A6E8B /* SegmentedControlViewController.swift */; };
+		2B995AB6211929DE00830259 /* SlidersFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB5211929DE00830259 /* SlidersFeatures.swift */; };
 		53CE5AEF1F2A8B4F00D8A656 /* SliderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AED1F2A8B4F00D8A656 /* SliderViewController.storyboard */; };
 		2200544318BC54F5002A6E8B /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543418BC54F5002A6E8B /* SliderViewController.swift */; };
 		53CE5AF21F2A8B8300D8A656 /* StackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AF01F2A8B8300D8A656 /* StackViewController.storyboard */; };
@@ -129,6 +130,7 @@
 		3E6AE851196B39110062A3E1 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlsFeatures.swift; sourceTree = "<group>"; };
 		2200543318BC54F5002A6E8B /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
+		2B995AB5211929DE00830259 /* SlidersFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersFeatures.swift; sourceTree = "<group>"; };
 		2200543418BC54F5002A6E8B /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SliderViewController.swift; sourceTree = "<group>"; };
 		B50F41071B1D284700E5147D /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		2B995ABB211BB95D00830259 /* StepperFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperFeatures.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */,
 				DBE070DA2113E6E300609510 /* SearchFeatures.swift */,
 				DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */,
+				2B995AB5211929DE00830259 /* SlidersFeatures.swift */,
 				2B995ABB211BB95D00830259 /* StepperFeatures.swift */,
 				DBE672B521141B2C007E54E9 /* SwitchFeatures.swift */,
 				DBE672B7211428B8007E54E9 /* TextFieldsFeatures.swift */,
@@ -550,6 +553,7 @@
 				2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */,
 				DBE070DB2113E6E400609510 /* SearchFeatures.swift in Sources */,
 				DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */,
+				2B995AB6211929DE00830259 /* SlidersFeatures.swift in Sources */,
 				2B995ABC211BB95D00830259 /* StepperFeatures.swift in Sources */,
 				DBE672B621141B2C007E54E9 /* SwitchFeatures.swift in Sources */,
 				DBE672B8211428B8007E54E9 /* TextFieldsFeatures.swift in Sources */,

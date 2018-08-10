@@ -60,6 +60,9 @@ public enum ElementType {
   /// Secure text field (for other text fields, see .textField)
   case secureTextField
 
+  /// Slider
+  case slider
+
   /// Switch
   case `switch`
 

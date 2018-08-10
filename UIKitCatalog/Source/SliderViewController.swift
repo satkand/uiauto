@@ -33,10 +33,11 @@ class SliderViewController: UITableViewController {
   func configureDefaultSlider() {
     defaultSlider.minimumValue = 0
     defaultSlider.maximumValue = 100
-    defaultSlider.value = 42
+    defaultSlider.value = 40
     defaultSlider.isContinuous = true
 
     defaultSlider.addTarget(self, action: #selector(SliderViewController.sliderValueDidChange(_:)), for: .valueChanged)
+    defaultSlider.accessibilityIdentifier = "default_slider"
   }
 
   func configureTintedSlider() {

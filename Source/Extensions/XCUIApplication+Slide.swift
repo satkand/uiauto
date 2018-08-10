@@ -24,7 +24,7 @@ extension XCUIApplication {
 
   /// Manually press and drag to adjust slider to a given percentage
   ///
-  /// This functionality is a workaround to mimic the slide functionality of a slider (.adjust(toNormalizedSliderPosition: percent))
+  /// This functionality is a **workaround** to mimic the slide functionality of a slider (.adjust(toNormalizedSliderPosition: percent))
   /// It manually presses and drags the slider to a set percentage
   ///
   /// It is **not 100%** accurate due to the value of the slider not exactly matching the percent of the coordinate set

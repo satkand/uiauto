@@ -16,11 +16,17 @@ final class SlidersFeatures: XCTestCase {
     application.tap(element: .init(type: .cell, index: 10))
   }
 
+  // This functionality is the method recommended by Apple to adjust slider components
+  // Unfortunately in the testing suite it has been **failing tests**
+  // It has been commented out here to ensure the tests all run in this project
+  //
+  // We recommend testing these methods on your project to see if it works with your component configuration
+  // If it doesn't work then the tests below should be implemented instead
   func testSliders() {
 
-    //    application.slide(element: .init(type: .slider, identifier: "default_slider"), toPercent: 0.8)
+    // application.slide(element: .init(type: .slider, identifier: "default_slider"), toPercent: 0.8)
     //
-    //    application.verifyText("80%", inElement: .init(type: .slider, identifier: "default_slider"))
+    // application.verifyText("80%", inElement: .init(type: .slider, identifier: "default_slider"))
   }
 
   func testDragSliders() {

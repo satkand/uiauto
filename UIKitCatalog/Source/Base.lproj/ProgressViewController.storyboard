@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aY0-FD-8DD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aY0-FD-8DD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,24 +17,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Default" id="eUe-E8-yfw">
+                            <tableViewSection headerTitle="" id="eUe-E8-yfw">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kmi-xt-LTG">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kmi-xt-LTG" id="FJn-D1-Mek">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ei4-Kf-1yF">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OA-7S-feP">
+                                                    <rect key="frame" x="170" y="6.5" width="34" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="start_progress_button"/>
+                                                    <state key="normal" title="Start"/>
+                                                    <connections>
+                                                        <action selector="startProgress" destination="aY0-FD-8DD" eventType="touchUpInside" id="x5Q-fZ-V90"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4OA-7S-feP" firstAttribute="centerY" secondItem="FJn-D1-Mek" secondAttribute="centerY" id="V7u-Ip-Bzm"/>
+                                                <constraint firstItem="4OA-7S-feP" firstAttribute="centerX" secondItem="FJn-D1-Mek" secondAttribute="centerX" id="c0Y-hf-CMi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Default" id="C0U-8R-Bx5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8c2-Yd-C6B">
+                                        <rect key="frame" x="0.0" y="127" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8c2-Yd-C6B" id="fb3-eH-KqY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ipm-6C-Oec">
                                                     <rect key="frame" x="20" y="21" width="335" height="2"/>
                                                 </progressView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="ei4-Kf-1yF" secondAttribute="centerY" id="19T-l6-w2Z"/>
-                                                <constraint firstItem="ei4-Kf-1yF" firstAttribute="leading" secondItem="FJn-D1-Mek" secondAttribute="leading" constant="20" symbolic="YES" id="996-hT-SEd"/>
-                                                <constraint firstAttribute="trailing" secondItem="ei4-Kf-1yF" secondAttribute="trailing" constant="20" symbolic="YES" id="X0O-1q-n6K"/>
-                                                <constraint firstItem="ei4-Kf-1yF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FJn-D1-Mek" secondAttribute="leading" constant="20" id="yYu-XW-UDu"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ipm-6C-Oec" secondAttribute="trailing" constant="20" symbolic="YES" id="81P-DM-KJp"/>
+                                                <constraint firstItem="Ipm-6C-Oec" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fb3-eH-KqY" secondAttribute="leading" constant="20" id="Cn5-9h-qJc"/>
+                                                <constraint firstItem="Ipm-6C-Oec" firstAttribute="leading" secondItem="fb3-eH-KqY" secondAttribute="leading" constant="20" symbolic="YES" id="USZ-VB-gpe"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ipm-6C-Oec" secondAttribute="centerY" id="gFI-FO-U9F"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -43,7 +69,7 @@
                             <tableViewSection headerTitle="Bar" id="bKC-KS-IHM">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8gd-go-6HH">
-                                        <rect key="frame" x="0.0" y="147.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gd-go-6HH" id="s1D-qX-CZU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -67,7 +93,7 @@
                             <tableViewSection headerTitle="Tinted" id="xT2-F1-qKq">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e4s-Qv-cWn">
-                                        <rect key="frame" x="0.0" y="239.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="311" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e4s-Qv-cWn" id="U7H-qE-1Eb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -98,11 +124,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="barStyleProgressView" destination="zOW-ND-gMa" id="oBr-1m-HjU"/>
-                        <outlet property="defaultStyleProgressView" destination="ei4-Kf-1yF" id="7lo-ee-pgZ"/>
+                        <outlet property="defaultStyleProgressView" destination="Ipm-6C-Oec" id="iof-BT-cDE"/>
                         <outlet property="tintedProgressView" destination="hce-gL-kyl" id="6l7-NC-hb8"/>
-                        <outletCollection property="progressViews" destination="ei4-Kf-1yF" collectionClass="NSMutableArray" id="vi4-76-kJ6"/>
                         <outletCollection property="progressViews" destination="hce-gL-kyl" collectionClass="NSMutableArray" id="kR6-BL-IOR"/>
                         <outletCollection property="progressViews" destination="zOW-ND-gMa" collectionClass="NSMutableArray" id="gh3-jC-y2q"/>
+                        <outletCollection property="progressViews" destination="Ipm-6C-Oec" collectionClass="NSMutableArray" id="eUE-y0-cyt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdv-yA-Pae" userLabel="First Responder" sceneMemberID="firstResponder"/>

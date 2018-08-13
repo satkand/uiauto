@@ -14,7 +14,7 @@ final class StepperFeatures: XCTestCase {
     application.launch()
 
     application.swipe(to: 12, in: "catalog_table", direction: .up)
-    application.tap(element: .init(type: .cell, index: 12))
+    application.tap(element: .init(type: .cell, identifier: "cell_steppers"))
   }
 
   /// We **CANNOT** access the stepper component by setting an `accessibilityIdentifier` and retrieving it.

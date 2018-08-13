@@ -89,6 +89,8 @@ extension MasterViewController {
 
     case 1: return "cell_alert_controller"
 
+    case 12: return "cell_steppers"
+
     default: return nil
     }
   }

@@ -67,7 +67,8 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let datePicker: XCUIElement = first(element: .init(type: .datePicker, identifier: datePickerIdentifier), timeout: timeout, file: file, line: line)
+    let element: Element = .init(type: .datePicker, identifier: datePickerIdentifier)
+    let datePicker: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
     let pickerWheelsCount: Int = datePicker.pickerWheels.count
 
     guard datePicker.exists else { return }

@@ -115,7 +115,12 @@ extension XCUIApplication {
   ) {
     let element: XCUIElement = stepButton.elementFromQuery(query(for: .button), at: index)
 
-    assertElementExists(element, timeout: timeout, file: file, line: line)
+    assert(
+      element.waitForExistence(timeout: timeout) == exists,
+      message: "Expected element '\(element)' to exists.",
+      file: file,
+      line: line
+    )
   }
 }
 

@@ -27,10 +27,10 @@ extension XCUIApplication {
     internal func elementFromQuery(_ query: XCUIElementQuery, at index: Int) -> XCUIElement {
       switch self {
       case .up:
-        return query.allElementsBoundByAccessibilityElement.filter { $0.label == "Increment" }[index]
+        return query.allElementsBoundByAccessibilityElement.filter { $0.label == "Increment" }[index].firstMatch
 
       case .down:
-        return query.allElementsBoundByAccessibilityElement.filter { $0.label == "Decrement" }[index]
+        return query.allElementsBoundByAccessibilityElement.filter { $0.label == "Decrement" }[index].firstMatch
       }
     }
   }

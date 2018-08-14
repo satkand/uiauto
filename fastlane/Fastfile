@@ -24,6 +24,8 @@ platform :ios do
     clean
     test
 
+    package_framework
+
     coverage
     lint
   end
@@ -32,12 +34,22 @@ platform :ios do
   override_lane :ci_qa do
     clean
     test
+
+    package_framework
   end
 
   desc "Cleans and tests"
   override_lane :ci_drop do
     clean
     test
+
+    package_framework
   end
 
+  desc "Run `carthage build` to ensure the library can be packaged as a framework"
+  lane :package_framework do
+    Dir.chdir ".." do
+      sh("/usr/local/bin/carthage", "build" ,"--no-skip-current", "--platform", "iOS")
+    end
+  end
 end

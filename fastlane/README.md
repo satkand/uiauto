@@ -156,6 +156,11 @@ fastlane ios validate_drop
 fastlane ios validate_appstore
 ```
 
+### ios package_framework
+```
+fastlane ios package_framework
+```
+Run `carthage build` to ensure the library can be packaged as a framework
 
 ----
 

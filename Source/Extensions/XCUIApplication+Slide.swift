@@ -53,12 +53,13 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
-    guard element.exists else { return }
-
-    let startCoordinate: XCUICoordinate = element.coordinate(withNormalizedOffset: CGVector(dx: startPercent, dy: 0.5))
-    let endCoordinate: XCUICoordinate = element.coordinate(withNormalizedOffset: CGVector(dx: endPercent, dy: 0.5))
-
-    startCoordinate.press(forDuration: 0.25, thenDragTo: endCoordinate)
+    drag(
+      element: element,
+      from: .init(x: startPercent, y: 0.5),
+      to: .init(x: endPercent, y: 0.5),
+      timeout: timeout,
+      file: file,
+      line: line
+    )
   }
 }

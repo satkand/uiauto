@@ -6,8 +6,8 @@ import Foundation
 /// top-left point while (1.0, 1.0) the bottom-right point.
 struct NormalisedPosition {
 
-  private let x: CGFloat
-  private let y: CGFloat
+  let x: CGFloat
+  let y: CGFloat
 
   /// Initialises a normalised position with the given x and y values. Crashes if given values that are not between
   /// 0.0 and 1.0.
@@ -30,5 +30,9 @@ struct NormalisedPosition {
 
   var vector: CGVector {
     return CGVector(dx: x, dy: y)
+  }
+
+  var inverted: NormalisedPosition {
+    return NormalisedPosition(x: 1 - x, y: 1 - y)
   }
 }

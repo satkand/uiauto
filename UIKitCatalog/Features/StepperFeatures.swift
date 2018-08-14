@@ -19,6 +19,8 @@ final class StepperFeatures: XCTestCase {
 
   func testSteppers() {
 
+    // Sleep the process as it takes time for the view controller to exists
+    sleep(1)
     application.expect(stepButton: .up, atIndex: 0, toExists: true)
     application.expect(stepButton: .down, atIndex: 0, toExists: true)
 

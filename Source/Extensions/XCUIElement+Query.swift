@@ -2,6 +2,8 @@
 
 import XCTest
 
+// swiftlint:disable cyclomatic_complexity
+
 extension XCUIElement {
 
   /// Build a `XCUIElementQuery` given an `ElementType`.

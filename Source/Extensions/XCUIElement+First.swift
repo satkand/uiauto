@@ -26,8 +26,13 @@ extension XCUIElement {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   ///
   /// - returns: First matching element (using `firstMatch` to stop once an element is found)
-  public func first(element: Element, failable: Bool = true, timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) -> XCUIElement {
-
+  public func first(
+    element: Element,
+    failable: Bool = true,
+    timeout: TimeInterval = 0,
+    file: StaticString = #file,
+    line: UInt = #line
+  ) -> XCUIElement {
     let uiElement: XCUIElement
     let errorMessage: String
 

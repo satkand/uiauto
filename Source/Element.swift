@@ -14,7 +14,8 @@ public struct Element {
   /// The identifier of the element
   public let identifier: String?
 
-  /// The index of the element (note: this might not be the programmed index as UI tests will return a list containing all matching elements)
+  /// The index of the element
+  /// (note: this might not be the programmed index as UI tests will return a list containing all matching elements)
   public let index: Int?
 
   /// Initialises an `Element` with no identifier or index

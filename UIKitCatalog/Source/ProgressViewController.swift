@@ -57,10 +57,14 @@ class ProgressViewController: UITableViewController {
     configureDefaultStyleProgressView()
     configureBarStyleProgressView()
     configureTintedProgressView()
+
+    // Reset the completed progress of the `UIProgressView`s.
+    for progressView in progressViews {
+      progressView.setProgress(0.0, animated: false)
+    }
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  @IBAction private func startProgress() {
 
     // Reset the completed progress of the `UIProgressView`s.
     for progressView in progressViews {
@@ -72,7 +76,7 @@ class ProgressViewController: UITableViewController {
      */
     progress.completedUnitCount = 0
 
-    updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+    updateTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
       /** Update the `completedUnitCount` of the `NSProgress` object if it's
        not completed. Otherwise, stop the timer.
        */

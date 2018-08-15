@@ -78,6 +78,7 @@
 		533BD7BD1F8D2B08007D5C3B /* ToolbarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7BB1F8D2B07007D5C3B /* ToolbarsTableViewController.swift */; };
 		5341627C1F291F310007BCCA /* ToolbarViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5341627A1F291F310007BCCA /* ToolbarViewControllers.storyboard */; };
 		533BD7951F8BF6A4007D5C3B /* UIViewController+SizeChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7941F8BF6A4007D5C3B /* UIViewController+SizeChange.swift */; };
+		DB8D73562122B43B00821F4C /* UninstallApplicationFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8D73552122B43B00821F4C /* UninstallApplicationFeatures.swift */; };
 		539C6BB01F27F4980006C5A9 /* WebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539C6BAC1F27F4980006C5A9 /* WebViewController.storyboard */; };
 		2200544A18BC54F5002A6E8B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543B18BC54F5002A6E8B /* WebViewController.swift */; };
 /* End PBXBuildFile section */
@@ -147,6 +148,7 @@
 		533BD7BB1F8D2B07007D5C3B /* ToolbarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarsTableViewController.swift; sourceTree = "<group>"; };
 		228DB9F318BC53F1002BA12A /* UIKitCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		533BD7941F8BF6A4007D5C3B /* UIViewController+SizeChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SizeChange.swift"; sourceTree = "<group>"; };
+		DB8D73552122B43B00821F4C /* UninstallApplicationFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UninstallApplicationFeatures.swift; sourceTree = "<group>"; };
 		2200543B18BC54F5002A6E8B /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3E5C084F1974991E00969DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5341627B1F291F310007BCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ToolbarViewControllers.storyboard; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				DBE672B7211428B8007E54E9 /* TextFieldsFeatures.swift */,
 				DB407517211D4F0200A0A35C /* TextViewFeatures.swift */,
 				DBB490BF211BFE440066C64D /* ToolbarsFeatures.swift */,
+				DB8D73552122B43B00821F4C /* UninstallApplicationFeatures.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				DBE672B8211428B8007E54E9 /* TextFieldsFeatures.swift in Sources */,
 				DB407518211D4F0200A0A35C /* TextViewFeatures.swift in Sources */,
 				DBB490C0211BFE440066C64D /* ToolbarsFeatures.swift in Sources */,
+				DB8D73562122B43B00821F4C /* UninstallApplicationFeatures.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

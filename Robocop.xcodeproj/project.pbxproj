@@ -11,6 +11,7 @@
 		DB13F702211A6BEB00E19A5F /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13F701211A6BEB00E19A5F /* Element.swift */; };
 		DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEC211817A8008B2082 /* ElementType.swift */; };
 		DB7FEAE62118175A008B2082 /* Robocop.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7FEAE42118175A008B2082 /* Robocop.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB11BEE62123B6350060B1EC /* XCTestCase+UninstallApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */; };
 		DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */; };
 		DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */; };
 		DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */; };
@@ -34,6 +35,7 @@
 		DB7FEAE52118175A008B2082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB7FEAE221181759008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7FEAE42118175A008B2082 /* Robocop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robocop.h; sourceTree = "<group>"; };
+		DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UninstallApplication.swift"; sourceTree = "<group>"; };
 		DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Expect.swift"; sourceTree = "<group>"; };
 		DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Navigate.swift"; sourceTree = "<group>"; };
 		DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Pick.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		DB7FEAED211817A8008B2082 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */,
 				DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */,
 				DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */,
 				DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */,
@@ -222,6 +225,7 @@
 				DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */,
 				DB13F702211A6BEB00E19A5F /* Element.swift in Sources */,
 				DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */,
+				DB11BEE62123B6350060B1EC /* XCTestCase+UninstallApplication.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */,
 				DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */,
 				DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */,

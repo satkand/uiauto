@@ -13,6 +13,7 @@ final class SwitchFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
+    application.swipe(to: 13, in: "catalog_table", direction: .up)
     application.tap(element: .init(type: .cell, index: 13))
   }
 

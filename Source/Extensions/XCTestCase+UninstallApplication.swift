@@ -26,13 +26,10 @@ extension XCTestCase {
 
     // The "x" button is not exposed, so in order to tap on it
     // we'll need to calculate it's location based on the position of the application icon in the springboard.
-    let iconFrame: CGRect = applicationIcon.frame
-    let springboardFrame: CGRect = springBoardApplication.frame
-
     springBoardApplication.coordinate(
       withNormalizedOffset: CGVector(
-        dx: (iconFrame.minX + 3) / springboardFrame.maxX,
-        dy: (iconFrame.minY + 3) / springboardFrame.maxY
+        dx: (applicationIcon.frame.minX + 3) / springBoardApplication.frame.maxX,
+        dy: (applicationIcon.frame.minY + 3) / springBoardApplication.frame.maxY
       )
     ).tap()
 

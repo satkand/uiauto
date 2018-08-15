@@ -4,12 +4,12 @@ import Foundation
 
 /// Represents a relative position in the containing plane. If we consider a frame, (x: 0.0, y: 0.0) would represent the
 /// top-left point while (x: 1.0, y: 1.0) the bottom-right point.
-struct NormalisedPosition {
+struct NormalizedPosition {
 
   let x: CGFloat
   let y: CGFloat
 
-  /// Initialises a normalised position with the given x and y values. Crashes if given values that are not between
+  /// Initialises a normalized position with the given x and y values. Crashes if given values that are not between
   /// 0.0 and 1.0.
   ///
   /// - Parameters:
@@ -17,11 +17,11 @@ struct NormalisedPosition {
   ///   - y: the value representing the vertical position.
   init(x: CGFloat, y: CGFloat) {
     guard x >= 0 && x <= 1 else {
-      fatalError("Invalid horizontal position: Normalised values should be between 0.0 and 1.0.")
+      fatalError("Invalid horizontal position: Normalized values should be between 0.0 and 1.0.")
     }
 
     guard y >= 0 && y <= 1 else {
-      fatalError("Invalid vertical position: Normalised values should be between 0.0 and 1.0.")
+      fatalError("Invalid vertical position: Normalized values should be between 0.0 and 1.0.")
     }
 
     self.x = x
@@ -32,7 +32,7 @@ struct NormalisedPosition {
     return CGVector(dx: x, dy: y)
   }
 
-  var inverted: NormalisedPosition {
-    return NormalisedPosition(x: 1 - x, y: 1 - y)
+  var inverted: NormalizedPosition {
+    return NormalizedPosition(x: 1 - x, y: 1 - y)
   }
 }

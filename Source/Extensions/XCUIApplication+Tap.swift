@@ -33,15 +33,15 @@ extension XCUIApplication {
 
 
     /// Returns a position that represents the area relative to the element's size.
-    var position: NormalisedPosition {
+    var position: NormalizedPosition {
       switch self {
-      case .bottomRight: return NormalisedPosition(x: 0.99, y: 0.99)
-      case .center: return NormalisedPosition(x: 0.5, y: 0.5)
-      case .left: return NormalisedPosition(x: 0.05, y: 0.5)
-      case .right: return NormalisedPosition(x: 0.95, y: 0.5)
-      case .topLeft: return NormalisedPosition(x: 0.01, y: 0.01)
-      case .top: return NormalisedPosition(x: 0.5, y: 0.05)
-      case .bottom: return NormalisedPosition(x: 0.5, y: 0.95)
+      case .bottomRight: return NormalizedPosition(x: 0.99, y: 0.99)
+      case .center: return NormalizedPosition(x: 0.5, y: 0.5)
+      case .left: return NormalizedPosition(x: 0.05, y: 0.5)
+      case .right: return NormalizedPosition(x: 0.95, y: 0.5)
+      case .topLeft: return NormalizedPosition(x: 0.01, y: 0.01)
+      case .top: return NormalizedPosition(x: 0.5, y: 0.05)
+      case .bottom: return NormalizedPosition(x: 0.5, y: 0.95)
       }
     }
   }

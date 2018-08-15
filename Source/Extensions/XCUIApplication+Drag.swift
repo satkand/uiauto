@@ -16,8 +16,8 @@ extension XCUIApplication {
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   func drag(
     element: Element,
-    from startPosition: NormalisedPosition,
-    to endPosition: NormalisedPosition,
+    from startPosition: NormalizedPosition,
+    to endPosition: NormalizedPosition,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
@@ -46,9 +46,9 @@ extension XCUIApplication {
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   func press(
     element: Element,
-    at startPosition: NormalisedPosition,
+    at startPosition: NormalizedPosition,
     forDuration duration: TimeInterval,
-    thenDragTo endPosition: NormalisedPosition,
+    thenDragTo endPosition: NormalizedPosition,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line

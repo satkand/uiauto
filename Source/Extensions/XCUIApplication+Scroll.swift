@@ -25,13 +25,13 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let endPosition: NormalisedPosition = area.position.inverted
+    let endPosition: NormalizedPosition = area.position.inverted
     scroll(element: element, to: endPosition, timeout: timeout, file: file, line: line)
   }
 
   private func scroll(
     element: Element,
-    to endPosition: NormalisedPosition,
+    to endPosition: NormalizedPosition,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
@@ -46,10 +46,10 @@ extension XCUIApplication {
     )
   }
 
-  private func startPosition(whenScrollingTo endPosition: NormalisedPosition) -> NormalisedPosition {
+  private func startPosition(whenScrollingTo endPosition: NormalizedPosition) -> NormalizedPosition {
     let startX: CGFloat = startPoint(whenScrollingTo: endPosition.x)
     let startY: CGFloat = startPoint(whenScrollingTo: endPosition.y)
-    return NormalisedPosition(x: startX, y: startY)
+    return NormalizedPosition(x: startX, y: startY)
   }
 
   /// Returns the start point to be able to scroll to the given end point.

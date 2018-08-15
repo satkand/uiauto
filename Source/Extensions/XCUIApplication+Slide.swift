@@ -55,8 +55,8 @@ extension XCUIApplication {
   ) {
     drag(
       element: element,
-      from: NormalisedPosition(x: startPercent, y: 0.5),
-      to: NormalisedPosition(x: endPercent, y: 0.5),
+      from: NormalizedPosition(x: startPercent, y: 0.5),
+      to: NormalizedPosition(x: endPercent, y: 0.5),
       timeout: timeout,
       file: file,
       line: line

@@ -10,7 +10,7 @@
 		DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEB211817A7008B2082 /* Assert.swift */; };
 		DB13F702211A6BEB00E19A5F /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13F701211A6BEB00E19A5F /* Element.swift */; };
 		DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEC211817A8008B2082 /* ElementType.swift */; };
-		E676CE3A21227D1B00CD18F4 /* NormalisedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE3921227D1B00CD18F4 /* NormalisedPosition.swift */; };
+		E676CE3A21227D1B00CD18F4 /* NormalizedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE3921227D1B00CD18F4 /* NormalizedPosition.swift */; };
 		DB7FEAE62118175A008B2082 /* Robocop.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7FEAE42118175A008B2082 /* Robocop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */; };
 		DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */; };
@@ -35,7 +35,7 @@
 		DB13F701211A6BEB00E19A5F /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		DB7FEAEC211817A8008B2082 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 		DB7FEAE52118175A008B2082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E676CE3921227D1B00CD18F4 /* NormalisedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalisedPosition.swift; sourceTree = "<group>"; };
+		E676CE3921227D1B00CD18F4 /* NormalizedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizedPosition.swift; sourceTree = "<group>"; };
 		DB7FEAE221181759008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7FEAE42118175A008B2082 /* Robocop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robocop.h; sourceTree = "<group>"; };
 		E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Drag.swift"; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 				DB13F701211A6BEB00E19A5F /* Element.swift */,
 				DB7FEAEC211817A8008B2082 /* ElementType.swift */,
 				DB7FEAE52118175A008B2082 /* Info.plist */,
-				E676CE3921227D1B00CD18F4 /* NormalisedPosition.swift */,
+				E676CE3921227D1B00CD18F4 /* NormalizedPosition.swift */,
 				DB7FEAE42118175A008B2082 /* Robocop.h */,
 				DB7FEAED211817A8008B2082 /* Extensions */,
 			);
@@ -231,7 +231,7 @@
 				DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */,
 				DB13F702211A6BEB00E19A5F /* Element.swift in Sources */,
 				DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */,
-				E676CE3A21227D1B00CD18F4 /* NormalisedPosition.swift in Sources */,
+				E676CE3A21227D1B00CD18F4 /* NormalizedPosition.swift in Sources */,
 				E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */,
 				DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */,

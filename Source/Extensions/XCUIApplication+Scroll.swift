@@ -36,13 +36,19 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let startPosition: NormalisedPosition = startingPosition(whenScrollingTo: endPosition)
-    drag(element: element, from: startPosition, to: endPosition, timeout: timeout, file: file, line: line)
+    drag(
+      element: element,
+      from: startPosition(whenScrollingTo: endPosition),
+      to: endPosition,
+      timeout: timeout,
+      file: file,
+      line: line
+    )
   }
 
-  private func startingPosition(whenScrollingTo endPosition: NormalisedPosition) -> NormalisedPosition {
-    let startX: CGFloat = startingPoint(whenScrollingTo: endPosition.x)
-    let startY: CGFloat = startingPoint(whenScrollingTo: endPosition.y)
+  private func startPosition(whenScrollingTo endPosition: NormalisedPosition) -> NormalisedPosition {
+    let startX: CGFloat = startPoint(whenScrollingTo: endPosition.x)
+    let startY: CGFloat = startPoint(whenScrollingTo: endPosition.y)
     return NormalisedPosition(x: startX, y: startY)
   }
 
@@ -79,7 +85,7 @@ extension XCUIApplication {
   ///   - endPoint: the point where the scroll gesture ends
   ///
   /// - Returns: the point where the scroll gesture should start
-  private func startingPoint(whenScrollingTo endPoint: CGFloat) -> CGFloat {
+  private func startPoint(whenScrollingTo endPoint: CGFloat) -> CGFloat {
     return isPositiveDirection(whenScrollingTo: endPoint) ? 0.2 : 0.8
   }
 

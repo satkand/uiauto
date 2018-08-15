@@ -31,7 +31,6 @@ extension XCUIApplication {
     /// Align horizontally to the mid point (50%/0.5) and vertically to the bottom side (95%/0.95)
     case bottom
 
-
     /// Returns a position that represents the area relative to the element's size.
     var position: NormalizedPosition {
       switch self {

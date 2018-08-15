@@ -4,7 +4,7 @@ import Foundation
 
 /// Represents a relative position in the containing plane. If we consider a frame, (x: 0.0, y: 0.0) would represent the
 /// top-left point while (x: 1.0, y: 1.0) the bottom-right point.
-struct NormalizedPosition {
+public struct NormalizedPosition {
 
   let x: CGFloat
   let y: CGFloat
@@ -15,7 +15,7 @@ struct NormalizedPosition {
   /// - Parameters:
   ///   - x: the value representing the horizontal position.
   ///   - y: the value representing the vertical position.
-  init(x: CGFloat, y: CGFloat) {
+  public init(x: CGFloat, y: CGFloat) {
     guard x >= 0 && x <= 1 else {
       fatalError("Invalid horizontal position: Normalized values should be between 0.0 and 1.0.")
     }

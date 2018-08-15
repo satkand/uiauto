@@ -14,7 +14,7 @@ extension XCUIApplication {
   ///   - timeout: the specified amount of time to wait for the element to exist
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  func drag(
+  public func drag(
     element: Element,
     from startPosition: NormalizedPosition,
     to endPosition: NormalizedPosition,
@@ -44,7 +44,7 @@ extension XCUIApplication {
   ///   - timeout: the specified amount of time to wait for the element to exist
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  func press(
+  public func press(
     element: Element,
     at startPosition: NormalizedPosition,
     forDuration duration: TimeInterval,

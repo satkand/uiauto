@@ -39,6 +39,7 @@ extension XCTestCase {
     // Hit the delete button in the alert
     springBoardApplication.alerts.buttons["Delete"].tap()
 
+    // Exit edit mode
     XCUIDevice.shared.press(.home)
   }
 }

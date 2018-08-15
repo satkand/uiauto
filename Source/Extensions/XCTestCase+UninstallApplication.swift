@@ -41,5 +41,8 @@ extension XCTestCase {
 
     // Exit edit mode
     XCUIDevice.shared.press(.home)
+
+    // Animations are still ocurring after deletion, so this delay is needed in order to ensure the app is deleted
+    sleep(1)
   }
 }

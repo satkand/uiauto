@@ -2,8 +2,8 @@
 
 import Foundation
 
-/// Represents a relative position in the containing plane. If we consider a frame, (0.0, 0.0) would represent the
-/// top-left point while (1.0, 1.0) the bottom-right point.
+/// Represents a relative position in the containing plane. If we consider a frame, (x: 0.0, y: 0.0) would represent the
+/// top-left point while (x: 1.0, y: 1.0) the bottom-right point.
 struct NormalisedPosition {
 
   let x: CGFloat

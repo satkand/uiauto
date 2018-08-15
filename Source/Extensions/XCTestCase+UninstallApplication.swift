@@ -21,11 +21,11 @@ extension XCTestCase {
 
     guard applicationIcon.exists else { return }
 
-    // Press and hold for 1.3 seconds
+    // Press and hold application icon to enter edit mode
     applicationIcon.press(forDuration: 1.3)
 
     // The "x" button is not exposed, so in order to tap on it
-    // we'll need to calculate it's location based on the position of the application icon in the springboard.
+    // we'll need to calculate its location based on the location of the application icon in the springboard.
     springBoardApplication.coordinate(
       withNormalizedOffset: CGVector(
         dx: (applicationIcon.frame.minX + 3) / springBoardApplication.frame.maxX,

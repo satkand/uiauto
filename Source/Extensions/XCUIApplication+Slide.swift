@@ -55,8 +55,8 @@ extension XCUIApplication {
   ) {
     drag(
       element: element,
-      from: .init(x: startPercent, y: 0.5),
-      to: .init(x: endPercent, y: 0.5),
+      from: NormalisedPosition(x: startPercent, y: 0.5),
+      to: NormalisedPosition(x: endPercent, y: 0.5),
       timeout: timeout,
       file: file,
       line: line

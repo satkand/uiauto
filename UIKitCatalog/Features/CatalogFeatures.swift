@@ -7,7 +7,7 @@ final class CatalogFeatures: XCTestCase {
 
   private var application: XCUIApplication!
 
-  private lazy var tableElement: Element = .init(type: .table, identifier: tableIdentifier)
+  private var tableElement: Element!
   private let tableIdentifier: String = "catalog_table"
 
   override func setUp() {
@@ -15,6 +15,13 @@ final class CatalogFeatures: XCTestCase {
 
     application = XCUIApplication()
     application.launch()
+    tableElement = Element(type: .table, identifier: tableIdentifier)
+  }
+
+  override func tearDown() {
+    application = nil
+    tableElement = nil
+    super.tearDown()
   }
 
   func testScreenTitle() {

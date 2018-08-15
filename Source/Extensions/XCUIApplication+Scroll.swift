@@ -46,28 +46,40 @@ extension XCUIApplication {
     return NormalisedPosition(x: startX, y: startY)
   }
 
+  /// Returns the start point to be able to scroll to the given end point.
+  ///
+  /// **Note**
+  ///
+  /// Given the reference line:
+  /// ```
+  ///  |----|----|----|----|----|----|----|----|----|----|
+  /// 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
+  /// ```
+  ///
+  /// If we want to drag to a position that is above 0.5, in order to have enough scrolling, we want to start at a
+  /// point behind the mid line.
+  /// ```
+  ///  |----|----|----|----|----|----|----|----|----|----|
+  /// 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
+  ///            |------------------>|--->|--->|--->|--->|
+  /// ```
+  ///
+  /// Similarly, if we want to drag to a position that is below 0.5, we want to start after the mid point.
+  /// ```
+  ///  |----|----|----|----|----|----|----|----|----|----|
+  /// 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
+  ///  |<---|<---|<---|<---|<------------------|
+  /// ```
+  ///
+  /// Those specific values were chosen through trial and error to be far enough from the edges to prevent triggering
+  /// device gestures such as showing the notification centre or the control centre, and also far enough that there
+  /// is still bounce but not too much that it disrupts the tests.
+  ///
+  /// - Parameters:
+  ///   - endPoint: the point where the scroll gesture ends
+  ///
+  /// - Returns: the point where the scroll gesture should start
   private func startingPoint(whenScrollingTo endPoint: CGFloat) -> CGFloat {
-    // Given the reference line:
-    //
-    //  |----|----|----|----|----|----|----|----|----|----|
-    // 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
-    //
-    // If we want to drag to a position that is above 0.5, in order to have enough scrolling, we want to start at a
-    // point behind the mid line.
-    //
-    //  |----|----|----|----|----|----|----|----|----|----|
-    // 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
-    //            |------------------>|--->|--->|--->|--->|
-    //
-    // Similarly, if we want to drag to a position that is below 0.5, we want to start after the mid point.
-    //
-    //  |----|----|----|----|----|----|----|----|----|----|
-    // 0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
-    //  |<---|<---|<---|<---|<------------------|
-    //
-    // Those specific values were chosen through trial and error to be far enough from the edges to prevent triggering
-    // device gestures such as showing the notification centre or the control centre, and also far enought that there
-    // is still bounce but not too much that it disrupts the tests.
     return isPositiveDirection(whenScrollingTo: endPoint) ? 0.2 : 0.8
   }
 

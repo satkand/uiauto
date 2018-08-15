@@ -7,7 +7,7 @@ extension XCUIApplication {
   /// Attempts to scroll the given element to the specified area. If the element is not scrollable, it won't do
   /// anything.
   ///
-  /// **Note:**
+  /// **Note**
   ///
   /// Scrolling to the `center` will only work if it has to scroll down to get to the center of the element. If
   /// scrolling up is required, scroll all the way up first before scrolling to the center as a workaround.

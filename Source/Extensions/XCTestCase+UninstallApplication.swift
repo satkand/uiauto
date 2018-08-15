@@ -4,7 +4,7 @@ import XCTest
 
 extension XCTestCase {
 
-  /// Uninstall application from device or simulator in a similar that the user's would.
+  /// Uninstall application from device or simulator similarly to how a user would.
   ///
   /// This function relies on the SpringBoard application to perform the uninstallation.
   ///

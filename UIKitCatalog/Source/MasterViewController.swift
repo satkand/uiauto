@@ -67,17 +67,26 @@ final class MasterViewController: BaseTableViewController {
 // MARK: - UITableViewDataSource
 
 extension MasterViewController {
+
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return 2
+  }
+
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return exampleList.count
+    return section == 0 ? exampleList.count : 0
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    let example = exampleList[indexPath.row]
-    cell.textLabel?.text = example.title
-    cell.detailTextLabel?.text = example.subTitle
 
-    cell.accessibilityIdentifier = accessibilityIdentifier(for: indexPath.row)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+
+    if indexPath.section == 0 {
+      let example = exampleList[indexPath.row]
+
+      cell.textLabel?.text = example.title
+      cell.detailTextLabel?.text = example.subTitle
+      cell.accessibilityIdentifier = accessibilityIdentifier(for: indexPath.row)
+    }
 
     return cell
   }
@@ -100,7 +109,12 @@ extension MasterViewController {
 
 extension MasterViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let example = exampleList[indexPath.row]
-    pushOrPresentStoryboard(storyboardName: example.subTitle, cellIndexPath: indexPath)
+
+    defer { tableView.deselectRow(at: indexPath, animated: true) }
+
+    if indexPath.section == 0 {
+      let example = exampleList[indexPath.row]
+      pushOrPresentStoryboard(storyboardName: example.subTitle, cellIndexPath: indexPath)
+    }
   }
 }

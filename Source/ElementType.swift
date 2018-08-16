@@ -30,6 +30,9 @@ public enum ElementType {
   /// Label
   case label
 
+  /// Menu item (e.g.: text field copy/paste)
+  case menuItem
+
   /// Navigation bar button
   case navigationBarButton
 

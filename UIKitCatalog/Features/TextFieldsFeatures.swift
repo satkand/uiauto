@@ -35,4 +35,13 @@ final class TextFieldsFeatures: XCTestCase {
     application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello World"))
     application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText(""))
   }
+
+  func testCopyPaste() {
+    application.type(text: "Hello", into: .init(type: .textField, identifier: "text_fields_default"))
+
+    application.copyText(from: .init(type: .textField, identifier: "text_fields_default"), andPasteInto: .init(type: .textField, identifier: "text_fields_tinted"))
+
+    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello"))
+    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText("Hello"))
+  }
 }

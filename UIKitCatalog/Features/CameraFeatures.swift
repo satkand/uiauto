@@ -11,6 +11,7 @@ import XCTest
 
     override func setUp() {
       super.setUp()
+
       uninstallApplication(named: "UIKitCatalog")
 
       application = XCUIApplication()
@@ -28,7 +29,7 @@ import XCTest
     }
 
     func testAcceptingPermissionAndTakingAPhoto() {
-      application.takePhotoAndAcceptPermissionIfRequired()
+      application.takePhoto()
     }
 
     func testDenyingPermission() {

@@ -46,6 +46,7 @@
 		53CE5AE91F2A8B1000D8A656 /* ProgressViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE71F2A8B1000D8A656 /* ProgressViewController.storyboard */; };
 		2200544118BC54F5002A6E8B /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543218BC54F5002A6E8B /* ProgressViewController.swift */; };
 		2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */; };
+		DB91002121267D8A001CBC70 /* Robocop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB7FEB1321182566008B2082 /* Robocop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; };
 		3E6AE85A196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */; };
 		533BD7BC1F8D2B08007D5C3B /* SearchBarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7BA1F8D2B07007D5C3B /* SearchBarsTableViewController.swift */; };
@@ -92,6 +93,20 @@
 			remoteInfo = UIKitCatalog;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB91002021267D81001CBC70 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB91002121267D8A001CBC70 /* Robocop.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DBB7D85E210EDC2A009931A6 /* ActivityIndicatorFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFeatures.swift; sourceTree = "<group>"; };
@@ -395,6 +410,7 @@
 				DB8EF6E9210AE2CB0091E5C8 /* Sources */,
 				DB8EF6EA210AE2CB0091E5C8 /* Frameworks */,
 				DB8EF6EB210AE2CB0091E5C8 /* Resources */,
+				DB91002021267D81001CBC70 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -816,7 +832,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -862,7 +878,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -879,7 +895,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -894,7 +909,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -907,21 +921,15 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.outware.Features;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UIKitCatalog;
 			};
 			name = Debug;
@@ -935,21 +943,14 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.outware.Features;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UIKitCatalog;
 			};
 			name = Release;

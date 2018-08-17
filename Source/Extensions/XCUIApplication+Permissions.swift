@@ -27,7 +27,7 @@ extension XCUIApplication {
     return .init(bundleIdentifier: "com.apple.springboard")
   }
 
-  /// Accept permissions if a permission requert dialog is displayed
+  /// Accept permissions if a permission request dialog is displayed
   ///
   /// - Parameters:
   ///     - permissionType: the type of permission being requested
@@ -45,7 +45,7 @@ extension XCUIApplication {
     springBoardApplication.tap(element: .init(type: .alertButton, identifier: permissionType.allowIdentifier), timeout: timeout, file: file, line: line)
   }
 
-  /// Deny permissions if a permission requert dialog is displayed
+  /// Deny permissions if a permission request dialog is displayed
   ///
   /// - Parameters:
   ///     - permissionType: the type of permission being requested

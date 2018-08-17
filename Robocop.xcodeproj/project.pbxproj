@@ -17,6 +17,7 @@
 		E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */; };
 		DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */; };
 		DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */; };
+		DBE6409621268C11007C2277 /* XCUIApplication+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */; };
 		DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */; };
 		DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */; };
 		E676CE762122932400CD18F4 /* XCUIApplication+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */; };
@@ -24,6 +25,7 @@
 		2BDFC28A211D0FDC008342E2 /* XCUIApplication+Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDFC289211D0FDC008342E2 /* XCUIApplication+Slide.swift */; };
 		DBB796E4212256F500B29297 /* XCUIApplication+Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB796E3212256F500B29297 /* XCUIApplication+Step.swift */; };
 		DB7FEB03211817A8008B2082 /* XCUIApplication+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */; };
+		DBE6409821268C3D007C2277 /* XCUIApplication+TakePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE6409721268C3D007C2277 /* XCUIApplication+TakePhoto.swift */; };
 		DB7FEB05211817A8008B2082 /* XCUIApplication+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */; };
 		DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */; };
 		DB7FEB01211817A8008B2082 /* XCUIElement+First.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF3211817A8008B2082 /* XCUIElement+First.swift */; };
@@ -45,6 +47,7 @@
 		E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Drag.swift"; sourceTree = "<group>"; };
 		DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Expect.swift"; sourceTree = "<group>"; };
 		DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Navigate.swift"; sourceTree = "<group>"; };
+		DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Permissions.swift"; sourceTree = "<group>"; };
 		DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Pick.swift"; sourceTree = "<group>"; };
 		DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Read.swift"; sourceTree = "<group>"; };
 		E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Scroll.swift"; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		2BDFC289211D0FDC008342E2 /* XCUIApplication+Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Slide.swift"; sourceTree = "<group>"; };
 		DBB796E3212256F500B29297 /* XCUIApplication+Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Step.swift"; sourceTree = "<group>"; };
 		DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Swipe.swift"; sourceTree = "<group>"; };
+		DBE6409721268C3D007C2277 /* XCUIApplication+TakePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+TakePhoto.swift"; sourceTree = "<group>"; };
 		DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Tap.swift"; sourceTree = "<group>"; };
 		DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Type.swift"; sourceTree = "<group>"; };
 		DB7FEAF3211817A8008B2082 /* XCUIElement+First.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+First.swift"; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */,
 				DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */,
 				DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */,
+				DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */,
 				DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */,
 				DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */,
 				E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */,
@@ -126,6 +131,7 @@
 				2BDFC289211D0FDC008342E2 /* XCUIApplication+Slide.swift */,
 				DBB796E3212256F500B29297 /* XCUIApplication+Step.swift */,
 				DB7FEAF5211817A8008B2082 /* XCUIApplication+Swipe.swift */,
+				DBE6409721268C3D007C2277 /* XCUIApplication+TakePhoto.swift */,
 				DB7FEAF7211817A8008B2082 /* XCUIApplication+Tap.swift */,
 				DB7FEAF0211817A8008B2082 /* XCUIApplication+Type.swift */,
 				DB7FEAF3211817A8008B2082 /* XCUIElement+First.swift */,
@@ -243,6 +249,7 @@
 				E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */,
 				DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */,
+				DBE6409621268C11007C2277 /* XCUIApplication+Permissions.swift in Sources */,
 				DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */,
 				DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */,
 				E676CE762122932400CD18F4 /* XCUIApplication+Scroll.swift in Sources */,
@@ -250,6 +257,7 @@
 				2BDFC28A211D0FDC008342E2 /* XCUIApplication+Slide.swift in Sources */,
 				DBB796E4212256F500B29297 /* XCUIApplication+Step.swift in Sources */,
 				DB7FEB03211817A8008B2082 /* XCUIApplication+Swipe.swift in Sources */,
+				DBE6409821268C3D007C2277 /* XCUIApplication+TakePhoto.swift in Sources */,
 				DB7FEB05211817A8008B2082 /* XCUIApplication+Tap.swift in Sources */,
 				DB7FEAFE211817A8008B2082 /* XCUIApplication+Type.swift in Sources */,
 				DB7FEB01211817A8008B2082 /* XCUIElement+First.swift in Sources */,

@@ -73,7 +73,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 0
+    return section == 0 ? exampleList.count : 2
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,6 +86,16 @@ extension MasterViewController {
       cell.textLabel?.text = example.title
       cell.detailTextLabel?.text = example.subTitle
       cell.accessibilityIdentifier = accessibilityIdentifier(for: indexPath.row)
+    } else {
+      if indexPath.row == 0 {
+        cell.textLabel?.text = "Camera"
+        cell.detailTextLabel?.text = nil
+        cell.accessibilityIdentifier = nil
+      } else if indexPath.row == 1 {
+        cell.textLabel?.text = "Camera - Edit Photo"
+        cell.detailTextLabel?.text = nil
+        cell.accessibilityIdentifier = nil
+      }
     }
 
     return cell
@@ -115,6 +125,29 @@ extension MasterViewController {
     if indexPath.section == 0 {
       let example = exampleList[indexPath.row]
       pushOrPresentStoryboard(storyboardName: example.subTitle, cellIndexPath: indexPath)
+    } else {
+      if indexPath.row == 0 {
+        let imagePickerController: UIImagePickerController = .init()
+        imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
+
+        present(imagePickerController, animated: true, completion: nil)
+      } else if indexPath.row == 1 {
+        let imagePickerController: UIImagePickerController = .init()
+        imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+
+        present(imagePickerController, animated: true, completion: nil)
+      }
     }
+  }
+}
+
+extension MasterViewController: UIImagePickerControllerDelegate {
+
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    picker.dismiss(animated: true, completion: nil)
+    print(info)
   }
 }

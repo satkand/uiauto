@@ -12,6 +12,9 @@ public enum ElementType {
   /// Activity indicator
   case activityIndicator
 
+  /// Alert dialogs
+  case alert
+
   /// Button within an alert
   case alertButton
 

@@ -16,6 +16,7 @@ extension XCUIElement {
     switch elementType {
     case .actionSheetButton: return sheets.buttons
     case .activityIndicator: return activityIndicators
+    case .alert: return alerts
     case .alertButton: return alerts.buttons
     case .button: return buttons
     case .cell: return cells

@@ -37,6 +37,8 @@ final class MasterViewController: BaseTableViewController {
     Example(title: "Web View", subTitle: "WebViewController", twoLevel: false),
   ]
 
+  private lazy var photoPicker: PhotoPicker = .init()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -73,7 +75,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 0
+    return section == 0 ? exampleList.count : 1
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,9 +88,22 @@ extension MasterViewController {
       cell.textLabel?.text = example.title
       cell.detailTextLabel?.text = example.subTitle
       cell.accessibilityIdentifier = accessibilityIdentifier(for: indexPath.row)
+    } else {
+      configureExtraFeaturesCell(cell, at: indexPath.row)
     }
 
     return cell
+  }
+
+  private func configureExtraFeaturesCell(_ cell: UITableViewCell, at index: Int) {
+    switch index {
+    case 0:
+      cell.textLabel?.text = "Photos"
+      cell.detailTextLabel?.text = "Pick photos from the library."
+      cell.accessibilityIdentifier = "photos_cell"
+
+    default: break
+    }
   }
 
   private func accessibilityIdentifier(for row: Int) -> String? {
@@ -108,6 +123,7 @@ extension MasterViewController {
 // MARK: - UITableViewDelegate
 
 extension MasterViewController {
+
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     defer { tableView.deselectRow(at: indexPath, animated: true) }
@@ -115,6 +131,17 @@ extension MasterViewController {
     if indexPath.section == 0 {
       let example = exampleList[indexPath.row]
       pushOrPresentStoryboard(storyboardName: example.subTitle, cellIndexPath: indexPath)
+    } else {
+      handleExtraFeaturesSelection(at: indexPath.row)
+    }
+  }
+
+  private func handleExtraFeaturesSelection(at index: Int) {
+    switch index {
+    case 0:
+      photoPicker.showPhotos(from: self)
+
+    default: break
     }
   }
 }

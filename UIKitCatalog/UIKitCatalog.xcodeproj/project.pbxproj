@@ -40,6 +40,8 @@
 		2B995AB42119208900830259 /* PageControlFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB32119208900830259 /* PageControlFeatures.swift */; };
 		53CE5AE31F2A8AD200D8A656 /* PageControlViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE11F2A8AD200D8A656 /* PageControlViewController.storyboard */; };
 		2200543F18BC54F5002A6E8B /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543018BC54F5002A6E8B /* PageControlViewController.swift */; };
+		E6FAF53521268C1C00BF3E0F /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FAF53421268C1C00BF3E0F /* PhotoPicker.swift */; };
+		E676CE792123EDE200CD18F4 /* PhotosFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE782123EDE200CD18F4 /* PhotosFeatures.swift */; };
 		DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB95405E2112BC6300157B74 /* PickerFeatures.swift */; };
 		53CE5AE61F2A8AEF00D8A656 /* PickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE41F2A8AEF00D8A656 /* PickerViewController.storyboard */; };
 		2200544018BC54F5002A6E8B /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543118BC54F5002A6E8B /* PickerViewController.swift */; };
@@ -119,6 +121,8 @@
 		539C6BB11F27F4A70006C5A9 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		2B995AB32119208900830259 /* PageControlFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlFeatures.swift; sourceTree = "<group>"; };
 		2200543018BC54F5002A6E8B /* PageControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PageControlViewController.swift; sourceTree = "<group>"; };
+		E6FAF53421268C1C00BF3E0F /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		E676CE782123EDE200CD18F4 /* PhotosFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosFeatures.swift; sourceTree = "<group>"; };
 		DB95405E2112BC6300157B74 /* PickerFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFeatures.swift; sourceTree = "<group>"; };
 		2200543118BC54F5002A6E8B /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PickerViewController.swift; sourceTree = "<group>"; };
 		2200543218BC54F5002A6E8B /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			children = (
 				228DBA0718BC53F1002BA12A /* Assets.xcassets */,
 				3E2459D41931CCB5002D3369 /* Application */,
+				E6FAF53321268C0A00BF3E0F /* Features */,
 				228DB9F618BC53F1002BA12A /* Supporting Files */,
 				3E1DA7601931CC99000114A9 /* View Controllers */,
 			);
@@ -352,6 +357,7 @@
 				DB8F273821114E24008BDCE7 /* ImageViewFeatures.swift */,
 				DB8EF6F1210AE2CB0091E5C8 /* Info.plist */,
 				2B995AB32119208900830259 /* PageControlFeatures.swift */,
+				E676CE782123EDE200CD18F4 /* PhotosFeatures.swift */,
 				DB95405E2112BC6300157B74 /* PickerFeatures.swift */,
 				2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */,
 				DBE070DA2113E6E300609510 /* SearchFeatures.swift */,
@@ -363,6 +369,14 @@
 				DB407517211D4F0200A0A35C /* TextViewFeatures.swift */,
 				DBB490BF211BFE440066C64D /* ToolbarsFeatures.swift */,
 				DB8D73552122B43B00821F4C /* UninstallApplicationFeatures.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E6FAF53321268C0A00BF3E0F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E6FAF53421268C1C00BF3E0F /* PhotoPicker.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -524,6 +538,7 @@
 				2200543C18BC54F5002A6E8B /* ImageViewController.swift in Sources */,
 				539C6BB21F27F4A70006C5A9 /* MasterViewController.swift in Sources */,
 				2200543F18BC54F5002A6E8B /* PageControlViewController.swift in Sources */,
+				E6FAF53521268C1C00BF3E0F /* PhotoPicker.swift in Sources */,
 				2200544018BC54F5002A6E8B /* PickerViewController.swift in Sources */,
 				2200544118BC54F5002A6E8B /* ProgressViewController.swift in Sources */,
 				3E6AE85A196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift in Sources */,
@@ -555,6 +570,7 @@
 				DB8F273321113FCB008BDCE7 /* DatePickerFeatures.swift in Sources */,
 				DB8F273921114E24008BDCE7 /* ImageViewFeatures.swift in Sources */,
 				2B995AB42119208900830259 /* PageControlFeatures.swift in Sources */,
+				E676CE792123EDE200CD18F4 /* PhotosFeatures.swift in Sources */,
 				DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */,
 				2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */,
 				DBE070DB2113E6E400609510 /* SearchFeatures.swift in Sources */,

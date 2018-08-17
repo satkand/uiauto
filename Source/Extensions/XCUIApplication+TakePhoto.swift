@@ -11,7 +11,7 @@ extension XCUIApplication {
 
   /// Accept camera permission if required and take a photo on the Camera screen
   public func takePhotoAndAcceptPermissionIfRequired(timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
-    acceptPermissionIfRequired(ofType: .camera)
+    acceptPermissionIfRequired(for: .camera)
     takePhoto(timeout: timeout, file: file, line: line)
   }
 }

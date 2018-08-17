@@ -31,13 +31,13 @@ import XCTest
     }
 
     func testDenyingPermission() {
-      application.denyPermissionIfRequired(ofType: .camera)
+      application.denyPermissionIfRequired(for: .camera)
     }
 
     func testAcceptingOrDenyPermissionMultipleTimes() {
-      application.acceptPermissionIfRequired(ofType: .camera)
-      application.acceptPermissionIfRequired(ofType: .camera)
-      application.denyPermissionIfRequired(ofType: .camera)
+      application.acceptPermissionIfRequired(for: .camera)
+      application.acceptPermissionIfRequired(for: .camera)
+      application.denyPermissionIfRequired(for: .camera)
     }
   }
 

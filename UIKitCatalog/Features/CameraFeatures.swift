@@ -41,6 +41,10 @@ import XCTest
       application.acceptPermissionIfRequired(for: .camera)
       application.denyPermissionIfRequired(for: .camera)
     }
+
+    func testCancellingTakingAPhoto() {
+      application.cancelTakingPhoto()
+    }
   }
 
 #endif

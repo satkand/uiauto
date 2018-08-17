@@ -148,9 +148,6 @@ extension MasterViewController: UIImagePickerControllerDelegate {
 
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
     picker.dismiss(animated: true, completion: nil)
-
-    let image: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
-
-    print(image)
+    print(info)
   }
 }

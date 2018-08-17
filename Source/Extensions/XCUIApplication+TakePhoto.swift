@@ -12,7 +12,16 @@ extension XCUIApplication {
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func takePhoto(timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
     acceptPermissionIfRequired(for: .camera)
-    tap(element: .init(type: .button, identifier: "PhotoCapture"), timeout: timeout, file: file, line: line)
+
+    // The camera app needs to be able to set the focus, otherwise it won't be able to take a photo (i.e.: please don't shake the device like crayz)
+    tap(element: .init(type: .button, identifier: "PhotoCapture"), timeout: 5, file: file, line: line)
+
+    let usePhotoElement: Element = .init(type: .button, identifier: "Use Photo")
+    let usePhotoUIElement: XCUIElement = first(element: usePhotoElement, failable: false, timeout: 5, file: file, line: line)
+
+    guard usePhotoUIElement.exists else { return }
+
+    tap(element: usePhotoElement, timeout: timeout, file: file, line: line)
   }
 
   /// Accept camera permission if required and cancel taking a photo on the Camera screen

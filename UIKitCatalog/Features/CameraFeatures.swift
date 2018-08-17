@@ -47,4 +47,19 @@ import XCTest
     }
   }
 
+  final class CameraEditableFeatures: XCTestCase {
+
+    func testEditingAPhoto() {
+      uninstallApplication(named: "UIKitCatalog")
+
+      let application: XCUIApplication = XCUIApplication()
+      application.launch()
+
+      application.swipe(to: 19, in: "catalog_table", direction: .up)
+      application.tap(element: .init(type: .cell, index: 19))
+
+      application.takePhoto()
+    }
+  }
+
 #endif

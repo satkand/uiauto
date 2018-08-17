@@ -75,7 +75,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 1
+    return section == 0 ? exampleList.count : 3
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,6 +98,16 @@ extension MasterViewController {
   private func configureExtraFeaturesCell(_ cell: UITableViewCell, at index: Int) {
     switch index {
     case 0:
+      cell.textLabel?.text = "Camera"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
+    case 1:
+      cell.textLabel?.text = "Camera - Edit Photo"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
+    case 2:
       cell.textLabel?.text = "Photos"
       cell.detailTextLabel?.text = "Pick photos from the library."
       cell.accessibilityIdentifier = "photos_cell"
@@ -132,16 +142,39 @@ extension MasterViewController {
       let example = exampleList[indexPath.row]
       pushOrPresentStoryboard(storyboardName: example.subTitle, cellIndexPath: indexPath)
     } else {
-      handleExtraFeaturesSelection(at: indexPath.row)
+      handleSelectionOfExtraFeature(at: indexPath.row)
     }
   }
 
-  private func handleExtraFeaturesSelection(at index: Int) {
+  private func handleSelectionOfExtraFeature(at index: Int) {
     switch index {
     case 0:
+      let imagePickerController: UIImagePickerController = .init()
+      imagePickerController.sourceType = .camera
+      imagePickerController.delegate = self
+
+      present(imagePickerController, animated: true, completion: nil)
+
+    case 1:
+      let imagePickerController: UIImagePickerController = .init()
+      imagePickerController.sourceType = .camera
+      imagePickerController.delegate = self
+      imagePickerController.allowsEditing = true
+
+      present(imagePickerController, animated: true, completion: nil)
+
+    case 2:
       photoPicker.showPhotos(from: self)
 
     default: break
     }
+  }
+}
+
+extension MasterViewController: UIImagePickerControllerDelegate {
+
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    picker.dismiss(animated: true, completion: nil)
+    print(info)
   }
 }

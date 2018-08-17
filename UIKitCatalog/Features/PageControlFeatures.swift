@@ -21,10 +21,10 @@ final class PageControlFeatures: XCTestCase {
 
     application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
 
-    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), inArea: .left)
+    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), in: .left)
     application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 2 of 10"))
 
-    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), inArea: .right)
+    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), in: .right)
     application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
   }
 

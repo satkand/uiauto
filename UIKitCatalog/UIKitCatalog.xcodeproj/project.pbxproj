@@ -19,6 +19,7 @@
 		DB8F273121112C3B008BDCE7 /* ButtonsFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */; };
 		53CE5AD81F2A89E500D8A656 /* ButtonViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AD61F2A89E500D8A656 /* ButtonViewController.storyboard */; };
 		2200542718BC54EC002A6E8B /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200542118BC54EC002A6E8B /* ButtonViewController.swift */; };
+		DBE64094212684CB007C2277 /* CameraFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE64093212684CB007C2277 /* CameraFeatures.swift */; };
 		DB8EF6F0210AE2CB0091E5C8 /* CatalogFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */; };
 		53B791DA1F85505400AB2FA6 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = 53B791D41F854B4700AB2FA6 /* content.html */; };
 		2200542818BC54EC002A6E8B /* CustomSearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200542218BC54EC002A6E8B /* CustomSearchBarViewController.swift */; };
@@ -48,6 +49,7 @@
 		53CE5AE91F2A8B1000D8A656 /* ProgressViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE71F2A8B1000D8A656 /* ProgressViewController.storyboard */; };
 		2200544118BC54F5002A6E8B /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543218BC54F5002A6E8B /* ProgressViewController.swift */; };
 		2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */; };
+		DB91002121267D8A001CBC70 /* Robocop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB7FEB1321182566008B2082 /* Robocop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; };
 		3E6AE85A196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */; };
 		533BD7BC1F8D2B08007D5C3B /* SearchBarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BD7BA1F8D2B07007D5C3B /* SearchBarsTableViewController.swift */; };
@@ -95,6 +97,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DB91002021267D81001CBC70 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB91002121267D8A001CBC70 /* Robocop.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DBB7D85E210EDC2A009931A6 /* ActivityIndicatorFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFeatures.swift; sourceTree = "<group>"; };
 		2200541A18BC54E8002A6E8B /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +121,7 @@
 		533BD7961F8BF8B0007D5C3B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsFeatures.swift; sourceTree = "<group>"; };
 		2200542118BC54EC002A6E8B /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		DBE64093212684CB007C2277 /* CameraFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeatures.swift; sourceTree = "<group>"; };
 		DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFeatures.swift; sourceTree = "<group>"; };
 		2200542218BC54EC002A6E8B /* CustomSearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomSearchBarViewController.swift; sourceTree = "<group>"; };
 		2200542318BC54EC002A6E8B /* CustomToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomToolbarViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +369,7 @@
 				DBB7D85E210EDC2A009931A6 /* ActivityIndicatorFeatures.swift */,
 				DBD78826210FE96900CCEB39 /* AlertControllerFeatures.swift */,
 				DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */,
+				DBE64093212684CB007C2277 /* CameraFeatures.swift */,
 				DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */,
 				DB8F273221113FCB008BDCE7 /* DatePickerFeatures.swift */,
 				DB8F273821114E24008BDCE7 /* ImageViewFeatures.swift */,
@@ -409,6 +427,7 @@
 				DB8EF6E9210AE2CB0091E5C8 /* Sources */,
 				DB8EF6EA210AE2CB0091E5C8 /* Frameworks */,
 				DB8EF6EB210AE2CB0091E5C8 /* Resources */,
+				DB91002021267D81001CBC70 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -566,6 +585,7 @@
 				DBB7D85F210EDC2A009931A6 /* ActivityIndicatorFeatures.swift in Sources */,
 				DBD78827210FE96900CCEB39 /* AlertControllerFeatures.swift in Sources */,
 				DB8F273121112C3B008BDCE7 /* ButtonsFeatures.swift in Sources */,
+				DBE64094212684CB007C2277 /* CameraFeatures.swift in Sources */,
 				DB8EF6F0210AE2CB0091E5C8 /* CatalogFeatures.swift in Sources */,
 				DB8F273321113FCB008BDCE7 /* DatePickerFeatures.swift in Sources */,
 				DB8F273921114E24008BDCE7 /* ImageViewFeatures.swift in Sources */,
@@ -832,7 +852,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -878,7 +898,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = "";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -895,7 +915,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -910,7 +929,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -923,21 +941,15 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.outware.Features;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UIKitCatalog;
 			};
 			name = Debug;
@@ -951,21 +963,14 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Y2XN2Z2HA2;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.outware.Features;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = UIKitCatalog;
 			};
 			name = Release;

@@ -47,7 +47,7 @@ extension XCUIApplication {
 
   /// Tap on element in the given area.
   ///
-  /// - parameters:
+  /// - Parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - area: the area of the element that was tapped (defaults to tapping in the center)
   ///     - timeout: the specified amount of time to wait for the element to exist
@@ -55,15 +55,43 @@ extension XCUIApplication {
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func tap(
     element: Element,
-    inArea area: Area = .center,
+    in area: Area = .center,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
+    coordinate(for: element, in: area, timeout: timeout, file: file, line: line)?.tap()
+  }
+
+  /// Double tap on element in the given area.
+  ///
+  /// - Parameters:
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - area: the area of the element that was tapped (defaults to tapping in the center)
+  ///     - timeout: the specified amount of time to wait for the element to exist
+  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
+  public func doubleTap(
+    element: Element,
+    in area: Area = .center,
+    timeout: TimeInterval = 0,
+    file: StaticString = #file,
+    line: UInt = #line
+  ) {
+    coordinate(for: element, in: area, timeout: timeout, file: file, line: line)?.doubleTap()
+  }
+
+  private func coordinate(
+    for element: Element,
+    in area: Area = .center,
+    timeout: TimeInterval = 0,
+    file: StaticString = #file,
+    line: UInt = #line
+  ) -> XCUICoordinate? {
     let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
-    guard element.exists else { return }
+    guard element.exists else { return nil }
 
-    element.coordinate(withNormalizedOffset: area.position.vector).tap()
+    return element.coordinate(withNormalizedOffset: area.position.vector)
   }
 }

@@ -41,7 +41,7 @@ extension XCUIApplication {
 
     guard uiElement.exists else { return }
 
-    tap(element: element, inArea: position.tapArea)
+    tap(element: element, in: position.tapArea)
 
     uiElement.typeText(text)
   }

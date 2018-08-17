@@ -90,10 +90,10 @@ final class PhotosFeatures: XCTestCase {
   // MARK: - Helper Methods
 
   private func showOpenPhotosOption() {
-    application.swipe(to: 18, in: "catalog_table", direction: .up)
+    application.swipe(to: 20, in: "catalog_table", direction: .up)
   }
 
   private func openPhotos() {
-    application.tap(element: .init(type: .cell, index: 18))
+    application.tap(element: .init(type: .cell, index: 20))
   }
 }

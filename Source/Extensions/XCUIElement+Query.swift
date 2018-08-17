@@ -16,12 +16,14 @@ extension XCUIElement {
     switch elementType {
     case .actionSheetButton: return sheets.buttons
     case .activityIndicator: return activityIndicators
+    case .alert: return alerts
     case .alertButton: return alerts.buttons
     case .button: return buttons
     case .cell: return cells
     case .datePicker: return datePickers
     case .image: return images
     case .label: return staticTexts
+    case .menuItem: return menuItems
     case .navigationBarButton: return navigationBars.buttons
     case .navigationBarTitle: return navigationBars
     case .pageControl: return pageIndicators

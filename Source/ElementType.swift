@@ -12,6 +12,9 @@ public enum ElementType {
   /// Activity indicator
   case activityIndicator
 
+  /// Alert dialogs
+  case alert
+
   /// Button within an alert
   case alertButton
 
@@ -29,6 +32,9 @@ public enum ElementType {
 
   /// Label
   case label
+
+  /// Menu item (e.g.: text field copy/paste)
+  case menuItem
 
   /// Navigation bar button
   case navigationBarButton

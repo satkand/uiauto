@@ -44,7 +44,7 @@ extension XCUIElement {
       errorMessage = "No element \(element.type) at index '\(index)' found."
     } else {
       uiElement = query(for: element.type).element.firstMatch
-      errorMessage = "No element \(elementType) found."
+      errorMessage = "No element \(element.type) found."
     }
 
     let exists: Bool = uiElement.waitForExistence(timeout: timeout)

@@ -32,14 +32,14 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testDenyingLibraryPermissionShowsErrorAlert() {
-    application.denyPhotosPermission()
+    application.denyPermissionIfRequired(for: .photos)
 
     application.expect(element: showPhotosOption, to: .exist(true))
     application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
   }
 
   func testOpeningPhotosWhenAccessIsDeniedThenShowsErrorAlert() {
-    application.denyPhotosPermission()
+    application.denyPermissionIfRequired(for: .photos)
     application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
     application.tap(element: permissionDeniedAlertCancelAction)
 
@@ -50,7 +50,7 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testShowingApplicationSettingsViaAccessDeniedErrorAlert() {
-    application.denyPhotosPermission()
+    application.denyPermissionIfRequired(for: .photos)
     application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
 
     application.tap(element: permissionDeniedAlertSettingsAction)
@@ -59,13 +59,13 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testAllowingLibraryAccessShowsPhotos() {
-    application.grantPhotosPermission()
+    application.acceptPermissionIfRequired(for: .photos)
 
     application.verifyIsShowingPhotos()
   }
 
   func testSelectingPhotoDismissesGallery() {
-    application.grantPhotosPermission()
+    application.acceptPermissionIfRequired(for: .photos)
 
     application.selectPhoto()
 
@@ -73,7 +73,7 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testShowingPhotosWhenPermissionIsGrantedThenProcceedsToPhotos() {
-    application.grantPhotosPermission()
+    application.acceptPermissionIfRequired(for: .photos)
     application.cancelSelectingPhoto()
 
     openPhotos()

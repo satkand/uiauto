@@ -4,31 +4,6 @@ import XCTest
 
 extension XCUIApplication {
 
-  // MARK: - Permission Handlers
-
-  /// Grants permission to access photos by accepting the request. You can onluy call this function immediatelly after showing
-  /// the system alert.
-  ///
-  /// - Parameters:
-  ///   - timeout: the specified amount of time to wait for elements to exist
-  ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
-  ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  public func grantPhotosPermission(timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
-    let springboardApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-    springboardApplication.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: timeout, file: file, line: line)
-  }
-
-  /// Chooses to not allow access to photos. You can only call this function immediatelly after showing the system alert.
-  ///
-  /// - Parameters:
-  ///   - timeout: the specified amount of time to wait for elements to exist
-  ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
-  ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  public func denyPhotosPermission(timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
-    let springboardApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-    springboardApplication.tap(element: .init(type: .alertButton, identifier: "Don’t Allow"), timeout: timeout)
-  }
-
   // MARK: - Verifiers
 
   /// Verifies that the photo gallery is being displayed.
@@ -65,10 +40,7 @@ extension XCUIApplication {
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func selectPhoto(fromAlbum album: String = "Camera Roll", atIndex photoIndex: Int = 0, timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
 
-    let springboardApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-    if springboardApplication.first(element: .init(type: .alertButton, identifier: "OK"), failable: false, timeout: timeout).exists {
-      grantPhotosPermission(file: file, line: line)
-    }
+    acceptPermissionIfRequired(for: .photos)
 
     // There seems to be an Apple bug where using `.firstMatch` makes the process crash. Therefore, since we cannot use `first` and other Robocop actions
     // which make use `.firstMatch`, we have to query for the element ourselves.

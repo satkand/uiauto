@@ -7,7 +7,7 @@ final class CatalogFeatures: XCTestCase {
 
   private var application: XCUIApplication!
 
-  private var tableElement: Element!
+  private var table: Element!
   private let tableIdentifier: String = "catalog_table"
 
   override func setUp() {
@@ -15,12 +15,12 @@ final class CatalogFeatures: XCTestCase {
 
     application = XCUIApplication()
     application.launch()
-    tableElement = Element(type: .table, identifier: tableIdentifier)
+    table = Element(type: .table, identifier: tableIdentifier)
   }
 
   override func tearDown() {
     application = nil
-    tableElement = nil
+    table = nil
     super.tearDown()
   }
 
@@ -28,34 +28,22 @@ final class CatalogFeatures: XCTestCase {
     application.expect(element: .init(type: .navigationBarTitle, identifier: "UIKitCatalog"), to: .exist(true))
   }
 
-  func testTappingEachCells() {
-
-    (0 ..< 18).forEach { index in
-
-      application.swipe(to: index, in: tableIdentifier, direction: .up)
-
-      application.tap(element: .init(type: .cell, index: index))
-
-      application.navigateBack()
-    }
-  }
-
   func testScrollingToBottom() {
-    application.scroll(element: tableElement, to: .bottom)
+    application.scroll(element: table, to: .bottom)
 
     application.expect(element: .init(type: .cell, index: 16), to: .beVisible(true))
   }
 
   func testScrollingToTop() {
-    application.scroll(element: tableElement, to: .bottom)
+    application.scroll(element: table, to: .bottom)
 
-    application.scroll(element: tableElement, to: .top)
+    application.scroll(element: table, to: .top)
 
     application.expect(element: .init(type: .cell, index: 0), to: .beVisible(true))
   }
 
   func testScrollingToCentre() {
-    application.scroll(element: tableElement, to: .center)
+    application.scroll(element: table, to: .center)
 
     application.expect(element: .init(type: .cell, index: 12), to: .beVisible(true))
   }

@@ -23,7 +23,7 @@ final class CalendarEventFeatures: XCTestCase {
     super.tearDown()
   }
 
-  func testAddingCalendarReminder() {
+  func testAddingCalendarEvent() {
     application.addCalendarEvent()
 
     application.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: 2)

@@ -4,7 +4,9 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Accepts photo library permission if required and selects a photo from the library.
+  /// Selects a photo from the photo library.
+  ///
+  /// If the *photo library permission* alert dialog is displayed, the request will be **automatically** accepted.
   ///
   /// - Parameters:
   ///   - timeout: the specified amount of time to wait for elements to exist
@@ -31,6 +33,8 @@ extension XCUIApplication {
   }
 
   /// Closes the photo gallery without selecting any photo.
+  ///
+  /// If the *photo library permission* alert dialog is displayed, the request will be **automatically** accepted.
   ///
   /// - Parameters:
   ///   - timeout: the specified amount of time to wait for elements to exist

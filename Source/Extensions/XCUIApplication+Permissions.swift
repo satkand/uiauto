@@ -4,34 +4,6 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Permissions dialog types
-  public enum PermissionType {
-
-    /// Calendar Permissions
-    case calendar
-
-    /// Camera permissions
-    case camera
-
-    /// Photo library permissions
-    case photoLibrary
-
-    /// Reminders
-    case reminders
-
-    fileprivate var allowIdentifier: String {
-      switch self {
-      case .calendar, .camera, .photoLibrary, .reminders: return "OK"
-      }
-    }
-
-    fileprivate var denyIdentifier: String {
-      switch self {
-      case .calendar, .camera, .photoLibrary, .reminders: return "Don’t Allow"
-      }
-    }
-  }
-
   private var springBoardApplication: XCUIApplication {
     return .init(bundleIdentifier: "com.apple.springboard")
   }

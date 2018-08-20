@@ -30,4 +30,17 @@ final class CalendarEventFeatures: XCTestCase {
 
     application.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: 2)
   }
+
+  func testAddingAndCustomisingCalendarEvent() {
+
+    let eventDetails: [XCUIApplication.EventDetail] = [
+      .title("Farewell Party"),
+      .url("https://www.google.com.au"),
+      .notes("We're gathered here today..."),
+    ]
+
+    application.addCalendarEvent(withDetails: eventDetails)
+
+    application.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: 2)
+  }
 }

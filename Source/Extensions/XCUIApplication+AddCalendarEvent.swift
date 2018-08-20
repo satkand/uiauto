@@ -18,20 +18,20 @@ extension XCUIApplication {
     case url(String)
     case notes(String)
 
-    fileprivate var accessibilityIdentifier: String {
+    fileprivate var element: Element {
 
       switch self {
-      case .title: return "Title"
-      case .location: return "Location"
-      case .allDay: return "All-day"
-      case .startDate: return "Starts"
-      case .endDate: return "Ends"
-      case .frequency: return "Repeat"
-      case .travelTime: return "Travel Time"
-      case .alert: return "Alert"
-      case .secondAlert: return "Second Alert"
-      case .url: return "URL"
-      case .notes: return "Notes"
+      case .title: return .init(type: .textField, identifier: "Title")
+      case .location: fatalError()
+      case .allDay: fatalError()
+      case .startDate: fatalError()
+      case .endDate: fatalError()
+      case .frequency: fatalError()
+      case .travelTime: fatalError()
+      case .alert: fatalError()
+      case .secondAlert: fatalError()
+      case .url: return .init(type: .textField, identifier: "URL")
+      case .notes: return .init(type: .textView, identifier: "Notes")
       }
     }
   }
@@ -42,10 +42,12 @@ extension XCUIApplication {
 
     eventDetails.forEach { detail in
 
+      swipe(to: detail.element, in: .init(type: .table), direction: .up, timeout: timeout, file: file, line: line)
+
       switch detail {
 
       case let .title(value), let .url(value), let .notes(value):
-        replaceText(in: .init(type: .textField, identifier: detail.accessibilityIdentifier), with: value, timeout: timeout, file: file, line: line)
+        replaceText(in: detail.element, with: value, timeout: timeout, file: file, line: line)
 
       case let .location(value):
         break

@@ -16,7 +16,7 @@ extension XCUIApplication {
     acceptPermissionIfRequired(for: .photos, timeout: timeout, file: file, line: line)
 
     // There seems to be an Apple bug where using `.firstMatch` makes the process crash. Therefore, since we cannot use `first` and other Robocop actions
-    // which make use `.firstMatch`, we have to query for the element ourselves.
+    // which make use of `.firstMatch`, we have to query for the element ourselves.
     let albumName: String = "Camera Roll"
     let album: XCUIElement = query(for: .cell)[albumName]
 

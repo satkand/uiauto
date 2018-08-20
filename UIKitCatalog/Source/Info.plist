@@ -32,6 +32,10 @@
 	<string>Select dat pic</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Save dat reminder</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Always locate dat thang</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Locate dat thang when in use</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

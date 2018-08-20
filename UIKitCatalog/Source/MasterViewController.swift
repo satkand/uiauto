@@ -6,10 +6,13 @@
  The primary table view controller displaying all the UIKit examples.
  */
 
+import CoreLocation
 import EventKitUI
 import UIKit
 
 final class MasterViewController: BaseTableViewController {
+
+  private let locationManager: CLLocationManager = .init()
 
   struct Example {
     var title: String
@@ -74,7 +77,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 6
+    return section == 0 ? exampleList.count : 8
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,6 +126,16 @@ extension MasterViewController {
 
     case 5:
       cell.textLabel?.text = "Add Reminder"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
+    case 6:
+      cell.textLabel?.text = "Location Service - Always"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
+    case 7:
+      cell.textLabel?.text = "Location Service - When In Use"
       cell.detailTextLabel?.text = nil
       cell.accessibilityIdentifier = nil
 
@@ -179,6 +192,12 @@ extension MasterViewController {
 
     case 5:
       addReminder()
+
+    case 6:
+      requestLocationServiceAlways()
+
+    case 7:
+      requestLocationServiceWhenInUse()
 
     default: break
     }
@@ -237,6 +256,14 @@ extension MasterViewController {
     let alertController: UIAlertController = .init(title: "Reminder Added", message: nil, preferredStyle: .alert)
     alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
     present(alertController, animated: true, completion: nil)
+  }
+
+  private func requestLocationServiceAlways() {
+    locationManager.requestAlwaysAuthorization()
+  }
+
+  private func requestLocationServiceWhenInUse() {
+    locationManager.requestWhenInUseAuthorization()
   }
 }
 

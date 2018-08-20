@@ -49,6 +49,7 @@
 		53CE5AE91F2A8B1000D8A656 /* ProgressViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AE71F2A8B1000D8A656 /* ProgressViewController.storyboard */; };
 		2200544118BC54F5002A6E8B /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543218BC54F5002A6E8B /* ProgressViewController.swift */; };
 		2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */; };
+		E6FAF537212A881400BF3E0F /* ReminderFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FAF536212A881400BF3E0F /* ReminderFeatures.swift */; };
 		DB91002121267D8A001CBC70 /* Robocop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB7FEB1321182566008B2082 /* Robocop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7FEB1221182566008B2082 /* Robocop.framework */; };
 		3E6AE85A196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */; };
@@ -145,6 +146,7 @@
 		2200543218BC54F5002A6E8B /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewFeatures.swift; sourceTree = "<group>"; };
 		5359C3081F194CF0007F0EC7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E6FAF536212A881400BF3E0F /* ReminderFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFeatures.swift; sourceTree = "<group>"; };
 		DB7FEB1221182566008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6AE859196B3BBC0062A3E1 /* SearchBarEmbeddedInNavigationBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarEmbeddedInNavigationBarViewController.swift; sourceTree = "<group>"; };
 		533BD7BA1F8D2B07007D5C3B /* SearchBarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarsTableViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				E676CE782123EDE200CD18F4 /* PhotoLibraryFeatures.swift */,
 				DB95405E2112BC6300157B74 /* PickerFeatures.swift */,
 				2B995AB921196C1E00830259 /* ProgressViewFeatures.swift */,
+				E6FAF536212A881400BF3E0F /* ReminderFeatures.swift */,
 				DBE070DA2113E6E300609510 /* SearchFeatures.swift */,
 				DBE070E02114194500609510 /* SegmentedControlsFeatures.swift */,
 				2B995AB5211929DE00830259 /* SlidersFeatures.swift */,
@@ -585,6 +588,7 @@
 				E676CE792123EDE200CD18F4 /* PhotoLibraryFeatures.swift in Sources */,
 				DB95405F2112BC6300157B74 /* PickerFeatures.swift in Sources */,
 				2B995ABA21196C1E00830259 /* ProgressViewFeatures.swift in Sources */,
+				E6FAF537212A881400BF3E0F /* ReminderFeatures.swift in Sources */,
 				DBE070DB2113E6E400609510 /* SearchFeatures.swift in Sources */,
 				DBE070E12114194500609510 /* SegmentedControlsFeatures.swift in Sources */,
 				2B995AB6211929DE00830259 /* SlidersFeatures.swift in Sources */,

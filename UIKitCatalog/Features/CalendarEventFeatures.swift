@@ -10,6 +10,8 @@ final class CalendarEventFeatures: XCTestCase {
   override func setUp() {
     super.setUp()
 
+    uninstallApplication(named: "UIKitCatalog")
+
     application = XCUIApplication()
     application.launch()
 

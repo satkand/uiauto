@@ -4,18 +4,16 @@ Dotenv.load '.env'
 
 default_platform :ios
 
-# If you have multiple Xcode version, you can uncomment the following line to
-# choose which version to use:
-#
-# xcversion(version: "8.3.2")
-# xcversion(version: "9.0")
-
 import_from_git(
   url: "git@bitbucket.org:outware/autobahn.git",
   branch: "master",
   path: "Fastfile",
   version: "~> 1.0"
 )
+
+before_all do
+  xcversion(version: "9.4.1")
+end
 
 platform :ios do
 

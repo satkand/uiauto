@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSContactsUsageDescription</key>
-	<string>Need contacts for your location</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Save dat event</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Take dat picture</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take dat picture</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select dat pic</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Need contacts for your location</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Save dat event</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

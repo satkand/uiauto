@@ -7,21 +7,24 @@ extension XCUIApplication {
   /// Permissions dialog types
   public enum PermissionType {
 
-    /// Camera permissions
-    case camera
-
     /// Calendar Permissions
     case calendar
 
+    /// Camera permissions
+    case camera
+
+    /// Photo library permissions
+    case photoLibrary
+
     fileprivate var allowIdentifier: String {
       switch self {
-      case .camera, .calendar: return "OK"
+      case .calendar, .camera, .photoLibrary: return "OK"
       }
     }
 
     fileprivate var denyIdentifier: String {
       switch self {
-      case .camera, .calendar: return "Don’t Allow"
+      case .calendar, .camera, .photoLibrary: return "Don’t Allow"
       }
     }
   }

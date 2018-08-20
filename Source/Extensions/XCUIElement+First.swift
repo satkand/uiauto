@@ -47,10 +47,10 @@ extension XCUIElement {
       errorMessage = "No element \(element.type) found."
     }
 
+    let exists: Bool = uiElement.waitForExistence(timeout: timeout)
+
     if failable {
-      assert(uiElement.exists, message: errorMessage, file: file, line: line)
-    } else {
-      _ = uiElement.waitForExistence(timeout: timeout)
+      assert(exists, message: errorMessage, file: file, line: line)
     }
 
     return uiElement

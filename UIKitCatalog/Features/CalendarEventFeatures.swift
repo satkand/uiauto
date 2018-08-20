@@ -13,8 +13,8 @@ final class CalendarEventFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 21, in: "catalog_table", direction: .up)
-    application.tap(element: .init(type: .cell, index: 21))
+    application.swipe(to: 22, in: "catalog_table", direction: .up)
+    application.tap(element: .init(type: .cell, index: 22))
   }
 
   override func tearDown() {
@@ -26,6 +26,6 @@ final class CalendarEventFeatures: XCTestCase {
   func testAddingCalendarReminder() {
     application.addCalendarEvent()
 
-    application.tap(element: .init(type: .alertButton, identifier: "OK"))
+    application.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: 2)
   }
 }

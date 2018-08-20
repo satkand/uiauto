@@ -17,16 +17,26 @@ extension XCUIApplication {
     to element: Element,
     in scrollableElement: Element,
     direction: Direction,
+    maxSwipeCount: UInt = 10,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    let uiElement: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
     let scrollableElement: XCUIElement = first(element: scrollableElement, timeout: timeout, file: file, line: line)
 
-    while !element.isVisible {
+    var swipeCount: UInt = 0
+    while !uiElement.isVisible && swipeCount < maxSwipeCount {
       scrollableElement.swipe(withDirection: direction)
+      swipeCount += 1
     }
+
+    assert(
+      swipeCount != maxSwipeCount,
+      message: "Unable to make element '\(element)' visible after '\(swipeCount)' attempts when scrolling '\(direction)'",
+      file: file,
+      line: line
+    )
   }
 
   /// Swipe an element towards a 'Direction'

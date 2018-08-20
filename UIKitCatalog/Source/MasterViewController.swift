@@ -147,29 +147,26 @@ extension MasterViewController {
   private func handleSelectionOfExtraFeature(at index: Int) {
     switch index {
     case 0:
-      let imagePickerController: UIImagePickerController = .init()
-      imagePickerController.sourceType = .camera
-      imagePickerController.delegate = self
-
-      present(imagePickerController, animated: true, completion: nil)
+      showImagePicker(from: .camera)
 
     case 1:
-      let imagePickerController: UIImagePickerController = .init()
-      imagePickerController.sourceType = .camera
-      imagePickerController.delegate = self
-      imagePickerController.allowsEditing = true
-
-      present(imagePickerController, animated: true, completion: nil)
+      showImagePicker(from: .camera, withConfiguration: { $0.allowsEditing = true })
 
     case 2:
-      let imagePickerController: UIImagePickerController = .init()
-      imagePickerController.sourceType = .photoLibrary
-      imagePickerController.delegate = self
-
-      present(imagePickerController, animated: true, completion: nil)
+      showImagePicker(from: .photoLibrary)
 
     default: break
     }
+  }
+
+  private func showImagePicker(from sourceType: UIImagePickerControllerSourceType, withConfiguration configure: ((UIImagePickerController) -> Void)? = nil) {
+    let imagePickerController: UIImagePickerController = .init()
+
+    imagePickerController.sourceType = sourceType
+    configure?(imagePickerController)
+    imagePickerController.delegate = self
+
+    present(imagePickerController, animated: true, completion: nil)
   }
 }
 

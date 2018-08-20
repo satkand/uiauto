@@ -9,7 +9,7 @@ extension XCUIApplication {
   /// - parameters:
   ///     - element: the struct containing details of the `XCUIElement` contained in `scrollableElement` to swipe to
   ///     - scrollableElement: the struct containing details of a scrollable `XCUIElement`
-  ///     - maxSwipeCount: the maximum of swipes before timing out. Defaults to 10 as it would otherwise indefinitely swipe.
+  ///     - maxSwipeCount: the maximum number of swipes. Defaults to 10 as it would otherwise indefinitely swipe.
   ///     - direction: the swiping direction
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
@@ -34,7 +34,7 @@ extension XCUIApplication {
 
     assert(
       swipeCount != maxSwipeCount,
-      message: "Unable to make element '\(element)' visible after '\(swipeCount)' attempts when scrolling '\(direction)'",
+      message: "Unable to make element '\(element)' visible after '\(swipeCount)' attempts while scrolling '\(direction)'",
       file: file,
       line: line
     )

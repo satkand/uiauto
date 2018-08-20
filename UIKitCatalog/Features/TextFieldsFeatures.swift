@@ -13,7 +13,7 @@ final class TextFieldsFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 14, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 14), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, index: 14))
   }
 

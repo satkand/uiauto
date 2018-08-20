@@ -13,7 +13,7 @@ final class PhotoLibraryFeatures: XCTestCase {
     uninstallApplication(named: "UIKitCatalog")
     application = XCUIApplication()
     application.launch()
-    application.swipe(to: 20, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 20), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, index: 20))
   }
 
@@ -51,7 +51,7 @@ final class PhotoLibraryEditableFeatures: XCTestCase {
     let application: XCUIApplication = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 21, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 21), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, index: 21))
 
     application.selectPhoto()

@@ -28,18 +28,6 @@ final class CatalogFeatures: XCTestCase {
     application.expect(element: .init(type: .navigationBarTitle, identifier: "UIKitCatalog"), to: .exist(true))
   }
 
-  func testTappingEachCells() {
-
-    (0 ..< 18).forEach { index in
-
-      application.swipe(to: index, in: tableIdentifier, direction: .up)
-
-      application.tap(element: .init(type: .cell, index: index))
-
-      application.navigateBack()
-    }
-  }
-
   func testScrollingToBottom() {
     application.scroll(element: tableElement, to: .bottom)
 

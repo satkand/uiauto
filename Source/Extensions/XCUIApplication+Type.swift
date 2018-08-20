@@ -65,7 +65,7 @@ extension XCUIApplication {
     element.typeText(deleteString)
   }
 
-  /// Override the text in an element with the given text.
+  /// Replace the text in an element with the given text.
   ///
   /// This function will clear the text in the element and then type the given text into it.
   ///
@@ -75,7 +75,7 @@ extension XCUIApplication {
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
-  public func overrideText(
+  public func replaceText(
     in element: Element,
     with text: String,
     timeout: TimeInterval = 0,

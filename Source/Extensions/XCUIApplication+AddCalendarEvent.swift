@@ -45,7 +45,7 @@ extension XCUIApplication {
       switch detail {
 
       case let .title(value), let .url(value), let .notes(value):
-        overrideText(in: .init(type: .textField, identifier: detail.accessibilityIdentifier), with: value, timeout: timeout, file: file, line: line)
+        replaceText(in: .init(type: .textField, identifier: detail.accessibilityIdentifier), with: value, timeout: timeout, file: file, line: line)
 
       case let .location(value):
         break

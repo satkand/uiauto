@@ -23,7 +23,7 @@ extension XCUIApplication {
 
   /// Type `text` into element with given identifier and type.
   ///
-  /// - parameters:
+  /// - Parameters:
   ///     - text: the text to input into the text entry form
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - timeout: the specified amount of time to wait for the element to exist
@@ -48,7 +48,7 @@ extension XCUIApplication {
 
   /// Clear text in text entry type with given identifier.
   ///
-  /// - parameters:
+  /// - Parameters:
   ///     - element: the struct containing details of the `XCUIElement` to find
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
@@ -63,5 +63,26 @@ extension XCUIApplication {
 
     element.tap()
     element.typeText(deleteString)
+  }
+
+  /// Override the text in an element with the given text.
+  ///
+  /// This function will clear the text in the element and then type the given text into it.
+  ///
+  /// - Parameters:
+  ///     - element: the struct containing details of the `XCUIElement` to find
+  ///     - text: the text to input into the text entry form
+  ///     - timeout: the specified amount of time to wait for the element to exist
+  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
+  public func overrideText(
+    in element: Element,
+    with text: String,
+    timeout: TimeInterval = 0,
+    file: StaticString = #file,
+    line: UInt = #line
+  ) {
+    clearText(in: element, timeout: timeout, file: file, line: line)
+    type(text: text, into: element, timeout: timeout, file: file, line: line)
   }
 }

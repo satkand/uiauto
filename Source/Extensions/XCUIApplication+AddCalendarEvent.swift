@@ -36,7 +36,7 @@ extension XCUIApplication {
     }
   }
 
-  public func addCalendarEvent(withDetails eventDetails: [EventDetail] = [], timeout: TimeInterval = 0, file: StaticString = #file, line: UInt = #line) {
+  public func addCalendarEvent(withDetails eventDetails: [EventDetail] = [], timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
 
     acceptPermissionIfRequired(for: .calendar, timeout: timeout, file: file, line: line)
 
@@ -61,6 +61,6 @@ extension XCUIApplication {
       }
     }
 
-    tap(element: .init(type: .navigationBarButton, identifier: "Add"))
+    tap(element: .init(type: .navigationBarButton, identifier: "Add"), timeout: timeout, file: file, line: line)
   }
 }

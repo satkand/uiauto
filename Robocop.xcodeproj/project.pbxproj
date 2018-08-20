@@ -13,6 +13,7 @@
 		E676CE3A21227D1B00CD18F4 /* NormalizedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE3921227D1B00CD18F4 /* NormalizedPosition.swift */; };
 		DB7FEAE62118175A008B2082 /* Robocop.h in Headers */ = {isa = PBXBuildFile; fileRef = DB7FEAE42118175A008B2082 /* Robocop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB11BEE62123B6350060B1EC /* XCTestCase+UninstallApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */; };
+		DB40B96D212A45B200F3D11C /* XCUIApplication+AddCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40B96C212A45B200F3D11C /* XCUIApplication+AddCalendarEvent.swift */; };
 		DB93BAD221254CDE00E608D6 /* XCUIApplication+CopyPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93BAD121254CDE00E608D6 /* XCUIApplication+CopyPaste.swift */; };
 		E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */; };
 		DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */; };
@@ -44,6 +45,7 @@
 		DB7FEAE221181759008B2082 /* Robocop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Robocop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7FEAE42118175A008B2082 /* Robocop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Robocop.h; sourceTree = "<group>"; };
 		DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+UninstallApplication.swift"; sourceTree = "<group>"; };
+		DB40B96C212A45B200F3D11C /* XCUIApplication+AddCalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+AddCalendarEvent.swift"; sourceTree = "<group>"; };
 		DB93BAD121254CDE00E608D6 /* XCUIApplication+CopyPaste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+CopyPaste.swift"; sourceTree = "<group>"; };
 		E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Drag.swift"; sourceTree = "<group>"; };
 		DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Expect.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				DB11BEE52123B6340060B1EC /* XCTestCase+UninstallApplication.swift */,
+				DB40B96C212A45B200F3D11C /* XCUIApplication+AddCalendarEvent.swift */,
 				DB93BAD121254CDE00E608D6 /* XCUIApplication+CopyPaste.swift */,
 				E676CE37212278D500CD18F4 /* XCUIApplication+Drag.swift */,
 				DB7FEAF6211817A8008B2082 /* XCUIApplication+Expect.swift */,
@@ -248,6 +251,7 @@
 				DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */,
 				E676CE3A21227D1B00CD18F4 /* NormalizedPosition.swift in Sources */,
 				DB11BEE62123B6350060B1EC /* XCTestCase+UninstallApplication.swift in Sources */,
+				DB40B96D212A45B200F3D11C /* XCUIApplication+AddCalendarEvent.swift in Sources */,
 				DB93BAD221254CDE00E608D6 /* XCUIApplication+CopyPaste.swift in Sources */,
 				E676CE38212278D500CD18F4 /* XCUIApplication+Drag.swift in Sources */,
 				DB7FEB04211817A8008B2082 /* XCUIApplication+Expect.swift in Sources */,

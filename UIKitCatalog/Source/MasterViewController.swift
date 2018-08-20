@@ -6,6 +6,7 @@
  The primary table view controller displaying all the UIKit examples.
  */
 
+import EventKitUI
 import UIKit
 
 final class MasterViewController: BaseTableViewController {
@@ -73,7 +74,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 4
+    return section == 0 ? exampleList.count : 5
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,6 +115,11 @@ extension MasterViewController {
       cell.textLabel?.text = "Photo Library - Edit Photo"
       cell.detailTextLabel?.text = "Pick photos from the library and edit them."
       cell.accessibilityIdentifier = "photo_library_edit_cell"
+
+    case 4:
+      cell.textLabel?.text = "Add Calendar Event"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
 
     default: break
     }
@@ -163,6 +169,9 @@ extension MasterViewController {
     case 3:
       showImagePicker(from: .photoLibrary, withConfiguration: { $0.allowsEditing = true })
 
+    case 4:
+      addCalendarEvent()
+
     default: break
     }
   }
@@ -176,6 +185,27 @@ extension MasterViewController {
 
     present(imagePickerController, animated: true, completion: nil)
   }
+
+  private func addCalendarEvent(type: EKEntityType = .event) {
+    let eventStore: EKEventStore = EKEventStore()
+
+    eventStore.requestAccess(to: .event) { granted, _ in
+      guard granted else { return }
+
+      let eventEditViewController: EKEventEditViewController = .init()
+      eventEditViewController.editViewDelegate = self
+
+      let event: EKEvent = EKEvent(eventStore: eventStore)
+      event.title = "Welcome Party"
+      event.startDate = Date()
+      event.endDate = event.startDate.addingTimeInterval(2 * 60 * 60)
+
+      eventEditViewController.event = event
+      eventEditViewController.eventStore = eventStore
+
+      self.present(eventEditViewController, animated: true, completion: nil)
+    }
+  }
 }
 
 extension MasterViewController: UIImagePickerControllerDelegate {
@@ -183,5 +213,29 @@ extension MasterViewController: UIImagePickerControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
     picker.dismiss(animated: true, completion: nil)
     print(info)
+  }
+}
+
+extension MasterViewController: EKEventEditViewDelegate {
+
+  func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+    controller.dismiss(animated: true, completion: nil)
+
+    let alertController: UIAlertController = .init(title: nil, message: nil, preferredStyle: .alert)
+    alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+
+    switch action {
+    case .canceled: alertController.title = "Event Canceled"
+    case .deleted: alertController.title = "Event Deleted"
+    case .saved: alertController.title = "Event Saved"
+    }
+
+    present(alertController, animated: true, completion: nil)
+  }
+
+  func eventEditViewControllerDefaultCalendar(forNewEvents controller: EKEventEditViewController) -> EKCalendar {
+    controller.title = "Add Event"
+
+    return controller.eventStore.defaultCalendarForNewEvents!
   }
 }

@@ -19,6 +19,7 @@
 		DB8F273121112C3B008BDCE7 /* ButtonsFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */; };
 		53CE5AD81F2A89E500D8A656 /* ButtonViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AD61F2A89E500D8A656 /* ButtonViewController.storyboard */; };
 		2200542718BC54EC002A6E8B /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200542118BC54EC002A6E8B /* ButtonViewController.swift */; };
+		DB40B96B212A427300F3D11C /* CalendarEventFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40B96A212A427300F3D11C /* CalendarEventFeatures.swift */; };
 		DBE64094212684CB007C2277 /* CameraFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE64093212684CB007C2277 /* CameraFeatures.swift */; };
 		DB8EF6F0210AE2CB0091E5C8 /* CatalogFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */; };
 		53B791DA1F85505400AB2FA6 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = 53B791D41F854B4700AB2FA6 /* content.html */; };
@@ -120,6 +121,7 @@
 		533BD7961F8BF8B0007D5C3B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsFeatures.swift; sourceTree = "<group>"; };
 		2200542118BC54EC002A6E8B /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		DB40B96A212A427300F3D11C /* CalendarEventFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventFeatures.swift; sourceTree = "<group>"; };
 		DBE64093212684CB007C2277 /* CameraFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeatures.swift; sourceTree = "<group>"; };
 		DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFeatures.swift; sourceTree = "<group>"; };
 		2200542218BC54EC002A6E8B /* CustomSearchBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomSearchBarViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				DBB7D85E210EDC2A009931A6 /* ActivityIndicatorFeatures.swift */,
 				DBD78826210FE96900CCEB39 /* AlertControllerFeatures.swift */,
 				DB8F273021112C3B008BDCE7 /* ButtonsFeatures.swift */,
+				DB40B96A212A427300F3D11C /* CalendarEventFeatures.swift */,
 				DBE64093212684CB007C2277 /* CameraFeatures.swift */,
 				DB8EF6EF210AE2CB0091E5C8 /* CatalogFeatures.swift */,
 				DB8F273221113FCB008BDCE7 /* DatePickerFeatures.swift */,
@@ -573,6 +576,7 @@
 				DBB7D85F210EDC2A009931A6 /* ActivityIndicatorFeatures.swift in Sources */,
 				DBD78827210FE96900CCEB39 /* AlertControllerFeatures.swift in Sources */,
 				DB8F273121112C3B008BDCE7 /* ButtonsFeatures.swift in Sources */,
+				DB40B96B212A427300F3D11C /* CalendarEventFeatures.swift in Sources */,
 				DBE64094212684CB007C2277 /* CameraFeatures.swift in Sources */,
 				DB8EF6F0210AE2CB0091E5C8 /* CatalogFeatures.swift in Sources */,
 				DB8F273321113FCB008BDCE7 /* DatePickerFeatures.swift in Sources */,

@@ -49,7 +49,8 @@ public enum PermissionType {
 
   fileprivate var allowIdentifier: String {
     switch self {
-    case .calendar, .camera, .locationServiceWhenInUse, .photoLibrary, .reminders: return "OK"
+    case .calendar, .camera, .photoLibrary, .reminders: return "OK"
+    case .locationServiceWhenInUse: return "Allow"
     case let .locationServiceAlwaysAndWhenInUse(button): return button.allowIdentifier
     }
   }

@@ -41,7 +41,7 @@ final class LocationServiceFeatures: XCTestCase {
 
   func testAcceptingPermissionForLocationWhenInUse() {
     application.tap(element: .init(type: .cell, index: 25))
-    application.denyPermissionIfRequired(for: .locationServiceWhenInUse)
+    application.acceptPermissionIfRequired(for: .locationServiceWhenInUse)
   }
 
   func testDenyingPermissionForLocationAlways() {

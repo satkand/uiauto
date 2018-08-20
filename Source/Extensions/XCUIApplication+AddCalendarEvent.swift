@@ -17,7 +17,7 @@ extension XCUIApplication {
     tap(element: .init(type: .navigationBarButton, identifier: "Add"), timeout: timeout, file: file, line: line)
   }
 
-  /// Closes the event editting screen without adding the event.
+  /// Closes the event editing screen without adding the event.
   ///
   /// If the *calendar permission* alert dialog is displayed, the request will be **automatically** accepted.
   ///

@@ -13,7 +13,7 @@ final class ToolbarsFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 16, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 16), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, index: 16))
   }
 

@@ -16,7 +16,7 @@ import XCTest
       application = XCUIApplication()
       application.launch()
 
-      application.swipe(to: 18, in: "catalog_table", direction: .up)
+      application.swipe(to: .init(type: .cell, index: 18), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
       application.tap(element: .init(type: .cell, index: 18))
     }
 
@@ -54,7 +54,7 @@ import XCTest
       let application: XCUIApplication = XCUIApplication()
       application.launch()
 
-      application.swipe(to: 19, in: "catalog_table", direction: .up)
+      application.swipe(to: .init(type: .cell, index: 19), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
       application.tap(element: .init(type: .cell, index: 19))
 
       application.takePhoto()

@@ -13,7 +13,7 @@ final class StepperFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 12, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 12), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, identifier: "cell_steppers"))
   }
 

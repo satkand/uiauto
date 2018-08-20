@@ -252,17 +252,8 @@ extension MasterViewController: EKEventEditViewDelegate {
 
   func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
     controller.dismiss(animated: true, completion: nil)
-
-    let alertController: UIAlertController = .init(title: nil, message: nil, preferredStyle: .alert)
-    alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
-
-    switch action {
-    case .canceled: alertController.title = "Event Canceled"
-    case .deleted: alertController.title = "Event Deleted"
-    case .saved: alertController.title = "Event Saved"
-    }
-
-    present(alertController, animated: true, completion: nil)
+    print(action.rawValue)
+    print(String(describing: controller.event))
   }
 
   func eventEditViewControllerDefaultCalendar(forNewEvents controller: EKEventEditViewController) -> EKCalendar {

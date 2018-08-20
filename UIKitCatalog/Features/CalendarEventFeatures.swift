@@ -15,7 +15,7 @@ final class CalendarEventFeatures: XCTestCase {
     application = XCUIApplication()
     application.launch()
 
-    application.swipe(to: 22, in: "catalog_table", direction: .up)
+    application.swipe(to: .init(type: .cell, index: 22), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
     application.tap(element: .init(type: .cell, index: 22))
   }
 
@@ -27,7 +27,9 @@ final class CalendarEventFeatures: XCTestCase {
 
   func testAddingCalendarEvent() {
     application.addCalendarEvent()
+  }
 
-    application.tap(element: .init(type: .alertButton, identifier: "OK"), timeout: 2)
+  func testCancellingAddingCalendarEvent() {
+    application.cancelAddingCalendarEvent()
   }
 }

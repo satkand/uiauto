@@ -3,7 +3,7 @@
 @Library("jenkins-pipeline-shared-library")_
 
 standardiOSPipeline {
-  SDK = '9.4'
+  SDK = '9.4.1'
   reportsConfig = [
     classCoverageTargets: '0, 0, 0',
     conditionalCoverageTargets: '0, 0, 0',

@@ -21,7 +21,7 @@ extension XCUIApplication {
     tap(element: .init(type: .button, identifier: "PhotoCapture"), timeout: 5, file: file, line: line)
 
     let usePhotoElement: Element = .init(type: .button, identifier: "Use Photo")
-    let usePhotoUIElement: XCUIElement = first(element: usePhotoElement, failable: false, timeout: 5, file: file, line: line)
+    let usePhotoUIElement: XCUIElement = first(element: usePhotoElement, failable: false, timeout: 2, file: file, line: line)
 
     guard usePhotoUIElement.exists else { return }
 

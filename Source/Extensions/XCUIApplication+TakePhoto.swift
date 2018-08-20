@@ -4,7 +4,11 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// Accept camera permission if required and take a photo on the Camera screen
+  /// Take a photo using the camera application.
+  ///
+  /// If the *camera permission* alert dialog is displayed, the permission request will **automatically** be accepted.
+  ///
+  /// This function will also cater for the case where the *editable mode* is enabled.
   ///
   /// - Parameters:
   ///   - timeout: the specified amount of time to wait for the element to exist

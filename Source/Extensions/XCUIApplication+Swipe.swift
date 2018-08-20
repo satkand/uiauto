@@ -31,6 +31,31 @@ extension XCUIApplication {
     }
   }
 
+  /// Swipe towards element in a scrollable element
+  ///
+  /// - parameters:
+  ///     - element: the struct containing details of the `XCUIElement` contained in `scrollableElement` to swipe to
+  ///     - scrollableElement: the struct containing details of a scrollable `XCUIElement`
+  ///     - direction: the swiping direction
+  ///     - timeout: the specified amount of time to wait for the element to exist
+  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
+  public func swipe(
+    to element: Element,
+    in scrollableElement: Element,
+    direction: Direction,
+    timeout: TimeInterval = 0,
+    file: StaticString = #file,
+    line: UInt = #line
+  ) {
+    let element: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
+    let scrollableElement: XCUIElement = first(element: scrollableElement, timeout: timeout, file: file, line: line)
+
+    while !element.isVisible {
+      scrollableElement.swipe(withDirection: direction)
+    }
+  }
+
   /// Swipe an element towards a 'Direction'
   ///
   /// - parameters:

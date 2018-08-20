@@ -2,8 +2,7 @@
 
 import XCTest
 
-// CI is not on Xcode 9.4 at time of writing which means we cannot use `targetEnvironment` yet
-#if !((arch(i386) || arch(x86_64)) && os(iOS))
+#if !(targetEnvironment(simulator))
 
   final class CameraFeatures: XCTestCase {
 

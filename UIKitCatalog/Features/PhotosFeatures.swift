@@ -7,21 +7,14 @@ final class PhotosFeatures: XCTestCase {
 
   private var application: XCUIApplication!
 
-  // MARK: - Elements
-
-  private var showPhotosOption: Element { return .init(type: .label, identifier: "Photos") }
-  private var permissionDeniedErrorAlert: Element { return .init(type: .label, identifier: "WOOP!") }
-  private var permissionDeniedAlertSettingsAction: Element { return .init(type: .alertButton, identifier: "Settings") }
-  private var permissionDeniedAlertCancelAction: Element { return .init(type: .alertButton, identifier: "Cancel") }
-
   override func setUp() {
     super.setUp()
 
     uninstallApplication(named: "UIKitCatalog")
     application = XCUIApplication()
     application.launch()
-    showOpenPhotosOption()
-    openPhotos()
+    application.swipe(to: 20, in: "catalog_table", direction: .up)
+    application.tap(element: .init(type: .cell, index: 20))
   }
 
   override func tearDown() {
@@ -31,69 +24,21 @@ final class PhotosFeatures: XCTestCase {
     super.tearDown()
   }
 
-  func testDenyingLibraryPermissionShowsErrorAlert() {
+  func testDenyingPermission() {
     application.denyPermissionIfRequired(for: .photos)
-
-    application.expect(element: showPhotosOption, to: .exist(true))
-    application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
   }
 
-  func testOpeningPhotosWhenAccessIsDeniedThenShowsErrorAlert() {
-    application.denyPermissionIfRequired(for: .photos)
-    application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
-    application.tap(element: permissionDeniedAlertCancelAction)
-
-    openPhotos()
-
-    application.expect(element: showPhotosOption, to: .exist(true))
-    application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
-  }
-
-  func testShowingApplicationSettingsViaAccessDeniedErrorAlert() {
-    application.denyPermissionIfRequired(for: .photos)
-    application.expect(element: permissionDeniedErrorAlert, to: .exist(true))
-
-    application.tap(element: permissionDeniedAlertSettingsAction)
-
-    application.verifyPhotosPermissionDeniedInSettings()
-  }
-
-  func testAllowingLibraryAccessShowsPhotos() {
-    application.acceptPermissionIfRequired(for: .photos)
-
-    application.verifyIsShowingPhotos()
-  }
-
-  func testSelectingPhotoDismissesGallery() {
-    application.acceptPermissionIfRequired(for: .photos)
-
+  func testAcceptingPermissionAndSelectingAPhoto() {
     application.selectPhoto()
-
-    application.expect(element: showPhotosOption, to: .exist(true), timeout: 1)
   }
 
-  func testShowingPhotosWhenPermissionIsGrantedThenProcceedsToPhotos() {
-    application.acceptPermissionIfRequired(for: .photos)
+  func testCancellingSelectingAPhoto() {
     application.cancelSelectingPhoto()
-
-    openPhotos()
-
-    application.verifyIsShowingPhotos()
   }
 
-  func testSelectingPhotoWhenPermissionHasNotBeenAskedThenContinuesByGrantingAccess() {
-    application.selectPhoto()
-
-    application.expect(element: showPhotosOption, to: .exist(true), timeout: 1)
-  }
-
-  // MARK: - Helper Methods
-
-  private func showOpenPhotosOption() {
-    application.swipe(to: 20, in: "catalog_table", direction: .up)
-  }
-
-  private func openPhotos() {
-    application.tap(element: .init(type: .cell, index: 20))
+  func testAcceptingOrDenyingPermissionMultipleTimes() {
+    application.acceptPermissionIfRequired(for: .photos)
+    application.denyPermissionIfRequired(for: .photos)
+    application.acceptPermissionIfRequired(for: .photos)
   }
 }

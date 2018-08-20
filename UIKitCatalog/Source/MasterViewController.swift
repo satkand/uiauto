@@ -37,8 +37,6 @@ final class MasterViewController: BaseTableViewController {
     Example(title: "Web View", subTitle: "WebViewController", twoLevel: false),
   ]
 
-  private lazy var photoPicker: PhotoPicker = .init()
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -164,7 +162,11 @@ extension MasterViewController {
       present(imagePickerController, animated: true, completion: nil)
 
     case 2:
-      photoPicker.showPhotos(from: self)
+      let imagePickerController: UIImagePickerController = .init()
+      imagePickerController.sourceType = .photoLibrary
+      imagePickerController.delegate = self
+
+      present(imagePickerController, animated: true, completion: nil)
 
     default: break
     }

@@ -4,31 +4,6 @@ import XCTest
 
 extension XCUIApplication {
 
-  // MARK: - Verifiers
-
-  /// Verifies that the photo gallery is being displayed.
-  ///
-  /// - Parameters:
-  ///   - timeout: the specified amount of time to wait for elements to exist
-  ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
-  ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  public func verifyIsShowingPhotos(timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
-    XCTAssertTrue(query(for: .cell)["Moments"].waitForExistence(timeout: timeout), "Did not show Photo Gallery.", file: file, line: line)
-  }
-
-  /// Verifies that access Photos is denied by checking the permission in application's settings.
-  ///
-  /// - Parameters:
-  ///   - timeout: the specified amount of time to wait for elements to exist
-  ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
-  ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
-  public func verifyPhotosPermissionDeniedInSettings(timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
-    let settingsApplication: XCUIApplication = .init(bundleIdentifier: "com.apple.Preferences")
-    settingsApplication.expect(element: .init(type: .cell, identifier: "Photos"), to: .haveText("Never"), timeout: timeout, file: file, line: line)
-  }
-
-  // MARK: - Actions
-
   /// Selects a photo from the library. By default, it will select the first photo in the "Camera Roll" album. If the permission has not been handled yet,
   /// it will grant the access and continue selecting the photo.
   ///
@@ -39,7 +14,6 @@ extension XCUIApplication {
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func selectPhoto(fromAlbum album: String = "Camera Roll", atIndex photoIndex: Int = 0, timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
-
     acceptPermissionIfRequired(for: .photos)
 
     // There seems to be an Apple bug where using `.firstMatch` makes the process crash. Therefore, since we cannot use `first` and other Robocop actions
@@ -66,6 +40,7 @@ extension XCUIApplication {
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func cancelSelectingPhoto(timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
+    acceptPermissionIfRequired(for: .photos)
     tap(element: .init(type: .button, identifier: "Cancel"), timeout: timeout, file: file, line: line)
   }
 }

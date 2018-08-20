@@ -30,6 +30,6 @@ final class CalendarEventFeatures: XCTestCase {
   }
 
   func testCancellingAddingCalendarEvent() {
-    application.cancelAddingEvent()
+    application.cancelAddingCalendarEvent()
   }
 }

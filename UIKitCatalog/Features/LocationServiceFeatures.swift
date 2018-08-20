@@ -3,7 +3,6 @@
 import Robocop
 import XCTest
 
-/// This
 final class LocationServiceFeatures: XCTestCase {
 
   private var application: XCUIApplication!

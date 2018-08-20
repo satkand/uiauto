@@ -3,7 +3,7 @@
 import Robocop
 import XCTest
 
-final class PhotosFeatures: XCTestCase {
+final class PhotoLibraryFeatures: XCTestCase {
 
   private var application: XCUIApplication!
 
@@ -25,7 +25,7 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testDenyingPermission() {
-    application.denyPermissionIfRequired(for: .photos)
+    application.denyPermissionIfRequired(for: .photoLibrary)
   }
 
   func testAcceptingPermissionAndSelectingAPhoto() {
@@ -37,13 +37,13 @@ final class PhotosFeatures: XCTestCase {
   }
 
   func testAcceptingOrDenyingPermissionMultipleTimes() {
-    application.acceptPermissionIfRequired(for: .photos)
-    application.denyPermissionIfRequired(for: .photos)
-    application.acceptPermissionIfRequired(for: .photos)
+    application.acceptPermissionIfRequired(for: .photoLibrary)
+    application.denyPermissionIfRequired(for: .photoLibrary)
+    application.acceptPermissionIfRequired(for: .photoLibrary)
   }
 }
 
-final class PhotosEditableFeatures: XCTestCase {
+final class PhotoLibraryEditableFeatures: XCTestCase {
 
   func testEditingTheSelectedPhoto() {
     uninstallApplication(named: "UIKitCatalog")

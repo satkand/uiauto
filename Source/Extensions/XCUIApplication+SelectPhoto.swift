@@ -15,7 +15,7 @@ extension XCUIApplication {
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func selectPhoto(timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
-    acceptPermissionIfRequired(for: .photos, timeout: timeout, file: file, line: line)
+    acceptPermissionIfRequired(for: .photoLibrary, timeout: timeout, file: file, line: line)
 
     // There seems to be an Apple bug where using `.firstMatch` makes the process crash. Therefore, since we cannot use `first` and other Robocop actions
     // which make use of `.firstMatch`, we have to query for the element ourselves.
@@ -40,7 +40,7 @@ extension XCUIApplication {
     choosePhoto.tap()
   }
 
-  /// Closes the photo gallery without selecting any photo.
+  /// Closes the photo library without selecting any photo.
   ///
   /// If the *photo library permission* alert dialog is displayed, the request will be **automatically** accepted.
   ///
@@ -49,7 +49,7 @@ extension XCUIApplication {
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
   ///   - line: the line number on which failure occurred. Defaults to the line number on which this function was called
   public func cancelSelectingPhoto(timeout: TimeInterval = 2, file: StaticString = #file, line: UInt = #line) {
-    acceptPermissionIfRequired(for: .photos, timeout: timeout, file: file, line: line)
+    acceptPermissionIfRequired(for: .photoLibrary, timeout: timeout, file: file, line: line)
     tap(element: .init(type: .button, identifier: "Cancel"), timeout: timeout, file: file, line: line)
   }
 }

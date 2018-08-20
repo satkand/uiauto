@@ -106,14 +106,14 @@ extension MasterViewController {
       cell.accessibilityIdentifier = nil
 
     case 2:
-      cell.textLabel?.text = "Photos"
+      cell.textLabel?.text = "Photo Library"
       cell.detailTextLabel?.text = "Pick photos from the library."
-      cell.accessibilityIdentifier = "photos_cell"
+      cell.accessibilityIdentifier = "photo_library_cell"
 
     case 3:
-      cell.textLabel?.text = "Photos - Edit Photo"
+      cell.textLabel?.text = "Photo Library - Edit Photo"
       cell.detailTextLabel?.text = "Pick photos from the library and edit them."
-      cell.accessibilityIdentifier = "photos_edit_cell"
+      cell.accessibilityIdentifier = "photo_library_edit_cell"
 
     default: break
     }

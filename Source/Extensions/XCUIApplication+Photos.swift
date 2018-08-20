@@ -20,15 +20,13 @@ extension XCUIApplication {
     // which make use `.firstMatch`, we have to query for the element ourselves.
     let album: XCUIElement = query(for: .cell)[album]
 
-    let albumExists: Bool = album.waitForExistence(timeout: timeout)
-    assert(albumExists, message: "No element \(ElementType.cell) with identifier '\(album)' found.", file: file, line: line)
+    assert(album.waitForExistence(timeout: timeout), message: "No element \(ElementType.cell) with identifier '\(album)' found.", file: file, line: line)
 
     album.tap()
 
     let photo: XCUIElement = query(for: .cell).element(boundBy: photoIndex)
-    let photoExists: Bool = photo.waitForExistence(timeout: timeout)
 
-    assert(photoExists, message: "No element \(ElementType.cell) at index '\(photoIndex)' found.", file: file, line: line)
+    assert(photo.waitForExistence(timeout: timeout), message: "No element \(ElementType.cell) at index '\(photoIndex)' found.", file: file, line: line)
 
     photo.tap()
   }

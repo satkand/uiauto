@@ -74,7 +74,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 5
+    return section == 0 ? exampleList.count : 6
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,6 +118,11 @@ extension MasterViewController {
 
     case 4:
       cell.textLabel?.text = "Add Calendar Event"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
+    case 5:
+      cell.textLabel?.text = "Add Reminder"
       cell.detailTextLabel?.text = nil
       cell.accessibilityIdentifier = nil
 
@@ -172,6 +177,9 @@ extension MasterViewController {
     case 4:
       addCalendarEvent()
 
+    case 5:
+      addReminder()
+
     default: break
     }
   }
@@ -186,12 +194,8 @@ extension MasterViewController {
     present(imagePickerController, animated: true, completion: nil)
   }
 
-  private func addCalendarEvent(type: EKEntityType = .event) {
-    let eventStore: EKEventStore = EKEventStore()
-
-    eventStore.requestAccess(to: .event) { granted, _ in
-      guard granted else { return }
-
+  private func addCalendarEvent() {
+    updateEventStore(forEventOfType: .event) { eventStore in
       let eventEditViewController: EKEventEditViewController = .init()
       eventEditViewController.editViewDelegate = self
 
@@ -205,6 +209,34 @@ extension MasterViewController {
 
       self.present(eventEditViewController, animated: true, completion: nil)
     }
+  }
+
+  private func addReminder() {
+    updateEventStore(forEventOfType: .reminder) { eventStore in
+      let reminder: EKReminder = EKReminder(eventStore: eventStore)
+      reminder.title = "Pick up kids"
+      reminder.calendar = eventStore.defaultCalendarForNewReminders()
+
+      try? eventStore.save(reminder, commit: true)
+
+      self.alertAddReminderSuccess()
+    }
+  }
+
+  private func updateEventStore(forEventOfType eventType: EKEntityType, update: @escaping (EKEventStore) -> Void) {
+    let eventStore: EKEventStore = .init()
+
+    eventStore.requestAccess(to: eventType) { granted, _ in
+      guard granted else { return }
+
+      update(eventStore)
+    }
+  }
+
+  private func alertAddReminderSuccess() {
+    let alertController: UIAlertController = .init(title: "Reminder Added", message: nil, preferredStyle: .alert)
+    alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+    present(alertController, animated: true, completion: nil)
   }
 }
 

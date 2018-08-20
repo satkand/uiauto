@@ -8,6 +8,8 @@ extension XCUIApplication {
   ///
   /// If the *photo library permission* alert dialog is displayed, the request will be **automatically** accepted.
   ///
+  /// This function will also cater for the case where the *editable mode* is enabled.
+  ///
   /// - Parameters:
   ///   - timeout: the specified amount of time to wait for elements to exist
   ///   - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called
@@ -30,6 +32,12 @@ extension XCUIApplication {
     assert(photo.waitForExistence(timeout: timeout), message: "No element \(ElementType.cell) at index '\(photoIndex)' found.", file: file, line: line)
 
     photo.tap()
+
+    let choosePhoto: XCUIElement = query(for: .button)["Choose"]
+
+    guard choosePhoto.waitForExistence(timeout: 2) else { return }
+
+    choosePhoto.tap()
   }
 
   /// Closes the photo gallery without selecting any photo.

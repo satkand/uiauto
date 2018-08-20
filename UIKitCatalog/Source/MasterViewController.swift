@@ -73,7 +73,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 3
+    return section == 0 ? exampleList.count : 4
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +109,11 @@ extension MasterViewController {
       cell.textLabel?.text = "Photos"
       cell.detailTextLabel?.text = "Pick photos from the library."
       cell.accessibilityIdentifier = "photos_cell"
+
+    case 3:
+      cell.textLabel?.text = "Photos - Edit Photo"
+      cell.detailTextLabel?.text = "Pick photos from the library and edit them."
+      cell.accessibilityIdentifier = "photos_edit_cell"
 
     default: break
     }
@@ -154,6 +159,9 @@ extension MasterViewController {
 
     case 2:
       showImagePicker(from: .photoLibrary)
+
+    case 3:
+      showImagePicker(from: .photoLibrary, withConfiguration: { $0.allowsEditing = true })
 
     default: break
     }

@@ -42,3 +42,18 @@ final class PhotosFeatures: XCTestCase {
     application.acceptPermissionIfRequired(for: .photos)
   }
 }
+
+final class PhotosEditableFeatures: XCTestCase {
+
+  func testEditingTheSelectedPhoto() {
+    uninstallApplication(named: "UIKitCatalog")
+
+    let application: XCUIApplication = XCUIApplication()
+    application.launch()
+
+    application.swipe(to: 21, in: "catalog_table", direction: .up)
+    application.tap(element: .init(type: .cell, index: 21))
+
+    application.selectPhoto()
+  }
+}

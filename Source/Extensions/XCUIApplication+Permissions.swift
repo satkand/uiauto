@@ -10,15 +10,18 @@ extension XCUIApplication {
     /// Camera permissions
     case camera
 
+    /// Photo library permissions
+    case photoLibrary
+
     fileprivate var allowIdentifier: String {
       switch self {
-      case .camera: return "OK"
+      case .camera, .photoLibrary: return "OK"
       }
     }
 
     fileprivate var denyIdentifier: String {
       switch self {
-      case .camera: return "Don’t Allow"
+      case .camera, .photoLibrary: return "Don’t Allow"
       }
     }
   }

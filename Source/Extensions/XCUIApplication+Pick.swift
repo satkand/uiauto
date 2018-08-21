@@ -4,85 +4,43 @@ import XCTest
 
 extension XCUIApplication {
 
-  /// The two 12-hour time periods
-  public enum TimePeriod {
-
-    // Ante meridiem period, aka. before noon
-    case beforeNoon
-
-    // Post meridiem period, aka. after noon
-    case afterNoon
-
-    fileprivate var abbreviation: String {
-      switch self {
-      case .beforeNoon: return "AM"
-      case .afterNoon: return "PM"
-      }
-    }
-  }
-
-  /// Select wheel value in picker from given column
+  /// Select wheel value in an element
   ///
   /// - parameters:
   ///     - wheelValue: the value to be set on the wheel
-  ///     - column: the wheel column
-  ///     - identifier: the identifier of the picker element
+  ///     - element: the element to apply the drag gesture to
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func pick(
     _ wheelValue: String,
-    fromColumn column: Int,
-    inPicker identifier: String,
+    in element: Element,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: XCUIElement = first(element: .init(type: .picker, identifier: identifier), timeout: timeout, file: file, line: line)
-      .first(element: .init(type: .pickerWheel, index: column), timeout: timeout, file: file, line: line)
-
-    guard element.exists else { return }
-
-    element.adjust(toPickerWheelValue: wheelValue)
+    first(element: element, timeout: timeout, file: file, line: line).adjust(toPickerWheelValue: wheelValue)
   }
 
-  /// Select date and time in date picker
+  /// Select wheel value in an element
   ///
   /// - parameters:
-  ///     - date: the date are expected to be in this format "MMM d"
-  ///     - hour: the hour of the day
-  ///     - time: the time of the day
-  ///     - timePeriod: the meridiem period (AM/PM)
-  ///     - datePickerIdentifier: the identifier of the date picker
+  ///     - wheelValue: the value to be set on the wheel
+  ///     - wheelIndex: the wheel index to adjust the value in
+  ///     - element: the element to apply the drag gesture to
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func pick(
-    date: String,
-    hour: String,
-    minute: String,
-    timePeriod: TimePeriod,
-    inDatePicker datePickerIdentifier: String,
+    _ wheelValue: String,
+    inWheelIndex wheelIndex: Int,
+    inElement element: Element,
     timeout: TimeInterval = 0,
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let element: Element = .init(type: .datePicker, identifier: datePickerIdentifier)
-    let datePicker: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
-    let pickerWheelsCount: Int = datePicker.pickerWheels.count
-
-    guard datePicker.exists else { return }
-
-    assert(
-      pickerWheelsCount == 4,
-      message: "Expected `DatePicker` to have 4 picker wheels, found \(pickerWheelsCount)",
-      file: file,
-      line: line
-    )
-
-    datePicker.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: date)
-    datePicker.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: hour)
-    datePicker.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: minute)
-    datePicker.pickerWheels.element(boundBy: 3).adjust(toPickerWheelValue: timePeriod.abbreviation)
+    first(element: element, timeout: timeout, file: file, line: line)
+      .first(element: .init(type: .pickerWheel, index: wheelIndex), timeout: timeout, file: file, line: line)
+      .adjust(toPickerWheelValue: wheelValue)
   }
 }

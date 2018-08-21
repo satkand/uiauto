@@ -52,7 +52,7 @@ class DatePickerController: UIViewController {
     let sevenDaysFromNow = Calendar.current.date(byAdding: .day, value: 7, to: now)
     datePicker.maximumDate = sevenDaysFromNow
 
-    datePicker.minuteInterval = 2
+    datePicker.minuteInterval = 1
 
     datePicker.addTarget(self, action: #selector(DatePickerController.updateDatePickerLabel), for: .valueChanged)
 

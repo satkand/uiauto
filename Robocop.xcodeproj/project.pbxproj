@@ -21,6 +21,7 @@
 		DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */; };
 		DBE6409621268C11007C2277 /* XCUIApplication+Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */; };
 		DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */; };
+		DBD1B328212CD11F0006D346 /* XCUIApplication+Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1B327212CD11F0006D346 /* XCUIApplication+Press.swift */; };
 		DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */; };
 		E676CE762122932400CD18F4 /* XCUIApplication+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */; };
 		DB7FEAFD211817A8008B2082 /* XCUIApplication+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEF211817A8008B2082 /* XCUIApplication+Search.swift */; };
@@ -54,6 +55,7 @@
 		DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Navigate.swift"; sourceTree = "<group>"; };
 		DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Permissions.swift"; sourceTree = "<group>"; };
 		DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Pick.swift"; sourceTree = "<group>"; };
+		DBD1B327212CD11F0006D346 /* XCUIApplication+Press.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Press.swift"; sourceTree = "<group>"; };
 		DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Read.swift"; sourceTree = "<group>"; };
 		E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Scroll.swift"; sourceTree = "<group>"; };
 		DB7FEAEF211817A8008B2082 /* XCUIApplication+Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Search.swift"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				DB7FEAF8211817A8008B2082 /* XCUIApplication+Navigate.swift */,
 				DBE6409521268C11007C2277 /* XCUIApplication+Permissions.swift */,
 				DB7FEAF2211817A8008B2082 /* XCUIApplication+Pick.swift */,
+				DBD1B327212CD11F0006D346 /* XCUIApplication+Press.swift */,
 				DB7FEAF9211817A8008B2082 /* XCUIApplication+Read.swift */,
 				E676CE752122932400CD18F4 /* XCUIApplication+Scroll.swift */,
 				DB7FEAEF211817A8008B2082 /* XCUIApplication+Search.swift */,
@@ -262,6 +265,7 @@
 				DB7FEB06211817A8008B2082 /* XCUIApplication+Navigate.swift in Sources */,
 				DBE6409621268C11007C2277 /* XCUIApplication+Permissions.swift in Sources */,
 				DB7FEB00211817A8008B2082 /* XCUIApplication+Pick.swift in Sources */,
+				DBD1B328212CD11F0006D346 /* XCUIApplication+Press.swift in Sources */,
 				DB7FEB07211817A8008B2082 /* XCUIApplication+Read.swift in Sources */,
 				E676CE762122932400CD18F4 /* XCUIApplication+Scroll.swift in Sources */,
 				DB7FEAFD211817A8008B2082 /* XCUIApplication+Search.swift in Sources */,

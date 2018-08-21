@@ -23,12 +23,16 @@ extension XCUIApplication {
     file: StaticString = #file,
     line: UInt = #line
   ) {
-    let uiElement: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
-    let scrollableElement: XCUIElement = first(element: scrollableElement, timeout: timeout, file: file, line: line)
+    let elementToShow: XCUIElement = first(element: element, timeout: timeout, file: file, line: line)
 
-    var swipeCount: UInt = 0
-    while !uiElement.isVisible && swipeCount < maxSwipeCount {
-      scrollableElement.swipe(withDirection: direction)
+    let offset: CGVector = CGVector(dx: 0.4, dy: 0.4)
+    let startPosition: NormalizedPosition = .center
+    let endPosition: NormalizedPosition = startPosition.offset(by: offset.scaled(by: direction.vector))
+
+    var swipeCount: Int = 0
+    while !elementToShow.isVisible && swipeCount < maxSwipeCount {
+      drag(element: scrollableElement, from: startPosition, to: endPosition, timeout: timeout, file: file, line: line)
+
       swipeCount += 1
     }
 
@@ -60,5 +64,12 @@ extension XCUIApplication {
     guard element.exists else { return }
 
     element.swipe(withDirection: direction)
+  }
+}
+
+private extension CGVector {
+
+  func scaled(by scale: CGVector) -> CGVector {
+    return CGVector(dx: dx * scale.dx, dy: dy * scale.dy)
   }
 }

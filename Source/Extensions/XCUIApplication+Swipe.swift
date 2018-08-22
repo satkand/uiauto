@@ -31,6 +31,8 @@ extension XCUIApplication {
 
     var swipeCount: Int = 0
     while !elementToShow.isVisible && swipeCount < maxSwipeCount {
+      // We're using drag here because it gives us more control over how much gets scrolled for each "swipe".
+      // With the provided `swipe` function, the view would scroll past the element, failing to locate it even though it exists.
       drag(element: scrollableElement, from: startPosition, to: endPosition, timeout: timeout, file: file, line: line)
 
       swipeCount += 1

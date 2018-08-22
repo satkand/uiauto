@@ -22,11 +22,11 @@ extension XCUIApplication {
     first(element: element, timeout: timeout, file: file, line: line).adjust(toPickerWheelValue: wheelValue)
   }
 
-  /// Select wheel value in an element
+  /// Select value in the specified wheel of an element
   ///
   /// - parameters:
   ///     - wheelValue: the value to be set on the wheel
-  ///     - wheelIndex: the wheel index to adjust the value in
+  ///     - wheelIndex: the index of the wheel to adjust
   ///     - element: the element to apply the drag gesture to
   ///     - timeout: the specified amount of time to wait for the element to exist
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.

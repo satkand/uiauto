@@ -27,6 +27,13 @@ public struct NormalizedPosition {
     self.x = x
     self.y = y
   }
+}
+
+extension NormalizedPosition {
+
+  static var center: NormalizedPosition {
+    return NormalizedPosition(x: 0.5, y: 0.5)
+  }
 
   var vector: CGVector {
     return CGVector(dx: x, dy: y)
@@ -34,5 +41,9 @@ public struct NormalizedPosition {
 
   var inverted: NormalizedPosition {
     return NormalizedPosition(x: 1 - x, y: 1 - y)
+  }
+
+  func offsetting(by vector: CGVector) -> NormalizedPosition {
+    return NormalizedPosition(x: x + vector.dx, y: y + vector.dy)
   }
 }

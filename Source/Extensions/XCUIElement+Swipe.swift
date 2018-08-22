@@ -20,6 +20,15 @@ extension XCUIElement {
 
     /// Scrolls right
     case left
+
+    var vector: CGVector {
+      switch self {
+      case .up: return CGVector(dx: 0, dy: -1)
+      case .down: return CGVector(dx: 0, dy: 1)
+      case .left: return CGVector(dx: -1, dy: 0)
+      case .right: return CGVector(dx: 1, dy: 0)
+      }
+    }
   }
 
   /// Convenience function to swipe towards a specific direction.

@@ -27,7 +27,7 @@ extension XCUIApplication {
 
     let offset: CGVector = CGVector(dx: 0.4, dy: 0.4)
     let startPosition: NormalizedPosition = .center
-    let endPosition: NormalizedPosition = startPosition.offsetting(by: offset.scaled(by: direction.vector))
+    let endPosition: NormalizedPosition = startPosition.offsetting(by: direction.vector.scaled(by: offset))
 
     var swipeCount: Int = 0
     while !elementToShow.isVisible && swipeCount < maxSwipeCount {

@@ -18,8 +18,14 @@ final class DatePickerFeatures: XCTestCase {
 
   func testDatePicker() {
     let dateFormatter: DateFormatter = .init()
-    dateFormatter.dateFormat = "MMM d"
+    dateFormatter.dateFormat = "MMM-d h mm a"
 
-    application.pick(date: dateFormatter.string(from: Date()), hour: "11", minute: "30", timePeriod: .afterNoon, inDatePicker: "date_picker_date_picker")
+    let futureDate: Date = Date().addingTimeInterval((60 * 60 * 13) + 60)
+    let dateComponents: [String] = dateFormatter.string(from: futureDate).components(separatedBy: .whitespaces)
+
+    application.pick(dateComponents[0].replacingOccurrences(of: "-", with: " "), in: .init(type: .pickerWheel, index: 0))
+    application.pick(dateComponents[1], in: .init(type: .pickerWheel, index: 1))
+    application.pick(dateComponents[2], in: .init(type: .pickerWheel, index: 2))
+    application.pick(dateComponents[3], in: .init(type: .pickerWheel, index: 3))
   }
 }

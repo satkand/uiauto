@@ -10,19 +10,21 @@ extension XCTestCase {
   ///
   /// - Parameters:
   ///     - applicationName: the name of the application to uninstall
-  public func uninstallApplication(named applicationName: String) {
+  ///     - timeout: the specified amount of time to wait for the element to exist
+  ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
+  ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
+  public func uninstallApplication(named applicationName: String, timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
 
     // The SpringBoard is the application that manages the home screen on iOS devices
     let springBoardApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.springboard")
     springBoardApplication.activate()
 
+    let applicationIconElement: Element = .init(type: .icon, identifier: applicationName)
+
     // Get the icon of the application you need to uninstall
-    let applicationIcon: XCUIElement = springBoardApplication.icons[applicationName].firstMatch
+    springBoardApplication.press(element: applicationIconElement, forDuration: 1.3, timeout: timeout, file: file, line: line)
 
-    guard applicationIcon.exists else { return }
-
-    // Press and hold application icon to enter edit mode
-    applicationIcon.press(forDuration: 1.3)
+    let applicationIcon: XCUIElement = springBoardApplication.first(element: applicationIconElement, timeout: timeout, file: file, line: line)
 
     // The "x" button is not exposed, so in order to tap on it
     // we'll need to calculate its location based on the location of the application icon in the springboard.
@@ -37,7 +39,7 @@ extension XCTestCase {
     sleep(1)
 
     // Hit the delete button in the alert
-    springBoardApplication.alerts.buttons["Delete"].tap()
+    springBoardApplication.tap(element: .init(type: .alertButton, identifier: "Delete"), timeout: timeout, file: file, line: line)
 
     // Exit edit mode
     XCUIDevice.shared.press(.home)

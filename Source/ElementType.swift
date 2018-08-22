@@ -27,6 +27,9 @@ public enum ElementType {
   /// Date picker
   case datePicker
 
+  /// Icon (currently used for accessing icons on the SpringBoard)
+  case icon
+
   /// Image
   case image
 

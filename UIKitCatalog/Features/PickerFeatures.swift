@@ -18,8 +18,8 @@ final class PickerFeatures: XCTestCase {
 
   func testPicker() {
 
-    application.pick("55", fromColumn: 0, inPicker: "picker_picker_wheel")
-    application.pick("65", fromColumn: 1, inPicker: "picker_picker_wheel")
-    application.pick("75", fromColumn: 2, inPicker: "picker_picker_wheel")
+    application.pick("55", inWheelIndex: 0, inElement: .init(type: .picker, identifier: "picker_picker_wheel"))
+    application.pick("65", inWheelIndex: 1, inElement: .init(type: .picker, identifier: "picker_picker_wheel"))
+    application.pick("75", inWheelIndex: 2, inElement: .init(type: .picker, identifier: "picker_picker_wheel"))
   }
 }

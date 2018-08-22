@@ -21,6 +21,7 @@ extension XCUIElement {
     case .button: return buttons
     case .cell: return cells
     case .datePicker: return datePickers
+    case .icon: return icons
     case .image: return images
     case .label: return staticTexts
     case .menuItem: return menuItems

@@ -43,7 +43,7 @@ extension NormalizedPosition {
     return NormalizedPosition(x: 1 - x, y: 1 - y)
   }
 
-  func offset(by vector: CGVector) -> NormalizedPosition {
+  func offsetting(by vector: CGVector) -> NormalizedPosition {
     return NormalizedPosition(x: x + vector.dx, y: y + vector.dy)
   }
 }

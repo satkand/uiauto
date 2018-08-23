@@ -39,7 +39,7 @@ final class TextFieldsFeatures: Feature {
   func testCopyPaste() {
     app.type(text: "Hello", into: defaultTextField)
 
-    app.copyText(from: defaultTextField, andPasteInto: tintedTextField)
+    app.copyText(from: defaultTextField, andPasteInto: tintedTextField, timeout: 0.5)
 
     app.expect(element: defaultTextField, to: .haveText("Hello"))
     app.expect(element: tintedTextField, to: .haveText("Hello"))

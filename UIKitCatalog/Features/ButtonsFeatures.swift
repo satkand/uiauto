@@ -3,24 +3,20 @@
 import Robocop
 import XCTest
 
-final class ButtonsFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.tap(element: .init(type: .cell, index: 2))
+final class ButtonsFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(index: 2)
+    app.tap(element: cell)
   }
 
   func testButtons() {
-    application.tap(element: .init(type: .button, identifier: "Button"), timeout: 2)
+    let buttonWithIdentifier = Button(identifier: "Button")
+    app.tap(element: buttonWithIdentifier, timeout: 2)
 
-    application.tap(element: .init(type: .button, index: 1))
+    let buttonAtIndex = Button(index: 1)
+    app.tap(element: buttonAtIndex)
 
-    application.tap(element: .init(type: .button, identifier: "buttons_image_button"))
+    let ButtonWithImage = Button(identifier: "buttons_image_button")
+    app.tap(element: ButtonWithImage)
   }
 }

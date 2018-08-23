@@ -1,35 +1,25 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class CalendarEventFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
+final class CalendarEventFeatures: Feature {
+  override func beforeLaunch() {
     uninstallApplication(named: "UIKitCatalog")
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 22), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 22))
   }
 
-  override func tearDown() {
-    application.terminate()
+  override func afterLaunch() {
+    let cell = Cell(index: 22)
+    let table = Table(identifier: "catalog_table")
 
-    super.tearDown()
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testAddingCalendarEvent() {
-    application.addCalendarEvent()
+    app.addCalendarEvent()
   }
 
   func testCancellingAddingCalendarEvent() {
-    application.cancelAddingCalendarEvent()
+    app.cancelAddingCalendarEvent()
   }
 }

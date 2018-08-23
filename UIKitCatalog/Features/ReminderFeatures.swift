@@ -1,36 +1,31 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class ReminderFeatures: XCTestCase {
+final class ReminderFeatures: Feature {
+  private var alert: Alert!
 
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
+  override func beforeLaunch() {
     uninstallApplication(named: "UIKitCatalog")
-    application = XCUIApplication()
-    application.launch()
-    application.swipe(to: .init(type: .cell, index: 23), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 23))
   }
 
-  override func tearDown() {
-    application.terminate()
-    application = nil
-    super.tearDown()
+  override func afterLaunch() {
+    let cell = Cell(index: 23)
+    let table = Table(identifier: "catalog_table")
+
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
+
+    alert = Alert(identifier: "Reminder Added")
   }
 
   func testAcceptingPermissionAndAddingAReminder() {
-    application.acceptPermissionIfRequired(for: .reminders)
-
-    application.expect(element: .init(type: .alert, identifier: "Reminder Added"), to: .exist(true))
+    app.acceptPermissionIfRequired(for: .reminders)
+    app.expect(element: alert, to: .exist(true))
   }
 
   func testDenyingPermissionForReminders() {
-    application.denyPermissionIfRequired(for: .reminders)
-
-    application.expect(element: .init(type: .alert, identifier: "Reminder Added"), to: .exist(false))
+    app.denyPermissionIfRequired(for: .reminders)
+    app.expect(element: alert, to: .exist(false))
   }
 }

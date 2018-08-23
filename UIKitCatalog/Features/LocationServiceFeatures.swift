@@ -1,61 +1,51 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class LocationServiceFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    let settingsApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.Preferences")
-    settingsApplication.launch()
-    settingsApplication.tap(element: .init(type: .cell, identifier: "General"))
-    settingsApplication.tap(element: .init(type: .cell, identifier: "Reset"))
-    settingsApplication.tap(element: .init(type: .cell, identifier: "Reset Location & Privacy"))
-    settingsApplication.tap(element: .init(type: .actionSheetButton, identifier: "Reset Warnings"))
-    settingsApplication.terminate()
-
-    application = XCUIApplication()
-    application.launch()
-    application.swipe(to: .init(type: .cell, index: 25), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
+final class LocationServiceFeatures: Feature {
+  override func beforeLaunch() {
+    settingsApp.launch()
+    
+    settingsApp.tap(element: Cell(identifier: "General"))
+    settingsApp.tap(element: Cell(identifier: "Reset"))
+    settingsApp.tap(element: Cell(identifier: "Reset Location & Privacy"))
+    settingsApp.tap(element: ActionSheetButton(identifier: "Reset Warnings"))
+    settingsApp.terminate()
   }
 
-  override func tearDown() {
-    application.terminate()
-    application = nil
-    super.tearDown()
+  override func afterLaunch() {
+    let cell = Cell(index: 25)
+    let table = Table(identifier: "catalog_table")
+    app.swipe(to: cell, in: table, direction: .up)
   }
 
   func testAcceptingPermissionForLocationAlways() {
-    application.tap(element: .init(type: .cell, index: 24))
-    application.acceptPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.always))
+    app.tap(element: Cell(index: 24))
+    app.acceptPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.always))
   }
 
   func testAcceptingPermissionForLocationWhenInUseWhenRequestingAlways() {
-    application.tap(element: .init(type: .cell, index: 24))
-    application.acceptPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.whenInUse))
+    app.tap(element: Cell(index: 24))
+    app.acceptPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.whenInUse))
   }
 
   func testAcceptingPermissionForLocationWhenInUse() {
-    application.tap(element: .init(type: .cell, index: 25))
-    application.acceptPermissionIfRequired(for: .locationServiceWhenInUse)
+    app.tap(element: Cell(index: 25))
+    app.acceptPermissionIfRequired(for: .locationServiceWhenInUse)
   }
 
   func testDenyingPermissionForLocationAlways() {
-    application.tap(element: .init(type: .cell, index: 24))
-    application.denyPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.always))
+    app.tap(element: Cell(index: 24))
+    app.denyPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.always))
   }
 
   func testDenyingPermissionForLocationWhenInUseWhenRequestingAlways() {
-    application.tap(element: .init(type: .cell, index: 24))
-    application.denyPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.whenInUse))
+    app.tap(element: Cell(index: 24))
+    app.denyPermissionIfRequired(for: .locationServiceAlwaysAndWhenInUse(.whenInUse))
   }
 
   func testDenyingPermissionForLocationWhenInUse() {
-    application.tap(element: .init(type: .cell, index: 25))
-    application.denyPermissionIfRequired(for: .locationServiceWhenInUse)
+    app.tap(element: Cell(index: 25))
+    app.denyPermissionIfRequired(for: .locationServiceWhenInUse)
   }
 }

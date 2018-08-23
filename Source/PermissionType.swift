@@ -1,7 +1,5 @@
 //  Copyright © 2018 Outware Mobile. All rights reserved.
 
-import Foundation
-
 /// Permissions dialog types
 public enum PermissionType {
 

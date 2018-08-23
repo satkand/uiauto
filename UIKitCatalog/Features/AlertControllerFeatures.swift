@@ -1,74 +1,99 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class AlertControllerFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.tap(element: .init(type: .cell, index: 1))
+final class AlertControllerFeatures: Feature {
+  override func afterLaunch() {
+    let alertControllersCell = Cell(index: 1)
+    app.tap(element: alertControllersCell)
   }
 
   // MARK: Alert Styles
 
   func testAlertSimpleStyle() {
-    application.tap(element: .init(type: .cell, index: 0))
-    application.tap(element: .init(type: .alertButton, index: 0))
+    let simpleAlertCell = Cell(index: 0)
+
+    app.tap(element: simpleAlertCell)
+
+    let okayButton = AlertButton(index: 0)
+    app.tap(element: okayButton)
   }
 
   func testOKCancelStyle() {
-    application.tap(element: .init(type: .cell, index: 1))
-    application.tap(element: .init(type: .alertButton, index: 0))
+    let cell = Cell(index: 1)
 
-    application.tap(element: .init(type: .cell, index: 1))
-    application.tap(element: .init(type: .alertButton, index: 1))
+    app.tap(element: cell)
+
+    let cancelButton = AlertButton(index: 0)
+    app.tap(element: cancelButton)
+
+    app.tap(element: cell)
+
+    let okayButton = AlertButton(index: 1)
+    app.tap(element: okayButton)
   }
 
   func testThreeButtonsStyle() {
-    application.tap(element: .init(type: .cell, index: 2))
-    application.tap(element: .init(type: .alertButton, index: 0))
+    let cell = Cell(index: 2)
 
-    application.tap(element: .init(type: .cell, index: 2))
-    application.tap(element: .init(type: .alertButton, identifier: "Choice Two"))
+    app.tap(element: cell)
+    let choice1Button: AlertButton = AlertButton(index: 0)
+    app.tap(element: choice1Button)
 
-    application.tap(element: .init(type: .cell, index: 2))
-    application.tap(element: .init(type: .alertButton, identifier: "Cancel"))
+    app.tap(element: cell)
+    let choice2Button: AlertButton = AlertButton(identifier: "Choice Two")
+    app.tap(element: choice2Button)
+
+    app.tap(element: cell)
+    let cancelButton: AlertButton = AlertButton(identifier: "Cancel")
+    app.tap(element: cancelButton)
   }
 
   func testTextEntryStyle() {
-    application.tap(element: .init(type: .cell, index: 3))
-    application.type(text: "Hello World", into: .init(type: .textField, identifier: "alert_text_field"))
-    application.tap(element: .init(type: .alertButton, identifier: "OK"))
+    let cell = Cell(index: 3)
+    app.tap(element: cell)
+
+    let textField = TextField(identifier: "alert_text_field")
+    app.type(text: "Hello World", into: textField)
+
+    let okayButton: AlertButton = AlertButton(identifier: "OK")
+    app.tap(element: okayButton)
   }
 
   func testSecureTextEntryStyle() {
-    application.tap(element: .init(type: .cell, index: 4))
-    application.type(text: "Hello World", into: .init(type: .secureTextField, identifier: "alert_secure_text_field"))
-    application.tap(element: .init(type: .alertButton, identifier: "OK"))
+    let cell = Cell(index: 4)
+
+    app.tap(element: cell)
+    let textField = SecureTextField(identifier: "alert_secure_text_field")
+    app.type(text: "Hello World", into: textField)
+
+    let okayButton = AlertButton(identifier: "OK")
+    app.tap(element: okayButton)
   }
 
   // MARK: Action Sheet Styles
 
   func testActionSheetComfirmCancelStyle() {
-    application.tap(element: .init(type: .cell, index: 5))
-    application.tap(element: .init(type: .actionSheetButton, index: 0))
+    let cell: Cell = Cell(index: 5)
 
-    application.tap(element: .init(type: .cell, index: 5))
-    application.tap(element: .init(type: .actionSheetButton, identifier: "Cancel"))
+    app.tap(element: cell)
+    let confirmButton = ActionSheetButton(index: 0)
+    app.tap(element: confirmButton)
+
+    app.tap(element: cell)
+    let cancelButton = ActionSheetButton(identifier: "Cancel")
+    app.tap(element: cancelButton)
   }
 
   func testActionSheetDestructiveStyle() {
-    application.tap(element: .init(type: .cell, index: 6))
-    application.tap(element: .init(type: .actionSheetButton, index: 0))
+    let cell: Cell = Cell(index: 6)
 
-    application.tap(element: .init(type: .cell, index: 6))
-    application.tap(element: .init(type: .actionSheetButton, index: 1))
+    app.tap(element: cell)
+    let descructiveChoice = ActionSheetButton(index: 0)
+    app.tap(element: descructiveChoice)
+
+    app.tap(element: cell)
+    let safeChoice = ActionSheetButton(index: 1)
+    app.tap(element: safeChoice)
   }
 }

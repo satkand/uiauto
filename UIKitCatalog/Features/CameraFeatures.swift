@@ -1,30 +1,20 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
+import Robocop
 
 #if !(targetEnvironment(simulator))
 
-  final class CameraFeatures: XCTestCase {
-
-    private var application: XCUIApplication!
-
-    override func setUp() {
-      super.setUp()
-
+  final class CameraFeatures: Feature {
+    override func beforeLaunch() {
       uninstallApplication(named: "UIKitCatalog")
-
-      application = XCUIApplication()
-      application.launch()
-
-      application.swipe(to: .init(type: .cell, index: 18), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-      application.tap(element: .init(type: .cell, index: 18))
     }
 
-    override func tearDown() {
-      application.terminate()
-      application = nil
+    override func afterLaunch() {
+      let cell = Cell(index: 18)
+      let table = Table(identifier: "catalog_table")
 
-      super.tearDown()
+      application.swipe(to: cell, in: table, direction: .up)
+      application.tap(element: cell)
     }
 
     func testAcceptingPermissionAndTakingAPhoto() {
@@ -46,17 +36,21 @@ import XCTest
     }
   }
 
-  final class CameraEditableFeatures: XCTestCase {
+  final class CameraEditableFeatures: Feature {
+
+    override func beforeLaunch() {
+      uninstallApplication(named: "UIKitCatalog")
+    }
+
+    override func afterLaunch() {
+      let cell = Cell(index: 19)
+      let table = Table(identifier: "catalog_table")
+
+      application.swipe(to: cell, in: table, direction: .up)
+      application.tap(element: cell)
+    }
 
     func testEditingAPhoto() {
-      uninstallApplication(named: "UIKitCatalog")
-
-      let application: XCUIApplication = XCUIApplication()
-      application.launch()
-
-      application.swipe(to: .init(type: .cell, index: 19), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-      application.tap(element: .init(type: .cell, index: 19))
-
       application.takePhoto()
     }
   }

@@ -14,4 +14,5 @@ extension XCUIElement {
 
     return XCUIApplication().windows.element(boundBy: 0).frame.contains(frame)
   }
+
 }

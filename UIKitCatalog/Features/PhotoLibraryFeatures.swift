@@ -1,59 +1,51 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class PhotoLibraryFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
+final class PhotoLibraryFeatures: Feature {
+  override func beforeLaunch() {
     uninstallApplication(named: "UIKitCatalog")
-    application = XCUIApplication()
-    application.launch()
-    application.swipe(to: .init(type: .cell, index: 20), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 20))
   }
 
-  override func tearDown() {
-    // For some reason, if we don't terminate the app, some tests become flaky and fail randomly.
-    application.terminate()
-    application = nil
-    super.tearDown()
+  override func afterLaunch() {
+    let cell = Cell(index: 20)
+    let table = Table(identifier: "catalog_table")
+
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testDenyingPermission() {
-    application.denyPermissionIfRequired(for: .photoLibrary)
+    app.denyPermissionIfRequired(for: .photoLibrary)
   }
 
   func testAcceptingPermissionAndSelectingAPhoto() {
-    application.selectPhoto()
+    app.selectPhoto()
   }
 
   func testCancellingSelectingAPhoto() {
-    application.cancelSelectingPhoto()
+    app.cancelSelectingPhoto()
   }
 
   func testAcceptingOrDenyingPermissionMultipleTimes() {
-    application.acceptPermissionIfRequired(for: .photoLibrary)
-    application.denyPermissionIfRequired(for: .photoLibrary)
-    application.acceptPermissionIfRequired(for: .photoLibrary)
+    app.acceptPermissionIfRequired(for: .photoLibrary)
+    app.denyPermissionIfRequired(for: .photoLibrary)
+    app.acceptPermissionIfRequired(for: .photoLibrary)
   }
 }
 
-final class PhotoLibraryEditableFeatures: XCTestCase {
+final class PhotoLibraryEditableFeatures: Feature {
+  override func beforeLaunch() {
+    uninstallApplication(named: "UIKitCatalog")
+  }
 
   func testEditingTheSelectedPhoto() {
-    uninstallApplication(named: "UIKitCatalog")
+    let cell = Cell(index: 21)
+    let table = Table(identifier: "catalog_table")
 
-    let application: XCUIApplication = XCUIApplication()
-    application.launch()
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: .init(type: .cell, index: 21))
 
-    application.swipe(to: .init(type: .cell, index: 21), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 21))
-
-    application.selectPhoto()
+    app.selectPhoto()
   }
 }

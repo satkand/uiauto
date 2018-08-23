@@ -1,39 +1,31 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class StepperFeatures: XCTestCase {
+final class StepperFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(identifier: "cell_steppers")
+    let table = Table(identifier: "catalog_table")
 
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 12), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, identifier: "cell_steppers"))
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testSteppers() {
+    app.expect(stepButton: .up, atIndex: 0, toExists: true)
+    app.expect(stepButton: .down, atIndex: 0, toExists: true)
 
-    // Sleep the process as it takes time for the view controller to exists
-    sleep(1)
-    application.expect(stepButton: .up, atIndex: 0, toExists: true)
-    application.expect(stepButton: .down, atIndex: 0, toExists: true)
+    let label = Label(index: 0)
+    app.expect(element: label, to: .haveText("0"))
 
-    application.expect(element: .init(type: .label, index: 0), to: .haveText("0"))
+    app.step(.up, index: 0)
 
-    application.step(.up, index: 0)
-
-    application.expect(element: .init(type: .label, index: 0), to: .haveText("1"))
+    app.expect(element: label, to: .haveText("1"))
 
     // We cannot go below 0 even if we click the decremenent button multiple times
-    application.step(.down, index: 0)
-    application.step(.down, index: 0)
+    app.step(.down, index: 0)
+    app.step(.down, index: 0)
 
-    application.expect(element: .init(type: .label, index: 0), to: .haveText("0"))
+    app.expect(element: label, to: .haveText("0"))
   }
 }

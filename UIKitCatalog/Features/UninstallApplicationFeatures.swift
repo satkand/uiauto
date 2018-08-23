@@ -1,14 +1,11 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
+import Robocop
 import XCTest
 
-final class UninstallApplicationFeatures: XCTestCase {
+final class UninstallApplicationFeatures: Feature {
 
   func testUninstallingTheApplication() {
-    // Launch application to install it
-    XCUIApplication().launch()
-
-    // Uninstall the application
     uninstallApplication(named: "UIKitCatalog")
 
     // Ensure that application is deleted

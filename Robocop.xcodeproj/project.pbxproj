@@ -14,8 +14,8 @@
 		DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEB211817A7008B2082 /* Assert.swift */; };
 		274E0129212D36B000ACBBD1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0128212D36B000ACBBD1 /* Button.swift */; };
 		274E0118212D1DAF00ACBBD1 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0117212D1DAF00ACBBD1 /* Cell.swift */; };
-		DB13F702211A6BEB00E19A5F /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13F701211A6BEB00E19A5F /* Element.swift */; };
-		DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FEAEC211817A8008B2082 /* ElementType.swift */; };
+		27AE9215212E6D5B00ECC003 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9213212E6D5B00ECC003 /* Element.swift */; };
+		27AE9214212E6D5B00ECC003 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9212212E6D5B00ECC003 /* ElementType.swift */; };
 		274E0115212D134D00ACBBD1 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0114212D134D00ACBBD1 /* Feature.swift */; };
 		274E0131212D3CB100ACBBD1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E0130212D3CB100ACBBD1 /* Image.swift */; };
 		27AE920D212E46E900ECC003 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE920C212E46E900ECC003 /* Label.swift */; };
@@ -66,8 +66,8 @@
 		DB7FEAEB211817A7008B2082 /* Assert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assert.swift; sourceTree = "<group>"; };
 		274E0128212D36B000ACBBD1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		274E0117212D1DAF00ACBBD1 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
-		DB13F701211A6BEB00E19A5F /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
-		DB7FEAEC211817A8008B2082 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
+		27AE9213212E6D5B00ECC003 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		27AE9212212E6D5B00ECC003 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 		274E0114212D134D00ACBBD1 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		274E0130212D3CB100ACBBD1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DB7FEAE52118175A008B2082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 				274E011E212D222900ACBBD1 /* AlertButton.swift */,
 				274E0128212D36B000ACBBD1 /* Button.swift */,
 				274E0117212D1DAF00ACBBD1 /* Cell.swift */,
+				27AE9213212E6D5B00ECC003 /* Element.swift */,
+				27AE9212212E6D5B00ECC003 /* ElementType.swift */,
 				274E0130212D3CB100ACBBD1 /* Image.swift */,
 				27AE920C212E46E900ECC003 /* Label.swift */,
 				274E012C212D3A4300ACBBD1 /* NavigationBarTitle.swift */,
@@ -179,8 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				DB7FEAEB211817A7008B2082 /* Assert.swift */,
-				DB13F701211A6BEB00E19A5F /* Element.swift */,
-				DB7FEAEC211817A8008B2082 /* ElementType.swift */,
 				274E0114212D134D00ACBBD1 /* Feature.swift */,
 				DB7FEAE52118175A008B2082 /* Info.plist */,
 				E676CE3921227D1B00CD18F4 /* NormalizedPosition.swift */,
@@ -327,8 +327,8 @@
 				DB7FEAFA211817A8008B2082 /* Assert.swift in Sources */,
 				274E0129212D36B000ACBBD1 /* Button.swift in Sources */,
 				274E0118212D1DAF00ACBBD1 /* Cell.swift in Sources */,
-				DB13F702211A6BEB00E19A5F /* Element.swift in Sources */,
-				DB7FEAFB211817A8008B2082 /* ElementType.swift in Sources */,
+				27AE9215212E6D5B00ECC003 /* Element.swift in Sources */,
+				27AE9214212E6D5B00ECC003 /* ElementType.swift in Sources */,
 				274E0115212D134D00ACBBD1 /* Feature.swift in Sources */,
 				274E0131212D3CB100ACBBD1 /* Image.swift in Sources */,
 				27AE920D212E46E900ECC003 /* Label.swift in Sources */,

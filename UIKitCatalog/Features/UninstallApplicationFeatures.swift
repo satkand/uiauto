@@ -4,7 +4,6 @@ import Robocop
 import XCTest
 
 final class UninstallApplicationFeatures: Feature {
-
   func testUninstallingTheApplication() {
     uninstallApplication(named: "UIKitCatalog")
 

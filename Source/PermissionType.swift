@@ -2,7 +2,6 @@
 
 /// Permissions dialog types
 public enum PermissionType {
-
   /// Calendar Permissions
   case calendar
 
@@ -30,7 +29,6 @@ public enum PermissionType {
   ///
   /// This enum should be used in order to know which button to tap on.
   public enum LocationServiceButton {
-
     /// Always allow button
     case always
 

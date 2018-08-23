@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCTestCase {
-
   /// Uninstall application from device or simulator similarly to how a user would.
   ///
   /// This function relies on the SpringBoard application to perform the uninstallation.
@@ -14,7 +13,6 @@ extension XCTestCase {
   ///     - file: the file in which failure occurred. Defaults to the file name of the test case in which this function was called.
   ///     - line: the line number on which failure occurred. Defaults to the line number on which this function was called.
   public func uninstallApplication(named applicationName: String, timeout: TimeInterval = 1, file: StaticString = #file, line: UInt = #line) {
-
     // The SpringBoard is the application that manages the home screen on iOS devices
     let springBoardApplication: XCUIApplication = XCUIApplication(bundleIdentifier: "com.apple.springboard")
     springBoardApplication.activate()

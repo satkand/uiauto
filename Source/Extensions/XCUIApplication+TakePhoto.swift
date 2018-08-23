@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Take a photo using the camera application.
   ///
   /// If the *camera permission* alert dialog is displayed, the permission request will **automatically** be accepted.

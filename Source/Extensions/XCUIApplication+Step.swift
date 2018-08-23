@@ -3,10 +3,8 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Enum representing the increment or decrement button in a stepper
   public enum StepButton {
-
     /// The increment button
     case up
 

@@ -15,7 +15,6 @@ import WebKit
  */
 
 class WebViewController: UIViewController {
-
   // MARK: - Properties
 
   @IBOutlet var webView: WKWebView!

@@ -5,7 +5,6 @@ import XCTest
 /// Custom element type that are handled by this framework
 /// to abstract the interaction to this library from the XCUITest framework.
 public enum ElementType {
-
   /// Button within an action sheet
   case actionSheetButton
 

@@ -16,7 +16,7 @@ final class ButtonsFeatures: Feature {
     let buttonAtIndex = Button(index: 1)
     app.tap(element: buttonAtIndex)
 
-    let ButtonWithImage = Button(identifier: "buttons_image_button")
-    app.tap(element: ButtonWithImage)
+    let buttonWithImage = Button(identifier: "buttons_image_button")
+    app.tap(element: buttonWithImage)
   }
 }

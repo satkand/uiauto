@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchResultsViewController: SearchControllerBaseViewController {
-
   // MARK: - Types
 
   /** The identifier string that corresponds to the `SearchResultsViewController`'s

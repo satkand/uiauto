@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIElement {
-
   /// Returns true depending on the following criteria:
   ///
   /// - the element exists on the screen
@@ -14,5 +13,4 @@ extension XCUIElement {
 
     return XCUIApplication().windows.element(boundBy: 0).frame.contains(frame)
   }
-
 }

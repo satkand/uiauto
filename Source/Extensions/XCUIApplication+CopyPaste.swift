@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Copy text from source element and paste into destination element
   ///
   /// - Parameters:

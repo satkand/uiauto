@@ -5,7 +5,7 @@ import Robocop
 final class LocationServiceFeatures: Feature {
   override func beforeLaunch() {
     settingsApp.launch()
-    
+
     settingsApp.tap(element: Cell(identifier: "General"))
     settingsApp.tap(element: Cell(identifier: "Reset"))
     settingsApp.tap(element: Cell(identifier: "Reset Location & Privacy"))

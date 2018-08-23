@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Swipe towards element in a scrollable element
   ///
   /// - parameters:

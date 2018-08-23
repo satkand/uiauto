@@ -3,10 +3,8 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Expectations that can be validated on a `XCUIElement`
   public enum Expectation {
-
     /// The element exists or not
     case exist(Bool)
 
@@ -54,7 +52,6 @@ extension XCUIApplication {
     let result: Bool
 
     switch expectation {
-
     case let .exist(expectedBool):
       // Waiting for existence is already done as part of finding the element using `first`
       result = uiElement.exists == expectedBool
@@ -125,7 +122,6 @@ extension XCUIApplication {
 }
 
 private extension String {
-
   var asBool: Bool? {
     switch self.lowercased() {
     case "true", "1": return true

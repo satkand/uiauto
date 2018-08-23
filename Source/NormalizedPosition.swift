@@ -3,7 +3,6 @@
 /// Represents a relative position in the containing plane. If we consider a frame, (x: 0.0, y: 0.0) would represent the
 /// top-left point while (x: 1.0, y: 1.0) the bottom-right point.
 public struct NormalizedPosition {
-
   let x: CGFloat
   let y: CGFloat
 

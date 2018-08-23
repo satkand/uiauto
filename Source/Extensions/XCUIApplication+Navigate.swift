@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Navigate back once by tapping the back button.
   ///
   /// To be generic, it is assumed that the first button is always the back button.

@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Initiates a press-and-hold gesture at the start position for the given durantion before dragging to the end
   /// position. The positions are relative to the given element's size.
   ///

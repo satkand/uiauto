@@ -6,7 +6,7 @@ open class Feature: XCTestCase {
   public private(set) var app: XCUIApplication!
   public private(set) var settingsApp: XCUIApplication!
 
-  override open func setUp() {
+  open override func setUp() {
     super.setUp()
 
     app = XCUIApplication()
@@ -19,7 +19,7 @@ open class Feature: XCTestCase {
     afterLaunch()
   }
 
-  override open func tearDown() {
+  open override func tearDown() {
     app.terminate()
     app = nil
 

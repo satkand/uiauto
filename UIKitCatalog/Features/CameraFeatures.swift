@@ -13,31 +13,30 @@ import Robocop
       let cell = Cell(index: 18)
       let table = Table(identifier: "catalog_table")
 
-      application.swipe(to: cell, in: table, direction: .up)
-      application.tap(element: cell)
+      app.swipe(to: cell, in: table, direction: .up)
+      app.tap(element: cell)
     }
 
     func testAcceptingPermissionAndTakingAPhoto() {
-      application.takePhoto()
+      app.takePhoto()
     }
 
     func testDenyingPermission() {
-      application.denyPermissionIfRequired(for: .camera)
+      app.denyPermissionIfRequired(for: .camera)
     }
 
     func testAcceptingOrDenyPermissionMultipleTimes() {
-      application.acceptPermissionIfRequired(for: .camera)
-      application.acceptPermissionIfRequired(for: .camera)
-      application.denyPermissionIfRequired(for: .camera)
+      app.acceptPermissionIfRequired(for: .camera)
+      app.acceptPermissionIfRequired(for: .camera)
+      app.denyPermissionIfRequired(for: .camera)
     }
 
     func testCancellingTakingAPhoto() {
-      application.cancelTakingPhoto()
+      app.cancelTakingPhoto()
     }
   }
 
   final class CameraEditableFeatures: Feature {
-
     override func beforeLaunch() {
       uninstallApplication(named: "UIKitCatalog")
     }
@@ -46,12 +45,12 @@ import Robocop
       let cell = Cell(index: 19)
       let table = Table(identifier: "catalog_table")
 
-      application.swipe(to: cell, in: table, direction: .up)
-      application.tap(element: cell)
+      app.swipe(to: cell, in: table, direction: .up)
+      app.tap(element: cell)
     }
 
     func testEditingAPhoto() {
-      application.takePhoto()
+      app.takePhoto()
     }
   }
 

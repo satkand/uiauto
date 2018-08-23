@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   private var springBoardApplication: XCUIApplication {
     return .init(bundleIdentifier: "com.apple.springboard")
   }

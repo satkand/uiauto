@@ -3,10 +3,8 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Position in which to add the text
   public enum TextPosition {
-
     /// At the end of the text
     case end
 

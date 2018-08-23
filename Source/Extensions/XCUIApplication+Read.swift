@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Read the text from an element with given type and identifier.
   ///
   /// **Note:**

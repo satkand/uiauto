@@ -9,7 +9,6 @@
 import UIKit
 
 class AlertControllerViewController: UITableViewController {
-
   // MARK: - Properties
 
   weak var secureTextAlertAction: UIAlertAction?
@@ -278,11 +277,8 @@ class AlertControllerViewController: UITableViewController {
 // MARK: - UITableViewDelegate
 
 extension AlertControllerViewController {
-
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     switch indexPath.section {
-
     case StyleSections.alertStyleSection.rawValue: didSelectAlert(at: indexPath.row)
 
     case StyleSections.actionStyleSection.rawValue: didSelectActionSheet(at: indexPath)
@@ -294,9 +290,7 @@ extension AlertControllerViewController {
   }
 
   private func didSelectAlert(at row: Int) {
-
     switch row {
-
     case AlertStyleTest.showSimpleAlert.rawValue:
       showSimpleAlert()
 
@@ -317,9 +311,7 @@ extension AlertControllerViewController {
   }
 
   private func didSelectActionSheet(at indexPath: IndexPath) {
-
     switch indexPath.row {
-
     case ActionSheetStyleTest.showOkayCancelActionSheet.rawValue:
       showOkayCancelActionSheet(indexPath)
 

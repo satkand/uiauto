@@ -9,7 +9,6 @@
 import UIKit
 
 class SegmentedControlViewController: UITableViewController {
-
   // MARK: - Properties
 
   @IBOutlet var defaultSegmentedControl: UISegmentedControl!
@@ -34,7 +33,6 @@ class SegmentedControlViewController: UITableViewController {
   // MARK: - Configuration
 
   func configureDefaultSegmentedControl() {
-
     defaultSegmentedControl.setEnabled(false, forSegmentAt: 0)
 
     defaultSegmentedControl.addTarget(

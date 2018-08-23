@@ -3,13 +3,11 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Location Area
   ///
   /// **Notes**:
   /// We can tap a specific area of an element by calculating a vector based on its size
   public enum Area {
-
     /// Horizontally (99%/0.99) and vertically (99%/0.99)
     case bottomRight
 

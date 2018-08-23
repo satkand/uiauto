@@ -5,7 +5,6 @@
 /// It is strongly recommended to use a unique identifier per screen elements
 /// as relying solely on the index or the element type will create flaky tests.
 public class Element {
-
   /// The type of the element
   let type: Robocop.ElementType
 

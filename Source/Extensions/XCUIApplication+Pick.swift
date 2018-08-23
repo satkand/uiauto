@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Select wheel value in an element
   ///
   /// - parameters:

@@ -1,24 +1,18 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class ToolbarsFeatures: XCTestCase {
+final class ToolbarsFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(index: 16)
+    let table = Table(identifier: "catalog_table")
 
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 16), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 16))
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testToolbar() {
-    application.tap(element: .init(type: .cell, index: 0))
-    application.tap(element: .init(type: .button, identifier: "Action"))
+    app.tap(element: Cell(index: 0))
+    app.tap(element: Button(identifier: "Action"))
   }
 }

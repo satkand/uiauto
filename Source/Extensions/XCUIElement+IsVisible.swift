@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIElement {
-
   /// Returns true depending on the following criteria:
   ///
   /// - the element exists on the screen

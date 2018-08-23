@@ -1,35 +1,28 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class TextViewFeatures: XCTestCase {
+final class TextViewFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(index: 15)
+    let table = Table(identifier: "catalog_table")
 
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 15), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 15))
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testTextView() {
+    let textView = TextView(identifier: "text_view")
 
-    let textView: Element = .init(type: .textView, identifier: "text_view")
+    let currentText: String = app.readText(from: textView)!
 
-    let currentText: String = application.readText(from: textView)!
+    app.type(text: "Sayonara.", into: textView)
 
-    application.type(text: "Sayonara.", into: .init(type: .textView))
+    app.expect(element: textView, to: .haveText(currentText + "Sayonara."))
 
-    application.expect(element: textView, to: .haveText(currentText + "Sayonara."))
+    app.swipe(element: textView, direction: .down)
+    app.type(text: "Konichiwa. ", into: textView, position: .start)
 
-    application.swipe(element: textView, direction: .down)
-    application.type(text: "Konichiwa. ", into: .init(type: .textView), position: .start)
-
-    application.expect(element: textView, to: .haveText("Konichiwa. " + currentText + "Sayonara."))
+    app.expect(element: textView, to: .haveText("Konichiwa. " + currentText + "Sayonara."))
   }
 }

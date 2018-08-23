@@ -9,7 +9,6 @@
 import UIKit
 
 class ActivityIndicatorViewController: UITableViewController {
-
   // MARK: - Properties
 
   @IBOutlet var grayStyleActivityIndicatorView: UIActivityIndicatorView!

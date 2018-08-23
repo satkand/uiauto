@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchBarEmbedInNavBarViewController: SearchControllerBaseViewController {
-
   // MARK: - Properties
 
   // `searchController` is set in viewDidLoad(_:).
@@ -24,7 +23,6 @@ class SearchBarEmbedInNavBarViewController: SearchControllerBaseViewController {
     if let searchResultsViewController =
       storyboard!.instantiateViewController(withIdentifier: SearchResultsViewController.identifier)
       as? SearchResultsViewController {
-
       // Create the search controller and make it perform the results updating.
       searchController = UISearchController(searchResultsController: searchResultsViewController)
       searchController.searchResultsUpdater = searchResultsViewController

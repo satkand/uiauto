@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIElement {
-
   /// Find the first matching `XCUIElement` with the given `Element`.
   ///
   /// An `XCUIElement` can be found by using their identifier (which is the accessibility identifier or label),

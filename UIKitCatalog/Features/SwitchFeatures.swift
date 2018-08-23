@@ -1,34 +1,31 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class SwitchFeatures: XCTestCase {
+final class SwitchFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(index: 13)
+    let table = Table(identifier: "catalog_table")
 
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 13), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 13))
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
   }
 
   func testSwitches() {
-    application.expect(element: .init(type: .switch, identifier: "default_switch"), to: .haveBool(true))
-    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(true))
+    let defaultSwitch = Switch(identifier: "default_switch")
+    let customSwitch = Switch(index: 1)
 
-    application.tap(element: .init(type: .switch, identifier: "default_switch"))
-    application.tap(element: .init(type: .switch, index: 1))
+    app.expect(element: defaultSwitch, to: .haveBool(true))
+    app.expect(element: customSwitch, to: .haveBool(true))
 
-    application.expect(element: .init(type: .switch, identifier: "default_switch"), to: .haveBool(false))
-    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(false))
+    app.tap(element: defaultSwitch)
+    app.tap(element: customSwitch)
 
-    application.tap(element: .init(type: .switch, index: 1))
+    app.expect(element: defaultSwitch, to: .haveBool(false))
+    app.expect(element: customSwitch, to: .haveBool(false))
 
-    application.expect(element: .init(type: .switch, index: 1), to: .haveBool(true))
+    app.tap(element: customSwitch)
+
+    app.expect(element: customSwitch, to: .haveBool(true))
   }
 }

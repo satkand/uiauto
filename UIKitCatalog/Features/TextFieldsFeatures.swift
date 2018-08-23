@@ -1,47 +1,47 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class TextFieldsFeatures: XCTestCase {
+final class TextFieldsFeatures: Feature {
+  private var defaultTextField: TextField!
+  private var tintedTextField: TextField!
 
-  private var application: XCUIApplication!
+  override func afterLaunch() {
+    let cell = Cell(index: 14)
+    let table = Table(identifier: "catalog_table")
 
-  override func setUp() {
-    super.setUp()
+    app.swipe(to: cell, in: table, direction: .up)
+    app.tap(element: cell)
 
-    application = XCUIApplication()
-    application.launch()
-
-    application.swipe(to: .init(type: .cell, index: 14), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-    application.tap(element: .init(type: .cell, index: 14))
+    defaultTextField = TextField(identifier: "text_fields_default")
+    tintedTextField = TextField(identifier: "text_fields_tinted")
   }
 
   func testTextFields() {
-    application.type(text: "Hello", into: .init(type: .textField, identifier: "text_fields_default"))
-    application.type(text: "Foo Bar", into: .init(type: .textField, identifier: "text_fields_tinted"))
+    app.type(text: "Hello", into: defaultTextField)
+    app.type(text: "Foo Bar", into: tintedTextField)
 
-    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello"))
-    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText("Foo Bar"))
+    app.expect(element: defaultTextField, to: .haveText("Hello"))
+    app.expect(element: tintedTextField, to: .haveText("Foo Bar"))
 
-    let oldText: String = application.readText(from: .init(type: .textField, identifier: "text_fields_default")) ?? ""
+    let oldText: String = app.readText(from: defaultTextField) ?? ""
 
-    application.clearText(in: .init(type: .textField, identifier: "text_fields_default"))
-    application.clearText(in: .init(type: .textField, identifier: "text_fields_tinted"))
+    app.clearText(in: defaultTextField)
+    app.clearText(in: tintedTextField)
 
-    application.type(text: oldText, into: .init(type: .textField, identifier: "text_fields_default"))
-    application.type(text: " World", into: .init(type: .textField, identifier: "text_fields_default"))
+    app.type(text: oldText, into: defaultTextField)
+    app.type(text: " World", into: defaultTextField)
 
-    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello World"))
-    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText(""))
+    app.expect(element: defaultTextField, to: .haveText("Hello World"))
+    app.expect(element: tintedTextField, to: .haveText(""))
   }
 
   func testCopyPaste() {
-    application.type(text: "Hello", into: .init(type: .textField, identifier: "text_fields_default"))
+    app.type(text: "Hello", into: defaultTextField)
 
-    application.copyText(from: .init(type: .textField, identifier: "text_fields_default"), andPasteInto: .init(type: .textField, identifier: "text_fields_tinted"))
+    app.copyText(from: defaultTextField, andPasteInto: tintedTextField, timeout: 0.5)
 
-    application.expect(element: .init(type: .textField, identifier: "text_fields_default"), to: .haveText("Hello"))
-    application.expect(element: .init(type: .textField, identifier: "text_fields_tinted"), to: .haveText("Hello"))
+    app.expect(element: defaultTextField, to: .haveText("Hello"))
+    app.expect(element: tintedTextField, to: .haveText("Hello"))
   }
 }

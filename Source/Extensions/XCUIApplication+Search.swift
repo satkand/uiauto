@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Input search text into search bar with given search bar identifier.
   ///
   /// - parameters:

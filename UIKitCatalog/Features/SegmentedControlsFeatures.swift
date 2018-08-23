@@ -1,23 +1,14 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class SegmentedControlsFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.tap(element: .init(type: .cell, index: 9))
+final class SegmentedControlsFeatures: Feature {
+  override func afterLaunch() {
+    app.tap(element: Cell(index: 9))
   }
 
   func testSegmentedControls() {
-    application.tap(element: .init(type: .button, identifier: "Tools"))
-    application.tap(element: .init(type: .button, index: 6))
+    app.tap(element: Button(identifier: "Tools"))
+    app.tap(element: Button(index: 6))
   }
 }

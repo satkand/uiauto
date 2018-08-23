@@ -56,7 +56,7 @@ if ! [[ -x $(command -v swiftformat) ]]; then
  exit 1
 fi
 
-disabled_rules="redundantSelf,unusedArguments,blankLinesAtStartOfScope"
+disabled_rules="redundantSelf,unusedArguments"
 
 ## Execute on the Source, Specs and Features directories
 

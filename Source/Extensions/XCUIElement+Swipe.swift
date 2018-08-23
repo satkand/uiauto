@@ -3,12 +3,10 @@
 import XCTest
 
 extension XCUIElement {
-
   /// Swiping directions.
   ///
   /// **Notes**: the swiping direction will *scroll* in the opposite direction
   public enum Direction {
-
     /// Scrolls down
     case up
 
@@ -36,7 +34,6 @@ extension XCUIElement {
   /// - parameters:
   ///     - direction: the direction of the swipe
   func swipe(withDirection direction: Direction) {
-
     switch direction {
     case .up: swipeUp()
     case .right: swipeRight()

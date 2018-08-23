@@ -1,22 +1,15 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class ImageViewFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
-
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.tap(element: .init(type: .cell, index: 4))
+final class ImageViewFeatures: Feature {
+  override func afterLaunch() {
+    let cell = Cell(index: 4)
+    app.tap(element: cell)
   }
 
   func testImageView() {
-    application.expect(element: .init(type: .image, identifier: "image_view_image_view"), to: .exist(true))
+    let image = Image(identifier: "image_view_image_view")
+    app.expect(element: image, to: .exist(true))
   }
 }

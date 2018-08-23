@@ -1,41 +1,33 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
 import Robocop
-import XCTest
 
-final class PageControlFeatures: XCTestCase {
-
-  private var application: XCUIApplication!
+final class PageControlFeatures: Feature {
   private let pageControlIdentifier: String = "page_control"
+  private var pageControl: PageControl!
 
-  override func setUp() {
-    super.setUp()
-
-    application = XCUIApplication()
-    application.launch()
-
-    application.tap(element: .init(type: .cell, index: 5))
+  override func afterLaunch() {
+    app.tap(element: Cell(index: 5))
+    pageControl = PageControl(identifier: pageControlIdentifier)
   }
 
   func testPageControlTaps() {
+    app.expect(element: pageControl, to: .haveText("page 3 of 10"))
 
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
+    app.tap(element: pageControl, in: .left)
+    app.expect(element: pageControl, to: .haveText("page 2 of 10"))
 
-    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), in: .left)
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 2 of 10"))
-
-    application.tap(element: .init(type: .pageControl, identifier: pageControlIdentifier), in: .right)
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
+    app.tap(element: pageControl, in: .right)
+    app.expect(element: pageControl, to: .haveText("page 3 of 10"))
   }
 
   func testPageControlSwipes() {
+    app.expect(element: pageControl, to: .haveText("page 3 of 10"))
 
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
+    app.swipe(element: pageControl, direction: .left)
+    app.expect(element: pageControl, to: .haveText("page 2 of 10"))
 
-    application.swipe(element: .init(type: .pageControl, identifier: pageControlIdentifier), direction: .left)
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 2 of 10"))
-
-    application.swipe(element: .init(type: .pageControl, identifier: pageControlIdentifier), direction: .right)
-    application.expect(element: .init(type: .pageControl, identifier: pageControlIdentifier), to: .haveText("page 3 of 10"))
+    app.swipe(element: pageControl, direction: .right)
+    app.expect(element: pageControl, to: .haveText("page 3 of 10"))
   }
 }

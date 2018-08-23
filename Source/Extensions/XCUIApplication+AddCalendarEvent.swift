@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Add an event to a calendar
   ///
   /// If the *calendar permission* alert dialog is displayed, the request will be **automatically** accepted.

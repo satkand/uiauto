@@ -11,7 +11,6 @@ import EventKitUI
 import UIKit
 
 final class MasterViewController: BaseTableViewController {
-
   private let locationManager: CLLocationManager = .init()
 
   struct Example {
@@ -71,7 +70,6 @@ final class MasterViewController: BaseTableViewController {
 // MARK: - UITableViewDataSource
 
 extension MasterViewController {
-
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
@@ -81,7 +79,6 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
     if indexPath.section == 0 {
@@ -145,7 +142,6 @@ extension MasterViewController {
 
   private func accessibilityIdentifier(for row: Int) -> String? {
     switch row {
-
     case 0: return "cell_activity_indicator"
 
     case 1: return "cell_alert_controller"
@@ -160,9 +156,7 @@ extension MasterViewController {
 // MARK: - UITableViewDelegate
 
 extension MasterViewController {
-
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     defer { tableView.deselectRow(at: indexPath, animated: true) }
 
     if indexPath.section == 0 {
@@ -268,7 +262,6 @@ extension MasterViewController {
 }
 
 extension MasterViewController: UIImagePickerControllerDelegate {
-
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
     picker.dismiss(animated: true, completion: nil)
     print(info)
@@ -276,7 +269,6 @@ extension MasterViewController: UIImagePickerControllerDelegate {
 }
 
 extension MasterViewController: EKEventEditViewDelegate {
-
   func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
     controller.dismiss(animated: true, completion: nil)
     print(action.rawValue)

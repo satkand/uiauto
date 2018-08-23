@@ -1,63 +1,56 @@
 //  Copyright © 2018 Apple. All rights reserved.
 
-import XCTest
+import Robocop
 
 #if !(targetEnvironment(simulator))
 
-  final class CameraFeatures: XCTestCase {
-
-    private var application: XCUIApplication!
-
-    override func setUp() {
-      super.setUp()
-
+  final class CameraFeatures: Feature {
+    override func beforeLaunch() {
       uninstallApplication(named: "UIKitCatalog")
-
-      application = XCUIApplication()
-      application.launch()
-
-      application.swipe(to: .init(type: .cell, index: 18), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-      application.tap(element: .init(type: .cell, index: 18))
     }
 
-    override func tearDown() {
-      application.terminate()
-      application = nil
+    override func afterLaunch() {
+      let cell = Cell(index: 18)
+      let table = Table(identifier: "catalog_table")
 
-      super.tearDown()
+      app.swipe(to: cell, in: table, direction: .up)
+      app.tap(element: cell)
     }
 
     func testAcceptingPermissionAndTakingAPhoto() {
-      application.takePhoto()
+      app.takePhoto()
     }
 
     func testDenyingPermission() {
-      application.denyPermissionIfRequired(for: .camera)
+      app.denyPermissionIfRequired(for: .camera)
     }
 
     func testAcceptingOrDenyPermissionMultipleTimes() {
-      application.acceptPermissionIfRequired(for: .camera)
-      application.acceptPermissionIfRequired(for: .camera)
-      application.denyPermissionIfRequired(for: .camera)
+      app.acceptPermissionIfRequired(for: .camera)
+      app.acceptPermissionIfRequired(for: .camera)
+      app.denyPermissionIfRequired(for: .camera)
     }
 
     func testCancellingTakingAPhoto() {
-      application.cancelTakingPhoto()
+      app.cancelTakingPhoto()
     }
   }
 
-  final class CameraEditableFeatures: XCTestCase {
+  final class CameraEditableFeatures: Feature {
+    override func beforeLaunch() {
+      uninstallApplication(named: "UIKitCatalog")
+    }
+
+    override func afterLaunch() {
+      let cell = Cell(index: 19)
+      let table = Table(identifier: "catalog_table")
+
+      app.swipe(to: cell, in: table, direction: .up)
+      app.tap(element: cell)
+    }
 
     func testEditingAPhoto() {
-      uninstallApplication(named: "UIKitCatalog")
-
-      let application: XCUIApplication = XCUIApplication()
-      application.launch()
-
-      application.swipe(to: .init(type: .cell, index: 19), in: .init(type: .table, identifier: "catalog_table"), direction: .up)
-      application.tap(element: .init(type: .cell, index: 19))
-
-      application.takePhoto()
+      app.takePhoto()
     }
   }
 

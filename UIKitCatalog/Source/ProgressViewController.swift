@@ -9,7 +9,6 @@
 import UIKit
 
 class ProgressViewController: UITableViewController {
-
   // MARK: - Properties
 
   @IBOutlet var defaultStyleProgressView: UIProgressView!
@@ -65,7 +64,6 @@ class ProgressViewController: UITableViewController {
   }
 
   @IBAction private func startProgress() {
-
     // Reset the completed progress of the `UIProgressView`s.
     for progressView in progressViews {
       progressView.setProgress(0.0, animated: false)

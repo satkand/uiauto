@@ -9,7 +9,6 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-
   // MARK: - View Life Cycle
 
   override func viewDidLoad() {

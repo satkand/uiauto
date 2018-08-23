@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Selects a photo from the photo library.
   ///
   /// If the *photo library permission* alert dialog is displayed, the request will be **automatically** accepted.

@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchControllerBaseViewController: UITableViewController {
-
   // MARK: - Types
 
   static let tableViewCellIdentifier = "searchResultsCell"

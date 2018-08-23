@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomToolbarViewController: UIViewController {
-
   // MARK: - Properties
 
   @IBOutlet var toolbar: UIToolbar!

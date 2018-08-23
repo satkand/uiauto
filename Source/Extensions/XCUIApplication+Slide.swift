@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Adjust slider to a given percentage
   ///
   /// It is **recommended** to test sliders with this functionality first

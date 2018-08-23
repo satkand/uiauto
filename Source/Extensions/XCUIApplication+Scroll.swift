@@ -3,7 +3,6 @@
 import XCTest
 
 extension XCUIApplication {
-
   /// Attempts to scroll the given element to the specified area. If the element is not scrollable, it won't do
   /// anything.
   ///

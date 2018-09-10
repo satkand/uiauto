@@ -9,6 +9,7 @@
 import UIKit
 
 class SliderViewController: UITableViewController {
+
   // MARK: - Properties
 
   @IBOutlet var defaultSlider: UISlider!

@@ -156,6 +156,11 @@ fastlane ios validate_drop
 fastlane ios validate_appstore
 ```
 
+### ios catalog_carthage
+```
+fastlane ios catalog_carthage
+```
+Download required carthage dependencies
 ### ios package_framework
 ```
 fastlane ios package_framework

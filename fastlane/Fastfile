@@ -19,6 +19,7 @@ platform :ios do
 
   desc "Cleans, tests, builds, computes code coverage and lints"
   override_lane :ci_dev do
+    catalog_carthage
     clean
     test
 
@@ -30,6 +31,7 @@ platform :ios do
 
   desc "Cleans and tests"
   override_lane :ci_qa do
+    catalog_carthage
     clean
     test
 
@@ -38,10 +40,16 @@ platform :ios do
 
   desc "Cleans and tests"
   override_lane :ci_drop do
+    catalog_carthage
     clean
     test
 
     package_framework
+  end
+
+  desc "Download required carthage dependencies"
+  lane :catalog_carthage do
+    Dir.chdir("../UIKitCatalog") do sh "carthage bootstrap --platform iOS --no-use-binaries" end
   end
 
   desc "Run `carthage build` to ensure the library can be packaged as a framework"

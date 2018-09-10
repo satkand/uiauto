@@ -9,6 +9,7 @@
 import UIKit
 
 class SwitchViewController: UITableViewController {
+
   // MARK: - Properties
 
   @IBOutlet var defaultSwitch: UISwitch!

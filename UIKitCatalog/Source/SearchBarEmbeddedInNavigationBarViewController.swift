@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchBarEmbedInNavBarViewController: SearchControllerBaseViewController {
+
   // MARK: - Properties
 
   // `searchController` is set in viewDidLoad(_:).

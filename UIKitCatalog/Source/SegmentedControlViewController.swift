@@ -9,6 +9,7 @@
 import UIKit
 
 class SegmentedControlViewController: UITableViewController {
+
   // MARK: - Properties
 
   @IBOutlet var defaultSegmentedControl: UISegmentedControl!

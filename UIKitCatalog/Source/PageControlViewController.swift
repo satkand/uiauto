@@ -9,6 +9,7 @@
 import UIKit
 
 class PageControlViewController: UIViewController {
+
   // MARK: - Properties
 
   @IBOutlet var pageControl: UIPageControl!

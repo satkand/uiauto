@@ -9,6 +9,7 @@
 import UIKit
 
 class TintedToolbarViewController: UIViewController {
+
   // MARK: - Properties
 
   @IBOutlet var toolbar: UIToolbar!

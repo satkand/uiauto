@@ -9,6 +9,7 @@
 import UIKit
 
 class DefaultSearchBarViewController: UIViewController {
+
   // MARK: - Properties
 
   @IBOutlet var searchBar: UISearchBar!

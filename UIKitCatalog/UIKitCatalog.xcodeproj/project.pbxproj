@@ -70,6 +70,7 @@
 		DBD7CBFB2145F8ED00A57A58 /* StepperFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CBEA2145F8ED00A57A58 /* StepperFeatures.swift */; };
 		53CE5AF51F2A8BB000D8A656 /* StepperViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AF31F2A8BB000D8A656 /* StepperViewController.storyboard */; };
 		2200544518BC54F5002A6E8B /* StepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543618BC54F5002A6E8B /* StepperViewController.swift */; };
+		DBD7CBD92145F89600A57A58 /* Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD7CBD82145F89600A57A58 /* Swifter.framework */; };
 		DBD7CBFA2145F8ED00A57A58 /* SwitchFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CBE92145F8ED00A57A58 /* SwitchFeatures.swift */; };
 		53CE5AF81F2A8BD000D8A656 /* SwitchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CE5AF61F2A8BD000D8A656 /* SwitchViewController.storyboard */; };
 		2200544618BC54F5002A6E8B /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200543718BC54F5002A6E8B /* SwitchViewController.swift */; };
@@ -162,6 +163,7 @@
 		B50F41071B1D284700E5147D /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		DBD7CBEA2145F8ED00A57A58 /* StepperFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperFeatures.swift; sourceTree = "<group>"; };
 		2200543618BC54F5002A6E8B /* StepperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StepperViewController.swift; sourceTree = "<group>"; };
+		DBD7CBD82145F89600A57A58 /* Swifter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifter.framework; path = Carthage/Build/iOS/Swifter.framework; sourceTree = "<group>"; };
 		DBD7CBE92145F8ED00A57A58 /* SwitchFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchFeatures.swift; sourceTree = "<group>"; };
 		2200543718BC54F5002A6E8B /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		DBD7CBE12145F8ED00A57A58 /* TextFieldsFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsFeatures.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7FEB1321182566008B2082 /* Robocop.framework in Frameworks */,
+				DBD7CBD92145F89600A57A58 /* Swifter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				DB7FEB1221182566008B2082 /* Robocop.framework */,
+				DBD7CBD82145F89600A57A58 /* Swifter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -442,6 +446,7 @@
 				DB8EF6EA210AE2CB0091E5C8 /* Frameworks */,
 				DB8EF6EB210AE2CB0091E5C8 /* Resources */,
 				DB91002021267D81001CBC70 /* Copy Frameworks */,
+				DBD7CC0B2145FA1500A57A58 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -549,6 +554,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which /usr/local/bin/swiftlint >/dev/null; then\n  /usr/local/bin/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		DBD7CC0B2145FA1500A57A58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Swifter.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Swifter.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -958,6 +978,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -980,6 +1004,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Features/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

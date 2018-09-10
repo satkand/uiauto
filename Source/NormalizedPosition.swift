@@ -27,7 +27,6 @@ public struct NormalizedPosition {
 }
 
 extension NormalizedPosition {
-
   static var center: NormalizedPosition {
     return NormalizedPosition(x: 0.5, y: 0.5)
   }

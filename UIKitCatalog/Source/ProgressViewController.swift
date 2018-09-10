@@ -9,6 +9,7 @@
 import UIKit
 
 class ProgressViewController: UITableViewController {
+
   // MARK: - Properties
 
   @IBOutlet var defaultStyleProgressView: UIProgressView!

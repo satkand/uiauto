@@ -10,6 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: NSObject, UIApplicationDelegate, UISplitViewControllerDelegate {
+
   // MARK: - Properties
 
   var window: UIWindow?

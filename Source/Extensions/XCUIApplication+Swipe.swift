@@ -69,7 +69,6 @@ extension XCUIApplication {
 }
 
 private extension CGVector {
-
   func scaled(by scale: CGVector) -> CGVector {
     return CGVector(dx: dx * scale.dx, dy: dy * scale.dy)
   }

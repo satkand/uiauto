@@ -38,6 +38,7 @@ An API stubbing example is given in the `LoadRequestViewController` and `LoadReq
 The following steps were used in order to build the example:
 
 1. Install `Swifter` as a 3rd party dependency using [Carthage](https://github.com/Carthage/Carthage)
+1. Allow local networking in ATS by adding the `NSAllowsLocalNetworking` key and set it to `YES` in the app's `Info.plist`
 1. Open the UIKitCatalog project build settings and add `-D Debug` under `Other Swift Flags`
 1. Set launch arguments using `app.launchArguments = ["UITesting"]` before the app is launched
 1. Use `ProcessInfo.processInfo.arguments.contains("UITesting")` in production code to determine which endpoint to use

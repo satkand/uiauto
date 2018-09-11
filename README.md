@@ -1,3 +1,5 @@
+[TOC]
+
 # Robocop
 
 Similarly to how Robocop *captures criminal*, this project will *capture defects*

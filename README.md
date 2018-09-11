@@ -25,3 +25,9 @@ Please make sure you are familiar with these ground rules:
 | SwiftFormat | 0.33.11  |
 
 Please follow our documentation on [command line tools installation](Documents/command-line-tools-installation.md) for more information.
+
+## Useful links
+
+- [Trello](https://trello.com/b/S0TX0dst/native-ui-testing)
+- [Confluence](https://tools.outware.com.au/wiki/display/IN/Native+UI+Testing+-+Robocop)
+

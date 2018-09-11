@@ -1,1 +1,1 @@
-github "glock45/swifter" == 1.4.0
+github "glock45/swifter" ~> 1.4.2

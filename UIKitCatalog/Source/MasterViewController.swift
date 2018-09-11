@@ -75,7 +75,7 @@ extension MasterViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section == 0 ? exampleList.count : 8
+    return section == 0 ? exampleList.count : 9
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,6 +136,11 @@ extension MasterViewController {
       cell.detailTextLabel?.text = nil
       cell.accessibilityIdentifier = nil
 
+    case 8:
+      cell.textLabel?.text = "Loading over HTTP"
+      cell.detailTextLabel?.text = nil
+      cell.accessibilityIdentifier = nil
+
     default: break
     }
   }
@@ -192,6 +197,9 @@ extension MasterViewController {
 
     case 7:
       requestLocationServiceWhenInUse()
+
+    case 8:
+      showLoadRequest()
 
     default: break
     }
@@ -258,6 +266,10 @@ extension MasterViewController {
 
   private func requestLocationServiceWhenInUse() {
     locationManager.requestWhenInUseAuthorization()
+  }
+
+  private func showLoadRequest() {
+    performSegue(withIdentifier: "LoadRequestSegue", sender: nil)
   }
 }
 

@@ -36,6 +36,8 @@
 		DBD7CBF52145F8ED00A57A58 /* ImageViewFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CBE42145F8ED00A57A58 /* ImageViewFeatures.swift */; };
 		53B791DB1F85505700AB2FA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53B791D61F854B4700AB2FA6 /* InfoPlist.strings */; };
 		539C6BAF1F27F4980006C5A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539C6BAA1F27F4980006C5A9 /* LaunchScreen.storyboard */; };
+		DBD7CC0A2145F93B00A57A58 /* LoadRequestFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CC092145F93B00A57A58 /* LoadRequestFeatures.swift */; };
+		DBD7CC0D21461DEC00A57A58 /* LoadRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CC0C21461DEC00A57A58 /* LoadRequestViewController.swift */; };
 		53B791DC1F85505A00AB2FA6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53B791D81F854B4800AB2FA6 /* Localizable.strings */; };
 		DBD7CC052145F90000A57A58 /* LocationServiceFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7CC002145F90000A57A58 /* LocationServiceFeatures.swift */; };
 		3E5C084E1974991E00969DD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5C08501974991E00969DD7 /* Main.storyboard */; };
@@ -139,6 +141,8 @@
 		DBD7CBE42145F8ED00A57A58 /* ImageViewFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewFeatures.swift; sourceTree = "<group>"; };
 		228DB9F718BC53F1002BA12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8EF6F1210AE2CB0091E5C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD7CC092145F93B00A57A58 /* LoadRequestFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRequestFeatures.swift; sourceTree = "<group>"; };
+		DBD7CC0C21461DEC00A57A58 /* LoadRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadRequestViewController.swift; sourceTree = "<group>"; };
 		DBD7CC002145F90000A57A58 /* LocationServiceFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServiceFeatures.swift; sourceTree = "<group>"; };
 		539C6BB11F27F4A70006C5A9 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		DBD7CBE82145F8ED00A57A58 /* PageControlFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlFeatures.swift; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 				2200542418BC54EC002A6E8B /* DatePickerController.swift */,
 				53CE5ADC1F2A8A3D00D8A656 /* ImageViewController.storyboard */,
 				2200542D18BC54F5002A6E8B /* ImageViewController.swift */,
+				DBD7CC0C21461DEC00A57A58 /* LoadRequestViewController.swift */,
 				53CE5AE11F2A8AD200D8A656 /* PageControlViewController.storyboard */,
 				2200543018BC54F5002A6E8B /* PageControlViewController.swift */,
 				53CE5AE41F2A8AEF00D8A656 /* PickerViewController.storyboard */,
@@ -376,6 +381,7 @@
 				DB8EF6F1210AE2CB0091E5C8 /* Info.plist */,
 				DB8D73552122B43B00821F4C /* UninstallApplicationFeatures.swift */,
 				DBD7CBFD2145F90000A57A58 /* Permissions */,
+				DBD7CC082145F92D00A57A58 /* Swifter */,
 				DBD7CBDA2145F8ED00A57A58 /* UIKitCatalog */,
 			);
 			path = Features;
@@ -415,6 +421,14 @@
 				DBD7CC012145F90000A57A58 /* ReminderFeatures.swift */,
 			);
 			path = Permissions;
+			sourceTree = "<group>";
+		};
+		DBD7CC082145F92D00A57A58 /* Swifter */ = {
+			isa = PBXGroup;
+			children = (
+				DBD7CC092145F93B00A57A58 /* LoadRequestFeatures.swift */,
+			);
+			path = Swifter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,6 +603,7 @@
 				2200542C18BC54EC002A6E8B /* DefaultToolbarViewController.swift in Sources */,
 				533BD78D1F8BE1A6007D5C3B /* DetailViewManager.swift in Sources */,
 				2200543C18BC54F5002A6E8B /* ImageViewController.swift in Sources */,
+				DBD7CC0D21461DEC00A57A58 /* LoadRequestViewController.swift in Sources */,
 				539C6BB21F27F4A70006C5A9 /* MasterViewController.swift in Sources */,
 				2200543F18BC54F5002A6E8B /* PageControlViewController.swift in Sources */,
 				2200544018BC54F5002A6E8B /* PickerViewController.swift in Sources */,
@@ -623,6 +638,7 @@
 				DBD7CBFC2145F8ED00A57A58 /* CatalogFeatures.swift in Sources */,
 				DBD7CBED2145F8ED00A57A58 /* DatePickerFeatures.swift in Sources */,
 				DBD7CBF52145F8ED00A57A58 /* ImageViewFeatures.swift in Sources */,
+				DBD7CC0A2145F93B00A57A58 /* LoadRequestFeatures.swift in Sources */,
 				DBD7CC052145F90000A57A58 /* LocationServiceFeatures.swift in Sources */,
 				DBD7CBF92145F8ED00A57A58 /* PageControlFeatures.swift in Sources */,
 				DBD7CC032145F90000A57A58 /* PhotoLibraryFeatures.swift in Sources */,
@@ -887,6 +903,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D Debug";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -933,6 +950,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

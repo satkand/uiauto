@@ -41,7 +41,7 @@ The following steps were used in order to build the example:
 1. Allow local networking in ATS by adding the `NSAllowsLocalNetworking` key and set it to `YES` in the app's `Info.plist`
 1. Open the UIKitCatalog project build settings and add `-D Debug` under `Other Swift Flags`
 1. Set launch arguments using `app.launchArguments = ["UITesting"]` before the app is launched
-1. Use `ProcessInfo.processInfo.arguments.contains("UITesting")` in production code to determine which endpoint to use
+1. Use `ProcessInfo.processInfo.arguments.contains("UITesting")` in production code to determine which endpoint to use. Swifter will launch a local server so the base URL becomes `http://localhost:8080`
 1. Optional: Use the `Debug` flag to avoid compiling the test code in the released binary.
 
 ## Useful links

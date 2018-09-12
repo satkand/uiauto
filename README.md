@@ -2,8 +2,9 @@
 
 # Robocop
 
-Similarly to how Robocop *captures criminal*, this project will *capture defects*
-by *automating* and *synchronising* our knowledge in UITesting into one framework
+__Robocop__ is a robotically enhanced police officer equipped state of the art weapons that aid him in servicing justice.
+
+Similarly to how the character is a step above his fellow average police officers, __Robocop__, the framework, is an enhancement of the native UI testing capabilities for iOS. It wraps `XCTest` to provide simpler and easier to use interfaces to help you write UI tests faster while not compromising on the quality of the tests. Additionally, it serves as a central knowledge base of the intricacies of UI testing including edge cases and limitations.
 
 ## Getting started
 

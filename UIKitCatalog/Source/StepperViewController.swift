@@ -9,7 +9,6 @@
 import UIKit
 
 class StepperViewController: UITableViewController {
-
   // MARK: - Properties
 
   @IBOutlet var defaultStepper: UIStepper!

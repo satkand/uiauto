@@ -9,7 +9,6 @@
 import UIKit
 
 class StackViewController: UIViewController {
-
   // MARK: - Properties
 
   @IBOutlet var furtherDetailStackView: UIStackView!

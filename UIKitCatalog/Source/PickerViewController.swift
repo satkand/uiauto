@@ -9,7 +9,6 @@
 import UIKit
 
 class PickerViewController: UIViewController {
-
   // MARK: - Types
 
   enum ColorComponent: Int {

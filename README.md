@@ -107,7 +107,7 @@ perform the most common actions:
 app.tap(element: Button(identifier: "buttons_image_button"))
 
 // Double taps a text field
-app.doubleTap(text: "Hello", into: TextField(identifier: "text_fields_default"))
+app.doubleTap(element: TextField(identifier: "text_fields_default"))
 ```
 
 * **Text Input**

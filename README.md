@@ -3,7 +3,7 @@
 # Robocop
 
 > *Robocop* is a robotically enhanced police officer equipped with state of the
-art weapons that aid him in servicing justice.
+art weapons that aid him in serving justice.
 
 Similarly to how the character is a step above his fellow average police
 officers, **Robocop**, the framework, is an enhancement of the native UI testing

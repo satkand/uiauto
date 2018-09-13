@@ -2,9 +2,15 @@
 
 # Robocop
 
-> *Robocop* is a robotically enhanced police officer equipped with state of the art weapons that aid him in servicing justice.
+> *Robocop* is a robotically enhanced police officer equipped with state of the
+art weapons that aid him in servicing justice.
 
-Similarly to how the character is a step above his fellow average police officers, **Robocop**, the framework, is an enhancement of the native UI testing capabilities for iOS. It wraps `XCTest` to provide simpler and easier to use interfaces to help you write UI tests faster while not compromising on the quality of the tests. Additionally, it serves as a central knowledge base of the intricacies of UI testing including edge cases and limitations.
+Similarly to how the character is a step above his fellow average police
+officers, **Robocop**, the framework, is an enhancement of the native UI testing
+capabilities for iOS. It wraps `XCTest` to provide simpler and easier to use
+interfaces to help you write UI tests faster while not compromising on the
+quality of the tests. Additionally, it serves as a central knowledge base of the
+intricacies of UI testing including edge cases and limitations.
 
 ## Getting started
 
@@ -15,7 +21,9 @@ Please make sure you are familiar with these ground rules:
 
 ### Toolset
 
-**Note**: The following tools were used to built this project. Be aware that newer versions of those tools might be available but have not been tested against this project.
+**Note**: The following tools were used to built this project. Be aware that
+newer versions of those tools might be available but have not been tested
+against this project.
 
 | Tools       | Versions |
 | ----------  | ---------|
@@ -27,13 +35,20 @@ Please make sure you are familiar with these ground rules:
 | SwiftLint   | 0.26.0   |
 | SwiftFormat | 0.33.11  |
 
-Please follow our documentation on [command line tools installation](Documents/command-line-tools-installation.md) for more information.
+Please follow our documentation on [command line tools installation](Documents/command-line-tools-installation.md)
+for more information.
 
 ## Components
 
 ### Feature
 
-The `Feature` class facilitates creating UI tests by automatically initialising and launching the main application, which can be accessed via the `app` property, so all your tests should be subclassing it. It's a subclass of `XCTestCase` so you still have the usual `setUp()` and `tearDown()` steps. In addition to that, it gives you the chance to perform some extra setup either before or after launching the app by implementing `beforeLaunch()` and `afterLaunch()` respectively, for example:
+The `Feature` class facilitates creating UI tests by automatically initialising
+and launching the main application, which can be accessed via the `app`
+property, so all your tests should be subclassing it. It's a subclass of
+`XCTestCase` so you still have the usual `setUp()` and `tearDown()` steps.
+In addition to that, it gives you the chance to perform some extra setup either
+before or after launching the app by implementing `beforeLaunch()` and
+`afterLaunch()` respectively, for example:
 
 ```swift
 import Robocop
@@ -61,15 +76,29 @@ final class PhotoLibraryFeatures: Feature {
 }
 ```
 
-In this particular test, we want to uninstall the app before launching it to clear any permission accesses that it may already have. After launching the app, we want to scroll the table to the position of the cell that let's you request permission access to the photo library.
+In this particular test, we want to uninstall the app before launching it to
+clear any permission accesses that it may already have. After launching the app,
+we want to scroll the table to the position of the cell that let's you request
+permission access to the photo library.
 
 ### Element
 
-An `Element` represents a UI element on the screen which can be accessed via its identifier or an index, in the case of cells in a table. It requires an `ElementType`, which defines the different kinds of views you can find in an iOS app, and is the main kind of object used to perform actions in the app. There are various subclasses of `Element` defined in the framework to capture common elements you would have to deal with such as `Button`, `Cell`, `Label`, `Table` and many more.
+An `Element` represents a UI element on the screen which can be accessed via its
+identifier or an index, in the case of cells in a table. It requires an
+`ElementType`, which defines the different kinds of views you can find in an iOS
+app, and is the main kind of object used to perform actions in the app. There
+are various subclasses of `Element` defined in the framework to capture common
+elements you would have to deal with such as `Button`, `Cell`, `Label`, `Table`
+and many more.
 
 ### Actions
 
-The framework also defines a number of extensions of `XCUIApplication` that represent actions that a user might take when using the app including tapping, scrolling and entering text. These generally take an `Element` which to act on in addition to other parameters necessary to complete the action such as the text you would want to type in a `TextField`. Below are examples of how to perform the most common actions:
+The framework also defines a number of extensions of `XCUIApplication` that
+represent actions that a user might take when using the app including tapping,
+scrolling and entering text. These generally take an `Element` which to act on
+in addition to other parameters necessary to complete the action such as the
+text you would want to type in a `TextField`. Below are examples of how to
+perform the most common actions:
 
 * **Tapping**
 
@@ -84,11 +113,15 @@ app.doubleTap(text: "Hello", into: TextField(identifier: "text_fields_default"))
 * **Text Input**
 
 ```swift
-// Types the characters in the given text using the keyboard into the given text field
+// Types the characters using the keyboard into the given text field
 app.type(text: "Hello", into: TextField(identifier: "text_fields_default"))
 
 // Copies the text from one text field to another
-app.copyText(from: TextField(identifier: "text_fields_default"), andPasteInto: TextField(identifier: "text_fields_tinted"), timeout: 0.5)
+app.copyText(
+  from: TextField(identifier: "text_fields_default"),
+  andPasteInto: TextField(identifier: "text_fields_tinted"),
+  timeout: 0.5
+)
 
 // Clears the text in the given text field
 app.clearText(in: TextField(identifier: "text_fields_default"))
@@ -100,28 +133,40 @@ app.clearText(in: TextField(identifier: "text_fields_default"))
 // Scrolls to the bottom of the given table
 app.scroll(element: Table(identifier: "catalog_table"), to: .bottom)
 
-// Swipes the table up (effectively scrolling it down) until the given cell is visible
-app.swipe(to: Cell(index: 14), in: Table(identifier: "catalog_table"), direction: .up)
+// Swipes the table up (scrolling it down) until the given cell is visible
+app.swipe(
+  to: Cell(index: 14),
+  in: Table(identifier: "catalog_table"),
+  direction: .up
+)
 
-// Performs a swipe down action on the given table (effectively scrolling the table up)
+// Performs a swipe down action on the given table (scrolling it up)
 app.swipe(element: TextView(identifier: "text_view"), direction: .down)
 ```
 
 ## API Stubbing
 
-An API stubbing example is given in the `LoadRequestViewController` and `LoadRequestFeatures` classes. They use a combination of the following tools:
+An API stubbing example is given in the `LoadRequestViewController` and
+`LoadRequestFeatures` classes. They use a combination of the following tools:
 
 * [Swifter](https://github.com/httpswift/swifter) for stubbing APIs
-* "Launch Arguments" & "Other Swift Flags" to decide which endpoint to use in the production code.
+* "Launch Arguments" & "Other Swift Flags" to decide which endpoint to use in
+the production code.
 
 The following steps were used in order to build the example:
 
 1. Install `Swifter` as a 3rd party dependency using [Carthage](https://github.com/Carthage/Carthage)
-1. Allow local networking in ATS by adding the `NSAllowsLocalNetworking` key and set it to `YES` in the app's `Info.plist`
-1. Open the UIKitCatalog project build settings and add `-D Debug` under `Other Swift Flags`
-1. Set launch arguments using `app.launchArguments = ["UITesting"]` before the app is launched
-1. Use `ProcessInfo.processInfo.arguments.contains("UITesting")` in production code to determine which endpoint to use. Swifter will launch a local server so the base URL becomes `http://localhost:8080`
-1. Optional: Use the `Debug` flag to avoid compiling the test code in the released binary.
+1. Allow local networking in ATS by adding the `NSAllowsLocalNetworking` key and
+set it to `YES` in the app's `Info.plist`
+1. Open the UIKitCatalog project build settings and add `-D Debug` under
+`Other Swift Flags`
+1. Set launch arguments using `app.launchArguments = ["UITesting"]` before the
+app is launched
+1. Use `ProcessInfo.processInfo.arguments.contains("UITesting")` in production
+code to determine which endpoint to use. Swifter will launch a local server so
+the base URL becomes `http://localhost:8080`
+1. Optional: Use the `Debug` flag to avoid compiling the test code in the
+released binary.
 
 ## Useful links
 

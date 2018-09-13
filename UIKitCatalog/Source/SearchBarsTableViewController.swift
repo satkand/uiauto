@@ -9,7 +9,6 @@
 import UIKit
 
 class SearchBarsTableViewController: BaseTableViewController {
-
   // MARK: - UITableViewDelegate
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

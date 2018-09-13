@@ -9,7 +9,6 @@
 import UIKit
 
 class TextViewController: UIViewController {
-
   // MARK: - Properties
 
   @IBOutlet var textView: UITextView!

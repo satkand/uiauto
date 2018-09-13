@@ -8,7 +8,6 @@
 import UIKit
 
 class ToolbarsTableViewController: BaseTableViewController {
-
   // MARK: - UITableViewDelegate
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

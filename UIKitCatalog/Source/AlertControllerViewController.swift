@@ -9,7 +9,6 @@
 import UIKit
 
 class AlertControllerViewController: UITableViewController {
-
   // MARK: - Properties
 
   weak var secureTextAlertAction: UIAlertAction?

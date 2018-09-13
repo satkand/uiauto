@@ -13,7 +13,6 @@
 import UIKit
 
 class ButtonViewController: UITableViewController {
-
   // MARK: - Properties
 
   @IBOutlet var systemTextButton: UIButton!
